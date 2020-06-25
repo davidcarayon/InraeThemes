@@ -1,0 +1,116 @@
+---
+title: "Titre du document"
+subtitle: "Sous-titre du document"
+author: "Auteur du document"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: 
+  pagedown::html_paged:
+    highlight: haddock
+    toc: true
+    lot: true
+    lof: true
+    css: 
+    - "style/inrae.css"
+knit: pagedown::chrome_print
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	dpi = 300,
+	out.width = 2100
+)
+```
+
+```{r packages}
+library(InraeThemes)
+library(dplyr)
+library(ggplot2)
+library(gt)
+```
+
+
+
+```{r}
+# Si besoin des couleurs
+couleurs_inrae<-rgb(red=c(102,0,39,0,255,157,158,66,121,196),
+                    green=c(193,140,86,0,255,197,214,48,120,192),
+                    blue=c(191,86,98,0,255,68,227,137,112,179),
+                    names=c("vert_inrae_clair","vert_inrae","vert_inrae_fonce","noir","blanc","vert","bleu_clair","bleu_fonce","gris_fonce","gris_clair"),
+                    max= 255)
+```
+
+
+>
+> # RESUME
+>
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+>
+
+# Premier chapitre
+
+## Première section
+
+### Une sous-section
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+## Seconde section
+
+Ci-dessous un graphique avec theme INRAE :
+
+```{r plot}
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(aes(color = as.factor(gear)))+
+  scale_color_inrae_n5()+
+  geom_smooth(color = couleurs_inrae[1]) +
+  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
+  theme_inrae()
+
+```
+
+# Second chapitre
+
+## Première section
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r gt}
+iris %>% 
+  head(10) %>% 
+  gt()
+```
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+## Seconde section
+
+Avec insertion de code :
+
+```{r echo = TRUE}
+
+# On charge un package
+library(ggplot2)
+
+# On trace un graphique ggplot avec un second theme INRAE
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_boxplot(color = "black") +
+  geom_jitter(shape = 21, color = "black", alpha = 0.6)+
+  labs(x = "Species", y = "Sepal Length") +
+  theme_inrae_1()
+
+```
+

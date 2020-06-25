@@ -1,16 +1,26 @@
 Package: InraeThemes
-Title: What the Package Does (One Line, Title Case)
+Title: Modèles et thèmes INRAE
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    c(
+    person(given = "David",
+           family = "Carayon",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "david.carayon@inrae.fr"),
+    person(given = "Sébastien",
+           family = "Boutry",
+           role = c("aut"),
+           email = "sebastien.boutry@inrae.fr"))       
+Description: Ce package met à disposition des modèles de document ainsi que des thèmes ggplot suivant la charte graphique INRAE.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ggplot2,
+    gt,
+    pagedown,
+    rmarkdown

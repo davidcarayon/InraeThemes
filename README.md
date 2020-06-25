@@ -1,0 +1,51 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# InraeThemes
+
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+InraeThemes est un package proposant une variété de templates
+(Rmarkdown) et de thèmes (ggplot) qui respectent la charte graphique
+INRAE.
+
+**Attention : Ces modèles nécessitent l’installation de 2 polices
+adoptées dans la charte graphique INRAE : “Raleway” et “Avenir Next
+Pro”.**
+
+## Installation
+
+Le package peut-être installé via :
+
+``` r
+# install.packages("devtools")
+devtools::install_github("davidcarayon/InraeThemes")
+```
+
+## Exemple
+
+Voici un exemple de graphique utilisant un thème ggplot INRAE :
+
+``` r
+library(InraeThemes)
+library(ggplot2)
+
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(aes(color = as.factor(gear)))+
+  scale_color_inrae_n5()+
+  geom_smooth(color = couleurs_inrae[1]) +
+  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
+  theme_inrae()
+```
+
+<img src="man/figures/README-example-1.png" width="100%" />
+
+## Utilisation de modèles
+
+Ce package permet de rédiger des rapports pré-formatés au style INRAE.
+Le modèle est directement accessible dans Rstudio via `File > New File >
+Rmarkdown > From Template`.
