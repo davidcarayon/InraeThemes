@@ -15,7 +15,7 @@ INRAE.
 
 **Attention : Ces modèles nécessitent l’installation de 2 polices
 adoptées dans la charte graphique INRAE : “Raleway” et “Avenir Next
-Pro”.**
+Pro”.** 
 
 ## Installation
 
