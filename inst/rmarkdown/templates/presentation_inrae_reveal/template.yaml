@@ -1,0 +1,4 @@
+name: Présentation dynamique RevealJS
+description: >
+   Production d'une présentation pré-formatée aux couleurs INRAE, en HTML, utilisant le framework revealJS.
+create_dir: FALSE

@@ -7,7 +7,9 @@
 theme_inrae_1(base_size = 10, base_family = "Avenir Next Pro")
 }
 \arguments{
-\item{base_family}{}
+\item{base_size}{base size}
+
+\item{base_family}{base family}
 }
 \value{
 

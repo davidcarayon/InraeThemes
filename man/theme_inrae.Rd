@@ -4,7 +4,10 @@
 \alias{theme_inrae}
 \title{Title}
 \usage{
-theme_inrae()
+theme_inrae(...)
+}
+\arguments{
+\item{...}{}
 }
 \value{
 

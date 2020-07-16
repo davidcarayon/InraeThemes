@@ -1,10 +1,10 @@
 #' Title
 #'
+#' @param ...
+#'
 #' @return
 #' @export
-#'
-#' @examples
-theme_inrae <- function(){
+theme_inrae <- function(...){
   theme(
   axis.title = element_text(
     family = "Avenir Next Pro",
@@ -76,13 +76,11 @@ theme_inrae <- function(){
 
 #' Title
 #'
-#' @param base_size
-#' @param base_family
+#' @param base_size base size
+#' @param base_family base family
 #'
 #' @return
 #' @export
-#'
-#' @examples
 theme_inrae_1 <- function(base_size = 10, base_family = "Avenir Next Pro") {
   theme_gray(base_size = base_size, base_family = base_family) %+replace%
     theme(
