@@ -51,6 +51,14 @@ ggplot(mtcars, aes(x=wt, y=mpg)) +
   theme_inrae()
 ```
 
-## Utilisation de modèles
+# Utilisation de modèles
 
 Ce package permet de rédiger des rapports pré-formatés au style INRAE. Le modèle est directement accessible dans Rstudio via `File > New File > Rmarkdown > From Template`.
+
+## Rapport PDF ou HTML utilisant {pagedown} 
+
+![](man/figures/cap_rapport.png)
+
+## Présentation HTML utilisant {revealjs} 
+
+![](man/figures/cap_reveal.png)

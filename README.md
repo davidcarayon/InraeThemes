@@ -15,7 +15,7 @@ INRAE.
 
 **Attention : Ces modèles nécessitent l’installation de 2 polices
 adoptées dans la charte graphique INRAE : “Raleway” et “Avenir Next
-Pro”.** 
+Pro”.**
 
 ## Installation
 
@@ -44,8 +44,16 @@ ggplot(mtcars, aes(x=wt, y=mpg)) +
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-## Utilisation de modèles
+# Utilisation de modèles
 
 Ce package permet de rédiger des rapports pré-formatés au style INRAE.
 Le modèle est directement accessible dans Rstudio via `File > New File >
 Rmarkdown > From Template`.
+
+## Rapport PDF ou HTML utilisant {pagedown}
+
+![](man/figures/cap_rapport.png)
+
+## Présentation HTML utilisant {revealjs}
+
+![](man/figures/cap_reveal.png)
