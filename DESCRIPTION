@@ -23,4 +23,5 @@ Imports:
     ggplot2,
     gt,
     pagedown,
-    rmarkdown
+    rmarkdown,
+    revealjs
