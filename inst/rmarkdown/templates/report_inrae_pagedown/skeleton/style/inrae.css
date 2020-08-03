@@ -126,15 +126,13 @@ td {
 /* Exception H1 pour le titre */
 h1.title {
   margin-block-start: -1cm;
-  break-after: always;
+  break-after: avoid;
   color: #00a3a6;
   position: absolute;
-  bottom: 1.4cm;
-  left: 0cm;
+  bottom: 22.5cm;
+  left: -1cm;
   text-align: left;
-  margin-right: 0.1cm;
   margin-left: 0cm;
-  margin-bottom: 0.1cm;
   font-size: 30pt;
 }
 
@@ -144,18 +142,20 @@ h1.subtitle {
   break-after: avoid;
   color: #00a3a6;
   position: absolute;
-  bottom: 22cm;
-  text-align: right;
+  left: -1cm;
+  bottom: 21cm;
+  text-align: left;
   font-size: 20pt;
 }
 
 h2.author {
-  margin-block-start: -1cm;
+  margin-block-start: 0cm;
   break-after: avoid;
   color: #00a3a6;
   position: absolute;
-  top: 23cm;
-  text-align: right;
+  left: -1cm;
+  top: 22cm;
+  text-align: left;
   font-size: 20pt;
 }
 
@@ -164,9 +164,10 @@ h2.date {
   break-after: avoid;
   color: #00a3a6;
   position: absolute;
-  top: 24cm;
-  text-align: right;
-  font-size: 20pt;
+  bottom: 19cm;
+  left: -1cm;
+  text-align: left;
+  font-size: 15pt;
 }
 
 
