@@ -4,14 +4,14 @@
 /* paragaphe et liste */
 p, ul {
   color: #000000;
-  font-family: "Raleway";
+  font-family: "Avenir Next Pro Light";
   text-align: justify;
 }
 
 /* titres */
 h1, h2, h3, h4 {
   color: #00a3a6;
-  font-family: "Raleway";
+  font-family: "Avenir Next Pro Light";
   font-weight: bold;
 }
 
@@ -20,21 +20,44 @@ h1, h2, h3, h4 {
 th {
   background-color: #00a3a6 !important;
   color: #FFFFFF !important;
-  font-family: "Raleway" !important;
+  font-family: "Avenir Next Pro Light" !important;
   font-weight: bold !important;
+  text-align: center;
+  border-width:1px; 
+  border-style:solid; 
+  border-color:black;
+  border-collapse:collapse;
+  font-size: 10pt;
 }
 
 /* colonnes de group */
 .gt_group_heading {
   color: #00a3a6 !important;
-  font-family: "Raleway" !important;
+  font-family: "Avenir Next Pro Light" !important;
   font-weight: bold !important;
+  border-collapse:collapse;
 }
+
+
+table {
+  border-width:1px; 
+  border-style:solid; 
+  border-color:black;
+  border-collapse:collapse;
+  break-inside: avoid;
+  }
+
 
 /* contenu */
 td {
   color: #000000;
-  font-family: "Raleway";
+  font-family: "Avenir Next Pro Light";
+  border-width:1px;
+  border-style:solid;
+  text-align: center;
+  border-color:black;
+  border-collapse:collapse;
+  font-size: 10pt;
 }
 
 /* eviter les tableaux multipages */
@@ -45,7 +68,7 @@ td {
 /* numerotation pages */
 .pagedjs_margin-content{
   color: #275662;
-  font-family: "Raleway";
+  font-family: "Avenir Next Pro Light";
   font-weight: bold;
 }
 
@@ -259,12 +282,14 @@ html, body {
   color: #000000;
   font-size: 15pt;
   line-height: 1.5;
+  break-after: avoid;
 }
 .toc li li {
   padding-left: 1em;
   color: #000000;
   font-size: 15pt;
   line-height: 1.5;
+  break-after: avoid;
 }
 .toc a, .lot a, .lof a {
   text-decoration: none;
@@ -273,6 +298,7 @@ html, body {
   color: #000000;
   font-size: 15pt;
   line-height: 1.5;
+  break-after: avoid;
 }
 
 .toc a::after, .lot a::after, .lof a::after {
@@ -281,16 +307,19 @@ html, body {
   float: right;
   background: white;
   color: #000000;
+  break-after: avoid;
 }
 .toc a.front-matter-ref::after, .lot a.front-matter-ref::after, .lof a.front-matter-ref::after {
   /* content: leader(dotted) target-counter(attr(href), page, lower-roman); */
   content: target-counter(attr(href), page, lower-roman);
   color: #000000;
+  break-after: avoid;
 }
 .toc .leaders::before, .lot .leaders::before, .lof .leaders::before {
   float: left;
   width: 0;
   white-space: nowrap;
+  break-after: avoid;
   color: #000000;
   content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
 }
