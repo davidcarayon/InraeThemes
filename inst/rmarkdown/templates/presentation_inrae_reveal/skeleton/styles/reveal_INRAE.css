@@ -26,23 +26,37 @@ body:after {
 content: url(logo_INRAE.png);
 position: fixed;
 top: 3.5em;
-right: 3.5em;}
+right: 3.5em;} 
 
 <style>
 
 /* Headings */
 
-.reveal h1 { /* Heading 1 */
-	text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); /* shadows */
-	font-weight: bold; /* bold */
-	color: #00a3a6
+
+
+.reveal p, ul, li {
+  color: #000000;
+  font-family: "Avenir Next Pro Light";
 }
 
-.reveal h2.author { /* Heading 2 for an author */
-	font-style: normal; /* could make bold or italics */
-	color: #00a3a6
+/* titres */
+
+.reveal h2 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); /* shadows */
+  color: #00a3a6;
+  font-weight: normal;
 }
 
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); /* shadows */
+}
+
+
+
+.reveal h2.author {
+  color: #00a3a6;
+  font-weight: normal;
+}
 
 /* Images */
 
@@ -73,7 +87,7 @@ right: 3.5em;}
     flex: 1;
 } 
   
-  
+
   
   
 </style>
