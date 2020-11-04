@@ -1,0 +1,4 @@
+name: Rapport simplifié INRAE
+description: >
+   Production d'un rapport simplifié pour le reporting d'analyses (documents internes).
+create_dir: FALSE
