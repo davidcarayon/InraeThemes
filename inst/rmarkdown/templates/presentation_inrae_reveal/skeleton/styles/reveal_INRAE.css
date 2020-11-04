@@ -21,12 +21,6 @@ Auteur : David Carayon
   width:50%;
 }
 
-/* Logo */
-body:after {
-content: url(logo_INRAE.png);
-position: fixed;
-top: 3.5em;
-right: 3.5em;} 
 
 <style>
 
@@ -42,13 +36,15 @@ right: 3.5em;}
 /* titres */
 
 .reveal h2 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); /* shadows */
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* shadows */
   color: #00a3a6;
-  font-weight: normal;
+  font-family: "Raleway";
+  font-weight: bold;
 }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); /* shadows */
+  font-family: "Raleway";
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* shadows */
 }
 
 
@@ -87,7 +83,23 @@ right: 3.5em;}
     flex: 1;
 } 
   
+/********** Customise logo, and footer disclaimer **********/
+/* Position the corporate logo in the top right of the page */
 
+#header-footer .slide-logo {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 150px;
+}
+
+/* Style/position the footer text */
+#header-footer .slide-footer {
+    position: fixed; 
+    bottom: 15px;
+    right: 60px;
+    width: 80px;
+}
   
   
 </style>

@@ -13,6 +13,9 @@ output:
     reveal_options:
       slideNumber: true
       previewLinks: true
+    includes:
+      in_header: styles/header.html
+knit: pagedown::chrome_print 
 ---
 
 ```{r setup, include=FALSE}
