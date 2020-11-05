@@ -6,9 +6,18 @@ body {
   text-align: justify;
 }
 
+a:link {
+  color: #00A3A6;
+}
+
 .title {
   font-size: 47px;
-  color: firebrick;
+  color: #008c8e;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: #00A3A6;
+  border-color: #000000;
 }
 
 h1,h2,h3,h4,h5 {
