@@ -1,4 +1,4 @@
-name: Rapports simplifiés d'analyse (documents de travail)
+name: Rapports reproductibles
 description: >
-   Rapport d'analyse (documents de travail)
+   Rapports reproductibles
 create_dir: FALSE
