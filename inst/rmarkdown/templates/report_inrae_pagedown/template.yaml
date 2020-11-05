@@ -1,4 +1,4 @@
-name: Rapport INRAE PDF ou  HTML
+name: Rapport INRAE
 description: >
-   Production d'un rapport pré-formaté aux couleurs INRAE, aux deux formats PDF et HTML, utilisant le framework pagedJS.
+   Rapport INRAE
 create_dir: FALSE

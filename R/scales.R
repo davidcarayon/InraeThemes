@@ -45,7 +45,7 @@ scale_color_inrae_n5 <- function(...){
 }
 
 palette_light <- function() {
-  c(
+  toupper(c(
     blue         = "#2c3e50", # blue
     red          = "#e31a1c", # red
     green        = "#18BC9C", # green
@@ -58,7 +58,7 @@ palette_light <- function() {
     orange       = "#ff7f00", # orange
     light_purple = "#cab2d6", # light_purple
     purple       = "#6a3d9a"  # purple
-  ) %>% toupper()
+  ))
 }
 
 

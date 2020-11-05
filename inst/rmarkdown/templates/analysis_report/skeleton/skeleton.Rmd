@@ -1,112 +1,116 @@
 ---
-title: "Titre du document"
-author: "Auteur du document"
-date: "Analyse du `r format(Sys.Date(), '%d %B %Y')`"
-output: 
-  pagedown::html_paged:
-    highlight: zenburn
-    css: 
-    - "style/simple.css"
-knit: pagedown::chrome_print
+title: "Titre de l'analyse"
+subtitle : "NB : Ce template est une version simplifiée de [rtemps](https://github.com/bblodfon/rtemps)."
+author: "Auteur"
+date: "Dernière M.A.J : `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    css: styles/analysis_report.css
+    theme: united
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    toc_depth: 3
+    number_sections: false
+    code_folding: hide
+    code_download: true
+# A décommenter pour obtenir une version PDF en +
+# knit: pagedown::chrome_print
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE,
-	dpi = 300,
-	out.width = 2100
-)
-```
+# Intro {-}
 
-```{r packages}
+Template based on [Rmarkdown](https://bookdown.org/yihui/rmarkdown/), using the [united HTML theme](https://bootswatch.com/united/).
+
+Refer to a [sub section](#sub-analysis). 
+Citing an article [@article]. 
+Refer to section [Analysis].
+
+# Input {-}
+
+Loading libraries:
+```{r Load libraries, message = FALSE}
 library(InraeThemes)
-library(dplyr)
-library(ggplot2)
 library(gt)
-source("../../../../../R/scales.R")
-source("../../../../../R/themes.R")
+library(magrittr)
+library(ggplot2)
+library(xfun)
 ```
 
+# Analysis {-}
 
+`Vestibulum` imperdiet^[Nullam quis sem nunc], ex vel sodales facilisis, nibh tellus imperdiet massa, sit amet scelerisque orci velit vel tellus. Ut consequat justo tincidunt porttitor varius. Suspendisse erat ipsum, feugiat vitae rhoncus non, molestie ac purus. Morbi aliquet, elit eget blandit suscipit, est lacus facilisis turpis, nec fermentum nunc felis et lorem.
+
+::: {#Table1}
+A nice table example:
+:::
 
 ```{r}
-# Si besoin des couleurs
-couleurs_inrae<-rgb(red=c(102,0,39,0,255,157,158,66,121,196),
-                    green=c(193,140,86,0,255,197,214,48,120,192),
-                    blue=c(191,86,98,0,255,68,227,137,112,179),
-                    names=c("vert_inrae_clair","vert_inrae","vert_inrae_fonce","noir","blanc","vert","bleu_clair","bleu_fonce","gris_fonce","gris_clair"),
-                    max= 255)
+gt::gt(head(mtcars)) %>% gt::tab_options(table.width = pct(100))
 ```
 
+## Sub analysis {-}
 
+> Suspendisse potenti
 
-> Résumé de l'analyse
+We can have math formulas inline like this: $E=mc^2$ or make them span an entire line like this:
 
-# Premier chapitre
+::: {#eq1} 
+:::
 
-## Première section
+$$f=\frac{a}{b+c}$$
 
-### Une sous-section
+**Create a horizontal line** using [markdown syntax](https://commonmark.org/help/):
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+----
 
+Cras pulvinar ligula ac nisi porttitor, volutpat congue orci tincidunt. Pellentesque non mi congue, porta enim eget, venenatis sem. Integer suscipit vulputate tellus, eget commodo dolor gravida vel. Suspendisse gravida gravida ligula, in interdum sapien molestie ut.
 
-## Seconde section
+### Yet another analysis {-}
 
-Ci-dessous un graphique avec theme INRAE :
+::: {.blue-box}
+In ut vehicula risus.
+Refer to the [table](#Table1) above!
+:::
 
-```{r plot}
-ggplot(mtcars, aes(x=wt, y=mpg)) +
-  geom_point(aes(color = as.factor(gear)))+
-  scale_color_quant() +
-  facet_wrap(~am,scales="free") +
-  geom_smooth(color = couleurs_inrae[1]) +
-  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
-  theme_quant()
+```{r example plot, warning = FALSE, fig.align='center'}
+options(scipen=999)  # turn-off scientific notation like 1e+48
+theme_set(theme_bw())  # pre-set the bw theme.
+data("midwest", package = "ggplot2")
+# midwest <- read.csv("http://goo.gl/G1K41K")  # bkup data source
 
+# Scatterplot
+gg = ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) + 
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(subtitle="Area Vs Population", 
+       y="Population", 
+       x="Area", 
+       title="Scatterplot", 
+       caption = "Source: midwest")
+
+plot(gg)
 ```
 
-# Second chapitre
+Remember [equation 1](#eq1)!
 
-## Première section
+# Conclusion {-}
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+::: {#box1 .green-box}
+Wrapping it up!
+:::
 
-```{r gt}
-iris %>% 
-  head(10) %>% 
-  gt() %>% tab_options(
-    table.width = pct(100)
-  )
+::: {#box4 .orange-box}
+An orange box!!!
+:::
+
+# R session info {-}
+
+```{r session info, comment=""}
+xfun::session_info()
 ```
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-## Seconde section
-
-Avec insertion de code :
-
-```{r echo = TRUE}
-
-# On charge un package
-library(ggplot2)
-
-# On trace un graphique ggplot avec un second theme INRAE
-ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
-  scale_fill_quant() +
-  geom_boxplot(color = "black") +
-  geom_jitter(shape = 21, color = "black", alpha = 0.6)+
-  labs(x = "Species", y = "Sepal Length") +
-  theme_quant()
-
-```
-
+# References {-}
