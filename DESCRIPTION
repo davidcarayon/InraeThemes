@@ -24,4 +24,6 @@ Imports:
     gt,
     pagedown,
     rmarkdown,
-    revealjs
+    revealjs,
+    scales,
+    xaringan

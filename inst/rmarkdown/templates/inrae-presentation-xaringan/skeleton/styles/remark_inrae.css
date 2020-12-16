@@ -1,0 +1,72 @@
+.remark-slide-content {
+  background-color: #fff;
+  font-size: 25px !important;
+}
+
+div.my-sidebar {
+    position: fixed;
+    right: 66%;
+    bottom: 45%;
+    height: 2.5em;
+    width: calc(110% * .55); /* fix sidebar height */
+    padding: 0.5em;
+    opacity: 0.7;
+    background-color: #ffffff;
+    background-position: 8% 50%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-image: url("inrae.png");
+    transform: rotate(-90deg);
+}
+
+.inverse {
+  background-color:  #66bfdd;
+  text-shadow: none;
+}
+
+.dark {
+  background-color: #222;
+  text-shadow: none;
+  color: #ddd;
+}
+
+.title-slide {
+  padding: 20px;
+  background-color: #fff;
+  background-origin: padding-box;
+  background-size: 50%;
+  background-position: -2em ;
+  background-image: url("sigle-inrae.png");
+}
+
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+h1, h2, h3 {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* shadows */
+  color: #00a3a6;
+  font-family: "Calibri";
+  font-weight: bold;
+}
+
+.inverse h1, .inverse h2, .inverse h3{
+  border: none;
+  color: #fff;
+}
+
+
+.title-slide h1, .title-slide h2, .title-slide h3 {
+  border: none;
+  color: #00a3a6;
+  text-shadow: 0 0 10px #fff;
+}
+
+a, a > code {
+  color: #901A1E;
+}
+
+
+.remark-code-line-highlighted { background-color: #66bfdd60; }

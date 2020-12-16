@@ -69,12 +69,19 @@ Rapport PDF ou HTML utilisant {pagedown}
 
 ![](man/figures/cap_rapport.png)
 
-## Présentation dynamique INRAE
+## Présentation INRAE RevealJS
 
 Présentation HTML et/ou PDF utilisant {revealjs} et
 `pagedown::chrome_print()`
 
 ![](man/figures/cap_reveal.png)
+
+## Présentation INRAE RemarkJS
+
+Présentation HTML et/ou PDF utilisant {remarkjs} et
+`pagedown::chrome_print()`
+
+![](man/figures/cap_remark.png)
 
 ## Rapport simplifié INRAE
 
