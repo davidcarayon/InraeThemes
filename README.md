@@ -46,8 +46,8 @@ Va donner l’architecture suivante :
     │   ├── raw-data
     │   ├── README.md
 
-Une proposition de *notebook* sera directement ouvert sur Rstudio pour
-démarrer les analyses.
+Un *notebook* sera directement ouvert sur Rstudio pour démarrer les
+analyses.
 
 # Mise à disposition de modèles Rmarkdown INRAE
 
