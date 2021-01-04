@@ -26,4 +26,8 @@ Imports:
     rmarkdown,
     revealjs,
     scales,
-    xaringan
+    xaringan,
+    xfun,
+    magrittr,
+    cli,
+    rstudioapi

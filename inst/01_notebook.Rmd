@@ -1,11 +1,10 @@
 ---
 title: "Titre de l'analyse"
-subtitle : "NB : Ce template est une version simplifiée de [rtemps](https://github.com/bblodfon/rtemps)."
+subtitle : "Sous titre"
 author: "Auteur"
 date: "Dernière M.A.J : `r format(Sys.time(), '%d %B, %Y')`"
 output:
-  html_document:
-    css: styles/analysis_report.css
+  html_notebook:
     theme: united
     toc: true
     toc_float:
@@ -13,15 +12,9 @@ output:
       smooth_scroll: true
     toc_depth: 3
     number_sections: false
-    code_folding: hide
-    code_download: true
-# A décommenter pour obtenir une version PDF en +
-# knit: pagedown::chrome_print
 ---
 
 # Intro {-}
-
-Template based on [Rmarkdown](https://bookdown.org/yihui/rmarkdown/), using the [united HTML theme](https://bootswatch.com/united/).
 
 Refer to a [sub section](#sub-analysis). 
 Citing an article [@article]. 

@@ -10,23 +10,97 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 InraeThemes est un package proposant une variété de templates
-(Rmarkdown) de thèmes (ggplot) et de fonctions utilitaires qui
+(Rmarkdown), de thèmes (ggplot) et de fonctions utilitaires qui
 respectent la charte graphique INRAE.
 
 **Attention : Ces modèles nécessitent l’installation de 2 polices
 adoptées dans la charte graphique INRAE : “Raleway” et “Avenir Next
 Pro”.**
 
-## Installation
+# Installation
 
 Le package peut-être installé via :
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("davidcarayon/InraeThemes")
+# install.packages("remotes")
+remotes::install_github("davidcarayon/InraeThemes")
 ```
 
-## Exemple
+# Création d’un répertoire d’analyse
+
+Ce package propose une architecture type de dossier d’analyse de
+données. En appelant cette fonction, l’utilisateur va créer un
+répertoire complet dédié à un projet et prêt à l’emploi.
+
+``` r
+new_analysis(dir = "MyProject")
+```
+
+Va donner l’architecture suivante :
+
+    ├── MyProject
+    │   ├── data
+    │   ├── R
+    │   │   └── 01_notebook.Rmd
+    │   ├── plots
+    │   ├── raw-data
+    │   ├── README.md
+
+Une proposition de *notebook* sera directement ouvert sur Rstudio pour
+démarrer les analyses.
+
+# Mise à disposition de modèles Rmarkdown INRAE
+
+Ce package permet également de rédiger des rapports et/ou présentations
+pré-formatés au style INRAE via un plugin RStudio. Les modèles sont
+accessibles via `File > New File > Rmarkdown > From Template`.
+
+## Rapport INRAE Pagedown
+
+Cette première fonction permet de produire un rapport HTML et/ou PDF (au
+choix) en utilisant le package {pagedown}. Le template Rmd est livré
+avec une feuille de style CSS correspondant aux couleurs INRAE ainsi que
+différents graphismes (logo, dernière page, etc.)
+
+L’utilisateur pourra choisir d’utiliser `chrome_print` au moment de la
+compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+
+![](man/figures/cap_rapport.png)
+
+## Présentation INRAE RevealJS
+
+Cette seconde fonction permet de produire une présentation HTML
+utilisant la technologie RevealJS (présentation web en 2 dimensions).
+
+Le template Rmd est livré avec une feuille de style CSS correspondant
+aux couleurs INRAE ainsi que différents graphismes (logo, première page,
+etc.)
+
+L’utilisateur pourra choisir d’utiliser `chrome_print` au moment de la
+compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+
+![](man/figures/cap_reveal.png)
+
+## Présentation INRAE RemarkJS
+
+Cette seconde fonction permet de produire une présentation HTML
+utilisant la technologie RemarkJS.
+
+Le template Rmd est livré avec une feuille de style CSS correspondant
+aux couleurs INRAE ainsi que différents graphismes (logo, première page,
+etc.)
+
+L’utilisateur pourra choisir d’utiliser `chrome_print` au moment de la
+compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+
+![](man/figures/cap_remark.png)
+
+## TO-DO
+
+  - Rapport Bookdown
+  - Rapport Word
+
+## Thèmes ggplot
 
 Voici un exemple de graphique utilisant un thème proposé dans le
 package, `theme_quant()`, inspiré du package `{tidyquant}`.
@@ -35,64 +109,21 @@ package, `theme_quant()`, inspiré du package `{tidyquant}`.
 library(InraeThemes)
 library(ggplot2)
 
-ggplot(mtcars, aes(x=wt, y=mpg)) +
-  geom_point(aes(color = as.factor(gear)))+
+ggplot(midwest, aes(x=area, y=poptotal)) +
+  geom_point(aes(col=state)) +
+  geom_smooth(method="loess", se=F) +
+  xlim(c(0, 0.1)) +
+  ylim(c(0, 500000)) +
+  facet_wrap(~state, scales = "free") +
+  labs(subtitle="Area Vs Population",
+       y="Population",
+       x="Area",
+       title="Scatterplot",
+       caption = "Source: midwest") +
   scale_color_quant()+
-  geom_smooth(color = couleurs_inrae[1]) +
-  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
   theme_quant()
+#> Warning: Removed 15 rows containing non-finite values (stat_smooth).
+#> Warning: Removed 15 rows containing missing values (geom_point).
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
-
-# Création d’un répertoire d’analyse
-
-La fonction utilitaire `create_analysis_dir()` permet de créer, dans le
-répertoire de votre choix, une architecture “classique” d’un projet
-d’analyse de données :
-
-``` r
-create_analyse_dir(dir = getwd())
-```
-
-![](man/figures/cap_dir.png)
-
-# Utilisation de modèles
-
-Ce package permet de rédiger des rapports pré-formatés au style INRAE.
-Les modèles sont directement accessibles dans Rstudio via `File > New
-File > Rmarkdown > From Template`.
-
-## Rapport INRAE
-
-Rapport PDF ou HTML utilisant {pagedown}
-
-![](man/figures/cap_rapport.png)
-
-## Présentation INRAE RevealJS
-
-Présentation HTML et/ou PDF utilisant {revealjs} et
-`pagedown::chrome_print()`
-
-![](man/figures/cap_reveal.png)
-
-## Présentation INRAE RemarkJS
-
-Présentation HTML et/ou PDF utilisant {remarkjs} et
-`pagedown::chrome_print()`
-
-![](man/figures/cap_remark.png)
-
-## Rapport simplifié INRAE
-
-Rapport avec moins de formattage que le rapport précédent, dédié aux
-documents de travail pour partager des résultats d’analyse.
-
-![](man/figures/simple_report.png)
-
-## Rapports reproductibles
-
-Rapports mettant encore plus l’accent sur la reproductibilité des
-analyses.
-
-![](man/figures/cap_analysis.png)
