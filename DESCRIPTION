@@ -30,4 +30,6 @@ Imports:
     xfun,
     magrittr,
     cli,
-    rstudioapi
+    rstudioapi,
+    gridExtra,
+    bookdown

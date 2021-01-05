@@ -2,16 +2,16 @@
 % Please edit documentation in R/scales.R
 \name{scale_fill_inrae}
 \alias{scale_fill_inrae}
-\title{Title}
+\title{Echelle de couleur INRAE}
 \usage{
 scale_fill_inrae(...)
 }
 \arguments{
-\item{...}{}
+\item{...}{Autres arguments pour \code{discrete_scale}.}
 }
 \value{
 
 }
 \description{
-Title
+Echelle de couleur INRAE
 }

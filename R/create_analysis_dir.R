@@ -1,6 +1,6 @@
-#' Create analysis directory template
+#' Architecture type d'une analyse
 #'
-#' @param dir the directory where the analysis template will be created
+#' @param dir Le nom du dossier
 #'
 #' @return
 #' @export
@@ -50,91 +50,141 @@ output:
 
 # Intro {-}
 
-Refer to a [sub section](#sub-analysis).
-Citing an article [@article].
-Refer to section [Analysis].
+Cf. [sous section](#Equations).
+Citer un article [@article] (Penser à inclure le .bib dans le YAML)
+Cf. section [Analyse].
 
 # Input {-}
 
-Loading libraries:
-```{r Load libraries, message = FALSE}
+On charge certains packages :
+
+```{r packages, message = FALSE}
 library(InraeThemes)
-library(gt)
-library(magrittr)
-library(ggplot2)
 library(xfun)
+library(here)
+library(ggplot2)
+library(gt)
+library(gridExtra)
 ```
 
-# Analysis {-}
+# Gestion des chemins d'accès
+
+Afin de proposer une analyse facilement reproductible par quiconque, nous conseillons l'utilisation du package {here} pour la gestion des chemins d'accès.
+
+Par exemple, pour pointer vers un jeu de données on va préférer :
+
+```{r chemins, message = FALSE}
+chemin_data <- here::here('data','donnees.csv') # Good
+
+chemin_data <- 'data/donnees.csv' # Bad
+```
+
+# Gestion de version
+
+Nous recommandons vivement l'utilisation d'un système de gestion de versions tel que **git**. Pour plus d'informations, vous pouvez consulter l'article dédié à git sur [le site de Rstudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+
+# Tableaux {-}
 
 `Vestibulum` imperdiet^[Nullam quis sem nunc], ex vel sodales facilisis, nibh tellus imperdiet massa, sit amet scelerisque orci velit vel tellus. Ut consequat justo tincidunt porttitor varius. Suspendisse erat ipsum, feugiat vitae rhoncus non, molestie ac purus. Morbi aliquet, elit eget blandit suscipit, est lacus facilisis turpis, nec fermentum nunc felis et lorem.
 
 ::: {#Table1}
-A nice table example:
+Exemple de tableau avec {gt}
 :::
 
 ```{r}
 gt::gt(head(mtcars)) %>% gt::tab_options(table.width = pct(100))
 ```
 
-## Sub analysis {-}
+## Equations {-}
 
 > Suspendisse potenti
 
-We can have math formulas inline like this: $E=mc^2$ or make them span an entire line like this:
+Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
 
 ::: {#eq1}
 :::
 
 $$f=\\frac{a}{b+c}$$
 
-**Create a horizontal line** using [markdown syntax](https://commonmark.org/help/):
-
 ----
 
 Cras pulvinar ligula ac nisi porttitor, volutpat congue orci tincidunt. Pellentesque non mi congue, porta enim eget, venenatis sem. Integer suscipit vulputate tellus, eget commodo dolor gravida vel. Suspendisse gravida gravida ligula, in interdum sapien molestie ut.
 
-### Yet another analysis {-}
+### Graphiques {-}
+
+Comme le notebook est un document HTML, vous pouvez inclure de la syntaxe CSS pour mettre en forme certains élements :
 
 ::: {.blue-box}
 In ut vehicula risus.
-Refer to the [table](#Table1) above!
+Cf. [table](#Table1) ci-dessus
 :::
 
-```{r example plot, warning = FALSE, fig.align='center'}
-options(scipen=999)  # turn-off scientific notation like 1e+48
-theme_set(theme_bw())  # pre-set the bw theme.
-data(\"midwest\", package = \"ggplot2\")
-# midwest <- read.csv(\"http://goo.gl/G1K41K\")  # bkup data source
+On reprend un des exemples proposés dans le README du package InraeThemes :
 
-# Scatterplot
-gg = ggplot(midwest, aes(x=area, y=poptotal)) +
-  geom_point(aes(col=state, size=popdensity)) +
-  geom_smooth(method=\"loess\", se=F) +
-  xlim(c(0, 0.1)) +
-  ylim(c(0, 500000)) +
-  labs(subtitle=\"Area Vs Population\",
-       y=\"Population\",
-       x=\"Area\",
-       title=\"Scatterplot\",
-       caption = \"Source: midwest\")
+```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320}
+## On charge les données d'exemple du package
+data(\"example_datasets\")
 
-plot(gg)
+## On construit 4 graphiques d'exemple, stockés dans une même liste
+display <- list(
+  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
+                                          color = 'Measure',
+                                          shape = 'Measure')) +
+    geom_line() +
+    geom_point(size = 3) +
+    facet_wrap(~Measure) +
+    geom_point(size = 1.8) +
+    scale_color_inrae() +
+    scale_shape_manual(values = c(15, 16)) +
+    labs(title = \"Titre\", subtitle = \"Sous-titre\") +
+    theme_inrae(),
+
+  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) +
+    geom_density(alpha = 0.75) +
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae(),
+
+  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) +
+    geom_histogram(binwidth = 850) +
+    xlab('Price (USD)') +
+    ylab('Count') +
+    scale_fill_inrae() +
+    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
+    theme_inrae(),
+
+  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
+                                              fill = \"Year\")) +
+    geom_boxplot(size = 0.25) +
+    ylab('Monthly Deaths') +
+    theme_inrae() +
+    scale_fill_inrae() +
+    coord_flip() +
+    labs(caption = \"Caption\")
+)
+
+# On assemble
+do.call(gridExtra::grid.arrange,  display)
 ```
-
-Remember [equation 1](#eq1)!
 
 # Conclusion {-}
 
+Voici encore des exemples de mise en forme CSS :
+
 ::: {#box1 .green-box}
-Wrapping it up!
+En vert
 :::
 
 ::: {#box4 .orange-box}
-An orange box!!!
+En orange
 :::
 
+
 # R session info {-}
+
+Pensez à inclure cette section afin d'indiquer l'état de votre machine lorsque vous avez réalisé cette analyse
 
 ```{r session info, comment=\"\"}
 xfun::session_info()
@@ -155,7 +205,7 @@ cli::cli_alert_success(paste0("A new analysis directory was created with the fol
 │   ├── raw_data
 │   ├── README.md"))
 
-cli::cli_alert_info(paste0("Now opening '", "README.md","'"))
-rstudioapi::navigateToFile("README.md")
+cli::cli_alert_info(paste0("Now opening '", "R/01_notebook.Rmd","'"))
+rstudioapi::navigateToFile("R/01_notebook.Rmd")
 
 }

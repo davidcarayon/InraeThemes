@@ -1,8 +1,7 @@
 ---
 title: "Titre du document"
-subtitle: "Sous-titre du document"
-author: "Auteur du document"
-date: "`r format(Sys.Date(), '%d %B %Y')`"
+author: "Auteur | Unité de Recherche"
+date: "Janvier 2021"
 output: 
   pagedown::html_paged:
     highlight: haddock
@@ -10,7 +9,7 @@ output:
     lot: true
     lof: true
     css: 
-    - "style/inrae.css"
+    - "style/pagedown_inrae.css"
 knit: pagedown::chrome_print
 ---
 
@@ -29,88 +28,116 @@ library(InraeThemes)
 library(dplyr)
 library(ggplot2)
 library(gt)
+library(gridExtra)
 ```
 
+>
+> # A PROPOS
+>
+> Ce document est un rapport au format {pagedown} généré par le package {InraeThemes}.
+> Il consiste en un fichier Rmarkdown (.Rmd) associé à un répertoire de "styles" contenant une feuille de style CSS ainsi que les éléments graphiques relatifs à INRAE (logos, sigles, etc.)
+>
+> Les premières et dernières pages de ce modèle sont des images (PNG) insérées en tant que fond. Ainsi, les informations du YAML sont automatiquement rajoutées par dessous.
+> Un template au format .svg est également livré afin d'éditer cette première page, par exemple pour modifier l'image de fond ou pour écrire directement les informations du rapport (dans le cas par exemple d'un titre trop long, d'un sous-titre, etc.). Il suffit d'ouvrir ce fichier sous [Inkscape](https://inkscape.org/fr/), puis d'exporter la page sous le nom de "styles/page_avant.png".
+>
+> Le document est initialement généré en HTML (sortie native de pagedown), mais peut être exporté en PDF en dé-commentant `knit: pagedown::chrome_print` dans le YAML.
+>
+> Vous êtes libres de personnaliser le CSS de ce modèle à vos goûts (cf. documentation [pagedown](https://pagedown.rbind.io/) & [paged.js](https://www.pagedjs.org/)) et vos suggestions sont les bienvenues sur le [Github InraeThemes](https://github.com/davidcarayon/InraeThemes/issues) !
 
+
+# Intro {-}
+
+Cf. [sous section](#Equations).
+
+Citer un article [@article] (Penser à inclure le .bib dans le YAML)
+
+Cf. section [Analyse].
+
+# Tableaux {-}
+
+`Vestibulum` imperdiet, ex vel sodales facilisis, nibh tellus imperdiet massa, sit amet scelerisque orci velit vel tellus. Ut consequat justo tincidunt porttitor varius. Suspendisse erat ipsum, feugiat vitae rhoncus non, molestie ac purus. Morbi aliquet, elit eget blandit suscipit, est lacus facilisis turpis, nec fermentum nunc felis et lorem.
+
+::: {#Table1}
+Exemple de tableau avec {gt} :
+:::
 
 ```{r}
-# Si besoin des couleurs
-couleurs_inrae<-rgb(red=c(102,0,39,0,255,157,158,66,121,196),
-                    green=c(193,140,86,0,255,197,214,48,120,192),
-                    blue=c(191,86,98,0,255,68,227,137,112,179),
-                    names=c("vert_inrae_clair","vert_inrae","vert_inrae_fonce","noir","blanc","vert","bleu_clair","bleu_fonce","gris_fonce","gris_clair"),
-                    max= 255)
+gt::gt(head(mtcars)) %>% gt::tab_options(table.width = pct(100))
 ```
 
+## Equations {-}
 
->
-> # RESUME
->
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
->
+> Bloc de citation
 
-# Premier chapitre
+Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
 
-## Première section
+::: {#eq1}
+:::
 
-### Une sous-section
+$$f=\frac{a}{b+c}$$
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Ligne verticale :
 
+----
 
-## Seconde section
+Cras pulvinar ligula ac nisi porttitor, volutpat congue orci tincidunt. Pellentesque non mi congue, porta enim eget, venenatis sem. Integer suscipit vulputate tellus, eget commodo dolor gravida vel. Suspendisse gravida gravida ligula, in interdum sapien molestie ut.
 
-Ci-dessous un graphique avec theme INRAE :
+### Graphiques {-}
 
-```{r plot}
-ggplot(mtcars, aes(x=wt, y=mpg)) +
-  geom_point(aes(color = as.factor(gear)))+
-  scale_color_inrae_n5()+
-  geom_smooth(color = couleurs_inrae[1]) +
-  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
-  theme_inrae()
+Cf. [table](#Table1) ci-dessus.
 
+On reprend un des exemples proposés dans le README du package InraeThemes :
+
+```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320}
+## On charge les données d'exemple du package
+data("example_datasets")
+
+## On construit 4 graphiques d'exemple, stockés dans une même liste
+display <- list(
+  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
+                                          color = 'Measure',
+                                          shape = 'Measure')) +
+    geom_line() +
+    geom_point(size = 3) +
+    facet_wrap(~Measure) +
+    geom_point(size = 1.8) +
+    scale_color_inrae() +
+    scale_shape_manual(values = c(15, 16)) +
+    labs(title = "Titre", subtitle = "Sous-titre") +
+    theme_inrae(),
+
+  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) +
+    geom_density(alpha = 0.75) +
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae(),
+
+  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) +
+    geom_histogram(binwidth = 850) +
+    xlab('Price (USD)') +
+    ylab('Count') +
+    scale_fill_inrae() +
+    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
+    theme_inrae(),
+
+  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
+                                              fill = "Year")) +
+    geom_boxplot(size = 0.25) +
+    ylab('Monthly Deaths') +
+    theme_inrae() +
+    scale_fill_inrae() +
+    coord_flip() +
+    labs(caption = "Caption")
+)
+
+# On assemble
+do.call(gridExtra::grid.arrange,  display)
 ```
 
-# Second chapitre
+# Conclusion {-}
 
-## Première section
+Conclusion.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```{r gt}
-iris %>% 
-  head(10) %>% 
-  gt()
-```
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-## Seconde section
-
-Avec insertion de code :
-
-```{r echo = TRUE}
-
-# On charge un package
-library(ggplot2)
-
-# On trace un graphique ggplot avec un second theme INRAE
-ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
-  geom_boxplot(color = "black") +
-  geom_jitter(shape = 21, color = "black", alpha = 0.6)+
-  labs(x = "Species", y = "Sepal Length") +
-  theme_inrae_1()
-
-```
-
+# References {-}

@@ -2,18 +2,18 @@
 % Please edit documentation in R/create_analysis_dir.R
 \name{new_analysis}
 \alias{new_analysis}
-\title{Create analysis directory template}
+\title{Architecture type d'une analyse}
 \usage{
 new_analysis(dir = "MyProject")
 }
 \arguments{
-\item{dir}{the directory where the analysis template will be created}
+\item{dir}{Le nom du dossier}
 }
 \value{
 
 }
 \description{
-Create analysis directory template
+Architecture type d'une analyse
 }
 \examples{
 library(InraeThemes)

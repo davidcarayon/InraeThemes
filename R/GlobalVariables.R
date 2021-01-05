@@ -1,3 +1,1 @@
-
-
 globalVariables("couleurs_inrae")
