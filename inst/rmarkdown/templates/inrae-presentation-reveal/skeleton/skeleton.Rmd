@@ -1,21 +1,20 @@
 ---
-title: "Titre de la présentation"
+title: |
+  ![](styles/bloc_etat.png){width=2in}  
+  Titre de la présentation
 subtitle: "Sous-titre"
 author: "Auteur"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   revealjs::revealjs_presentation:
     theme: default
-    css: styles/reveal_INRAE.css
+    css: styles/reveal_inrae.css
     transition: slide
     background_transition: default
     center: true
     reveal_options:
       slideNumber: true
       previewLinks: true
-    includes:
-      in_header: styles/header.html
-knit: pagedown::chrome_print 
 ---
 
 ```{r setup, include=FALSE}
@@ -34,20 +33,6 @@ library(InraeThemes)
 library(dplyr)
 library(ggplot2)
 library(gt)
-```
-
-```{r}
-# Si besoin des couleurs
-
-# RGB
-couleurs_inrae<-rgb(red=c(102,0,39,0,255,157,158,66,121,196),
-                    green=c(193,140,86,0,255,197,214,48,120,192),
-                    blue=c(191,86,98,0,255,68,227,137,112,179),
-                    names=c("vert_inrae_clair","vert_inrae","vert_inrae_fonce","noir","blanc","vert","bleu_clair","bleu_fonce","gris_fonce","gris_clair"),
-                    max= 255)
-
-# HEX 
-couleurs_hex <- c('#00a3a6', '#66c1bf','#008c8e','#275662','#000')
 ```
 
 
@@ -69,32 +54,80 @@ Chaque diapositive peut être colorée individuellement en rajoutant une de ces 
 
 - Couleur CSS : {data-background=#ff0000}
 
-- Image de fond : {data-background="image.jpeg"} (fonctionne avec les GIF)
+- Image de fond : {data-background="image.jpeg"} (fonctionne avec les GIF) (Fonctionne avec des fichiers locaux et/ou des URL)
 
 - Vidéo de fond {data-background-video="video.mp4"}
 
 
 Pour plus d'informations sur la personnalisation (transitions, animation des listes à puces, etc.) : [consulter le README du package revealjs](https://github.com/rstudio/revealjs)
 
-# Démonstrations {data-background=styles/agriculture.jpg}
+# Démonstrations {data-background=https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Snow_Scene_at_Shipka_Pass_1.JPG/1280px-Snow_Scene_at_Shipka_Pass_1.JPG}
 
 ## Diapositive avec graphique
 
 Ci-dessous un graphique avec un thème INRAE :
 
-```{r plot, out.width = "60%", fig.align = "center"}
-ggplot(mtcars, aes(x=wt, y=mpg)) +
-  geom_point(aes(color = as.factor(gear)))+
-  scale_color_inrae_n5()+
-  geom_smooth(color = couleurs_inrae[1]) +
-  labs(x = "Valeur de X", y = "Valeur de Y", title = "Titre du graphique", subtitle = "Sous-titre", color = "couleur") +
-  theme_inrae() +
-  theme(panel.background = element_rect(fill = "transparent", colour = NA),
-        plot.background = element_rect(fill = "transparent", colour = NA))
+```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320, out.width = "90%", fig.align = "center"}
+library(InraeThemes)
+library(ggplot2)
+
+## On charge les données d'exemple du package
+data("example_datasets")
+
+## On construit 4 graphiques d'exemple, stockés dans une même liste
+display <- list(
+  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
+                                          color = 'Measure',
+                                          shape = 'Measure')) + 
+    geom_line() + 
+    geom_point(size = 3) + 
+    facet_wrap(~Measure) +
+    geom_point(size = 1.8) +
+    scale_color_inrae() +
+    scale_shape_manual(values = c(15, 16)) +
+    labs(title = "Titre", subtitle = "Sous-titre") +
+    theme_inrae(),
+  
+  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) + 
+    geom_density(alpha = 0.75) + 
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae(),
+  
+  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) + 
+    geom_histogram(binwidth = 850) + 
+    xlab('Price (USD)') + 
+    ylab('Count') + 
+    scale_fill_inrae() +
+    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
+    theme_inrae(),
+  
+  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
+                                              fill = "Year")) + 
+    geom_boxplot(size = 0.25) + 
+    ylab('Monthly Deaths') +
+    theme_inrae() +
+    scale_fill_inrae() +
+    coord_flip() +
+    labs(caption = "Caption") 
+)
+
+# On assemble
+do.call(gridExtra::grid.arrange,  display)
 ```
 
-> Ceci est un bloc de citation.
+## Equations {-}
 
+> Bloc de citation
+
+Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
+
+::: {#eq1}
+:::
+
+$$f=\frac{a}{b+c}$$
 
 ## Mise en page avancée
 
@@ -102,12 +135,12 @@ ggplot(mtcars, aes(x=wt, y=mpg)) +
 
 <div class="col">
 Une première image à gauche :
-![](styles/img1.jpeg)
+![](https://miro.medium.com/max/1200/1*ZVlIZ1ZYC6rASz-dYPzhZQ.jpeg)
 </div>
 
 <div class="col">
 Puis une autre image à droite :
-![](styles/img2.jpeg)
+![](https://pbs.twimg.com/media/EJ-maQOW4AAI16b?format=jpg&name=medium)
 </div>
 </div>
 
@@ -128,14 +161,13 @@ iris %>%
 # On charge un package
 library(ggplot2)
 
-# On trace un graphique ggplot avec un second theme INRAE
-ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
-  geom_boxplot(color = "black") +
-  geom_jitter(shape = 21, color = "black", alpha = 0.6)+
-  labs(x = "Species", y = "Sepal Length") +
-  theme_inrae_1()+
-  theme(panel.background = element_rect(fill = "transparent", colour = NA),
-        plot.background = element_rect(fill = "transparent", colour = NA))
+ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) + 
+    geom_density(alpha = 0.75) + 
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae()
 ```
 
 # Merci de votre attention ! {data-background=#E0FFFF}

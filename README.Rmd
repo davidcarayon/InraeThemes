@@ -49,10 +49,7 @@ Ce package propose différentes fonctions permettant de personnaliser les graphi
 
 La palette de couleurs construite à partir de la charte graphique V3 est la suivante :
 
-```{r}
-library(InraeThemes)
-scales::show_col(palette_inrae())
-```
+![](man/figures/scales.png)
 
 ## Utilisation du thème et des échelles de couleur
 
@@ -67,6 +64,7 @@ scale_fill_inrae()
 Voici différents exemples d'utilisation de ces fonctions :
 
 ```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320}
+library(InraeThemes)
 library(ggplot2)
 
 ## On charge les données d'exemple du package
@@ -180,27 +178,29 @@ Voici un exemple de rapport :
 
 ![](man/figures/cap_book.png)
 
+## Rapport Word INRAE
+
+Ce troisième template permet de produire un rapport au format Microsoft Word (.docx).
+
+Le template Rmd est livré avec un template au format .docx, à modifier selon les préférences de l'utilisateur, et un logo bloc-état.
+
+Voici un exemple de rapport :
+
+![](man/figures/cap_word.png)
 
 ## Présentation INRAE RevealJS
 
-Ce troisième template permet de produire une présentation HTML utilisant la technologie RevealJS (présentation web en 2 dimensions).
+Ce quatrième template permet de produire une présentation HTML utilisant la technologie RevealJS (présentations web construites en 2 niveaux : les titres de premiers niveau définissent la dimension horizontale tandis que les titres de second niveau (et plus) définissent la dimension verticale. Chaque titre correspond à une diapositive).
 
-Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE ainsi que différents graphismes (logo, première page, etc.)
-
-L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE et d'un logo bloc-etat.
 
 ![](man/figures/cap_reveal.png)
 
 ## Présentation INRAE RemarkJS
 
-Cette seconde fonction permet de produire une présentation HTML utilisant la technologie RemarkJS.
+Ce cinquième template  permet de produire une présentation HTML/PDF utilisant la technologie RemarkJS du package {[xaringan](https://github.com/yihui/xaringan)}.
 
-Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE ainsi que différents graphismes (logo, première page, etc.)
-
+Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE, un fichier HTML permettant d'insérer le logo bloc-état sur chaque slide via du JavaScript et un logo INRAE blanc (issu de la charte graphique INRAE).
 L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la compilation pour obtenir un fichier PDF en plus de la sortie HTML.
 
 ![](man/figures/cap_remark.png)
-
-## TO-DO
-
-- Rapport Word

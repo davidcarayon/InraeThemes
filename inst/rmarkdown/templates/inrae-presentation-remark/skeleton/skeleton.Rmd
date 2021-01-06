@@ -1,0 +1,190 @@
+---
+title: "Titre de la présentation"
+subtitle: "Sous-titre"
+author: "Auteur | Unité de recherche"
+institute: ""
+date: "Evenement | Janvier 2021"
+output:
+  xaringan::moon_reader:
+    css: [styles/remark_inrae.css]
+    lib_dir: libs
+    nature:
+      titleSlideClass: [middle, center]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false 
+      ratio: "16:9"
+    includes:
+      after_body: styles/insert-logo.html
+# Dé-commenter la ligne ci-dessous pour une sortie PDF
+# knit: pagedown::chrome_print
+---
+
+layout: true
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	dpi = 300,
+	out.width = "80%",
+	dev.args=list(bg="transparent")
+)
+library(InraeThemes)
+library(ggplot2)
+library(gt)
+```
+
+
+---
+class: center, middle
+
+# Première section
+
+---
+
+# Hello World
+
+Cette présentation a été construite à partir de **xaringan**, pouvant être consulté sur [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE, echo = TRUE}
+devtools::install_github("yihui/xaringan")
+```
+
+--
+
+Une première phrase :
+
+--
+
+- Première puce incrémentale 
+
+--
+
+- Astuce : Prévisualisation en direct de la présentation via l'addin Rstudio "Infinite Moon Reader"[1]
+
+.footnote[
+[1] Note de bas de page
+]
+
+---
+class: dark, center, middle
+
+# Slide de section alternative
+
+---
+
+# Diapositive avec graphique
+
+Ci-dessous un graphique avec un thème INRAE :
+
+```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320, out.width = "70%", fig.align = "center"}
+## On charge les données d'exemple du package
+data("example_datasets")
+
+## On construit 4 graphiques d'exemple, stockés dans une même liste
+display <- list(
+  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
+                                          color = 'Measure',
+                                          shape = 'Measure')) + 
+    geom_line() + 
+    geom_point(size = 3) + 
+    facet_wrap(~Measure) +
+    geom_point(size = 1.8) +
+    scale_color_inrae() +
+    scale_shape_manual(values = c(15, 16)) +
+    labs(title = "Titre", subtitle = "Sous-titre") +
+    theme_inrae(),
+  
+  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) + 
+    geom_density(alpha = 0.75) + 
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae(),
+  
+  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) + 
+    geom_histogram(binwidth = 850) + 
+    xlab('Price (USD)') + 
+    ylab('Count') + 
+    scale_fill_inrae() +
+    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
+    theme_inrae(),
+  
+  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
+                                              fill = "Year")) + 
+    geom_boxplot(size = 0.25) + 
+    ylab('Monthly Deaths') +
+    theme_inrae() +
+    scale_fill_inrae() +
+    coord_flip() +
+    labs(caption = "Caption") 
+)
+
+# On assemble
+do.call(gridExtra::grid.arrange,  display)
+```
+
+---
+
+# Equations 
+
+> Bloc de citation
+
+Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
+
+
+$$f=\frac{a}{b+c}$$
+
+---
+
+# Mise en page avancée
+
+.pull-left[
+<img src="https://miro.medium.com/max/1200/1*ZVlIZ1ZYC6rASz-dYPzhZQ.jpeg" width=300 height=400>
+]
+
+.pull-right[
+<img src="https://pbs.twimg.com/media/EJ-maQOW4AAI16b?format=jpg&name=medium" width=300 height=400>
+]
+
+---
+
+# Diapositive avec un tableau
+
+```{r gt}
+iris %>% 
+  head(8) %>% 
+  gt() %>% 
+  tab_header(title = "Exemple de tableau sur le jeu de données iris") %>%
+  tab_options(table.width = pct(100))
+```
+
+---
+
+# Avec affichage du code
+
+```{r echo = TRUE, out.width = "60%", fig.align="center", fig.width = 12, fig.height = 4} 
+
+# On charge un package
+library(ggplot2)
+
+ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) + 
+    geom_density(alpha = 0.75) + 
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae()
+```
+
+---
+class: center, middle
+background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Snow_Scene_at_Shipka_Pass_1.JPG/1280px-Snow_Scene_at_Shipka_Pass_1.JPG")
+background-size: "100%"
+
+# Merci de votre attention !
