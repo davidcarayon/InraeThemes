@@ -1,0 +1,129 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+% pour fonctionner, ce modele doit être accompagné de
+% beamercolorthemeinrae.sty
+% inrae.png
+% fleche-titre.png
+% sigle-inrae.png
+% sigle-inrae-plein.png
+% et, pour la licence Creative commons : cc-by.png
+%\usecolortheme[secheader]{inrae} % Version avec barre de navigation supérieure
+\usecolortheme[default]{inrae} % Version sans barre de navigation supérieure
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{textpos}
+\usepackage{array}
+\usepackage{color}
+\usepackage{transparent}
+\usepackage{hyperref}
+\hypersetup{
+urlcolor=inraefonce
+,linkcolor=.
+,colorlinks=true}
+
+% Definition de la page de titre
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \hspace{1.6cm}\includegraphics[width=2.5cm]{Republique_Francaise_RVB}\vskip -1.6cm
+  \hspace{5cm}\includegraphics[width=2cm]{inrae}\par\bigskip
+  \hspace{1.2cm}\includegraphics[height=0.8cm]{fleche-titre} \usebeamerfont{title}\textcolor{inrae}{\inserttitle}\par
+  \hspace{2cm}\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \bigskip
+  \hspace{2cm}\usebeamerfont{author}\insertauthor\par\bigskip
+  \hspace{2cm}\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par\bigskip \hspace{2cm}\usebeamerfont{institute}\insertinstitute\par
+  {\small
+  \hspace{2cm}Document distribué sous licence CC-BY\\
+  \hspace{2cm}\includegraphics[width=1cm]{cc-by} \href{https://creativecommons.org/licenses/by/4.0/fr/legalcode}{https://creativecommons.org/licenses/by/4.0/fr/legalcode}
+  }\par
+  \vspace{-5.7cm}
+  \hspace{-0.5cm}
+  \includegraphics[width=6cm]{sigle-inrae}
+}
+
+% Données générales
+\author[Auteur]{Auteur--
+\href{mailto:auteur@inrae.fr}{auteur@inrae.fr}
+}
+
+\title[Titre court]{Titre de la présentation}
+\subtitle{sous-titre}
+\institute[UR]{UR -- Déroulé acronyme}
+\date[\today]{\today}
+
+\begin{document}
+
+% Page de titre
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+% Page de sommaire
+\begin{frame}[plain]
+\tableofcontents
+\end{frame}
+
+
+\section{Première partie}
+% Diapo pour identifier une nouvelle section
+\setbeamercolor{background canvas}{bg=inraeclair}
+\begin{frame}[plain]{}
+	\begin {center}
+		\textcolor{inraefonce}{\textbf{{\Large Première partie}}}
+	\end{center}
+\end{frame}
+\setbeamercolor{background canvas}{bg=white}
+% fin de la diapo d'identification d'une nouvelle section
+
+\begin{frame}{Titre diapo}{Sous-titre diapo}
+
+\end{frame}
+
+
+\begin{frame}{une diapo présentant les boites}
+\begin{block}{Les points à élucider...}
+Quels sont les points à élucider ?
+\end{block}
+
+\begin{exampleblock}{Un exemple}
+Voici un exemple...
+\end{exampleblock}
+
+\begin{alertblock}{Attention...}
+Faites attention à :
+\begin{itemize}
+\item ceci...
+\item ... et cela.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Un exemple d'affichage décalé}
+\begin{enumerate}
+\item<1-> section 2
+
+\item<2-> La suite de la section 2
+
+\begin{itemize}
+\item<3> en retrait de la section 2
+\item<3> toujours en retrait de la section 2
+\begin{itemize}
+	\item<3> en sous-retrait
+\end{itemize}
+\end{itemize}
+
+\item<2-> et la fin de la section 2...
+\item<4-> Les alinéas ont disparu !
+\end{enumerate}
+
+\end{frame}
+
+
+\end{document}
+

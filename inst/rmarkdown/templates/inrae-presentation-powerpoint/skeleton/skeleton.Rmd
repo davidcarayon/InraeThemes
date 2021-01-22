@@ -1,0 +1,78 @@
+---
+title: "Titre de la présentation"
+subtitle: "Sous-titre"
+author: "Auteur"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: 
+  powerpoint_presentation:
+    reference_doc: styles/template.pptx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Diapositive avec graphique
+
+```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320, out.width = "90%"}
+library(InraeThemes)
+library(ggplot2)
+
+## On charge les données d'exemple du package
+data("example_datasets")
+
+## On construit 4 graphiques d'exemple, stockés dans une même liste
+display <- list(
+  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
+                                          color = 'Measure',
+                                          shape = 'Measure')) + 
+    geom_line() + 
+    geom_point(size = 3) + 
+    facet_wrap(~Measure) +
+    geom_point(size = 1.8) +
+    scale_color_inrae() +
+    scale_shape_manual(values = c(15, 16)) +
+    labs(title = "Titre", subtitle = "Sous-titre") +
+    theme_inrae(),
+  
+  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
+                                           colour = 'cyl')) + 
+    geom_density(alpha = 0.75) + 
+    scale_fill_inrae() +
+    scale_color_inrae() +
+    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
+    theme_inrae(),
+  
+  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) + 
+    geom_histogram(binwidth = 850) + 
+    xlab('Price (USD)') + 
+    ylab('Count') + 
+    scale_fill_inrae() +
+    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
+    theme_inrae(),
+  
+  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
+                                              fill = "Year")) + 
+    geom_boxplot(size = 0.25) + 
+    ylab('Monthly Deaths') +
+    theme_inrae() +
+    scale_fill_inrae() +
+    coord_flip() +
+    labs(caption = "Caption") 
+)
+
+# On assemble
+do.call(gridExtra::grid.arrange,  display)
+```
+
+## Equations
+
+Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
+
+$$f=\frac{a}{b+c}$$

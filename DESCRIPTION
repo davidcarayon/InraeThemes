@@ -10,7 +10,12 @@ Authors@R:
     person(given = "Sébastien",
            family = "Boutry",
            role = c("aut"),
-           email = "sebastien.boutry@inrae.fr"))       
+           email = "sebastien.boutry@inrae.fr"),
+    person(given = "Eric",
+           family = "Quinton",
+           role = c("ctb"),
+           email = "eric.quinton@inrae.fr")
+    )       
 Description: Ce package met à disposition des modèles de document ainsi que des thèmes ggplot suivant la charte graphique INRAE.
 License: GPL-3
 Encoding: UTF-8
