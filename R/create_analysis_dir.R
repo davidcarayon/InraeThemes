@@ -1,37 +1,69 @@
 #' Architecture type d'une analyse
+#' Inpiré du package `ProjectTemplate`
 #'
-#' @param dir Le nom du dossier
+#' @param projname Name of the project to be created
+#' @param init Should a git repository be initialised ?
 #'
 #' @return
 #' @export
-#'
-#' @examples
-#' library(InraeThemes)
-#' \dontrun{new_analysis()}
-new_analysis <- function(dir = "MyProject"){
+new_analysis <- function(projname = "MyProject",init = TRUE){
 
-  if (!dir.exists(dir)) {dir.create(dir)}
-  setwd(dir)
-
-  cli::cli_alert_warning(paste0("Working directory changed to '", dir,"'"))
+  # ensure path exists
+  dir.create(projname, recursive = TRUE, showWarnings = FALSE)
 
 # Creating folders --------------------------------------------------------
-  dir.create("data")
-  dir.create("docs")
-  dir.create("plots")
-  dir.create("R")
-  dir.create("raw-data")
+  dir.create(file.path(projname,"data"))
+  dir.create(file.path(projname,"cache"))
+  dir.create(file.path(projname,"docs"))
+  dir.create(file.path(projname,"img"))
+  dir.create(file.path(projname,"R"))
+  dir.create(file.path(projname,"report"))
+
+# Should git init ? -------------------------------------------------------
+
+if(init) {gert::git_init(projname)}
+
+# Generating TODO ---------------------------------------------------------
+  file.create(file.path(projname,"TODO.txt"))
+  sink(file.path(projname,"TODO.txt"))
+  cat("Welcome!
+
+Project name:		N/A
+
+Notes
+-----
+
+
+")
+  sink()
 
 # Generating a README -----------------------------------------------------
-  file.create("README.md")
-  sink("README.md")
-  cat(paste0("Welcome to ",dir," !
-  This project is about..."))
+  file.create(file.path(projname,"README.md"))
+  sink(file.path(projname,"README.md"))
+  cat("> Welcome to Your project !
+
+Description of the project's architecture :
+
+-   `README.md` : The intro file is used to provide project orientation. The file defines project objectives and is intended to introduce project data, source code and configurations for repeatable research. The md file format is that of a basic text or markdown file. When saved to GitHub, it will be used to create an HTML project wiki.
+
+-   `TODO.txt` : A note file on a project's development or implementation status with a list of bugs and future improvement needs.
+
+-   `cache` : The cache is used to store data output.
+
+-   `data` : The data directory stores all data inputs in raw format.
+
+-   `docs` : Here you can store any source or reference material about the project.
+
+-   `img` : Used to store image output, including Rplots, image files or gif animations.
+
+-   `R` : R source code (Plain R files or Rmd notebooks)
+
+-   `report` : Used to store output tables and reports. R is capable of supporting a broad range of outputs including Word, Powerpoint, pdf, LaTeX and HTML.")
   sink()
 
 # Generating a notebook ---------------------------------------------------
-  file.create("R/01_notebook.Rmd")
-  sink("R/01_notebook.Rmd")
+  file.create(file.path(projname,"R","01_notebook.Rmd"))
+  sink(file.path(projname,"R","01_notebook.Rmd"))
   cat("---
 title: \"Titre de l'analyse\"
 subtitle : \"Sous titre\"
@@ -39,22 +71,21 @@ author: \"Auteur\"
 date: \"Dernière M.A.J : `r format(Sys.time(), '%d %B, %Y')`\"
 output:
   html_notebook:
-    theme: united
     toc: true
     toc_float:
       collapsed: false
       smooth_scroll: true
     toc_depth: 3
-    number_sections: false
+    number_sections: true
 ---
 
-# Intro {-}
+# Intro
 
 Cf. [sous section](#Equations).
 Citer un article [@article] (Penser à inclure le .bib dans le YAML)
 Cf. section [Analyse].
 
-# Input {-}
+# Input
 
 On charge certains packages :
 
@@ -83,7 +114,7 @@ chemin_data <- 'data/donnees.csv' # Bad
 
 Nous recommandons vivement l'utilisation d'un système de gestion de versions tel que **git**. Pour plus d'informations, vous pouvez consulter l'article dédié à git sur [le site de Rstudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
-# Tableaux {-}
+# Tableaux
 
 `Vestibulum` imperdiet^[Nullam quis sem nunc], ex vel sodales facilisis, nibh tellus imperdiet massa, sit amet scelerisque orci velit vel tellus. Ut consequat justo tincidunt porttitor varius. Suspendisse erat ipsum, feugiat vitae rhoncus non, molestie ac purus. Morbi aliquet, elit eget blandit suscipit, est lacus facilisis turpis, nec fermentum nunc felis et lorem.
 
@@ -95,8 +126,7 @@ Exemple de tableau avec {gt}
 gt::gt(head(mtcars)) %>% gt::tab_options(table.width = pct(100))
 ```
 
-## Equations {-}
-
+## Equations
 > Suspendisse potenti
 
 Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
@@ -110,14 +140,7 @@ $$f=\\frac{a}{b+c}$$
 
 Cras pulvinar ligula ac nisi porttitor, volutpat congue orci tincidunt. Pellentesque non mi congue, porta enim eget, venenatis sem. Integer suscipit vulputate tellus, eget commodo dolor gravida vel. Suspendisse gravida gravida ligula, in interdum sapien molestie ut.
 
-### Graphiques {-}
-
-Comme le notebook est un document HTML, vous pouvez inclure de la syntaxe CSS pour mettre en forme certains élements :
-
-::: {.blue-box}
-In ut vehicula risus.
-Cf. [table](#Table1) ci-dessus
-:::
+### Graphiques
 
 On reprend un des exemples proposés dans le README du package InraeThemes :
 
@@ -169,18 +192,9 @@ display <- list(
 do.call(gridExtra::grid.arrange,  display)
 ```
 
-# Conclusion {-}
+# Conclusion
 
-Voici encore des exemples de mise en forme CSS :
-
-::: {#box1 .green-box}
-En vert
-:::
-
-::: {#box4 .orange-box}
-En orange
-:::
-
+Pour conclure :
 
 # R session info {-}
 
@@ -194,18 +208,5 @@ xfun::session_info()
 
 ")
   sink()
-
-cli::cli_alert_success(paste0("A new analysis directory was created with the following directories :
-├── ",dir,"
-│   ├── data
-│   ├── R
-│   │   └── 01_notebook.Rmd
-│   ├── plots
-│   ├── docs
-│   ├── raw_data
-│   ├── README.md"))
-
-cli::cli_alert_info(paste0("Now opening '", "R/01_notebook.Rmd","'"))
-rstudioapi::navigateToFile("R/01_notebook.Rmd")
 
 }

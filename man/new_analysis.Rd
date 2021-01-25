@@ -2,20 +2,20 @@
 % Please edit documentation in R/create_analysis_dir.R
 \name{new_analysis}
 \alias{new_analysis}
-\title{Architecture type d'une analyse}
+\title{Architecture type d'une analyse
+Inpiré du package \code{ProjectTemplate}}
 \usage{
-new_analysis(dir = "MyProject")
+new_analysis(projname = "MyProject", init = TRUE)
 }
 \arguments{
-\item{dir}{Le nom du dossier}
+\item{projname}{Name of the project to be created}
+
+\item{init}{Should a git repository be initialised ?}
 }
 \value{
 
 }
 \description{
 Architecture type d'une analyse
-}
-\examples{
-library(InraeThemes)
-\dontrun{new_analysis()}
+Inpiré du package \code{ProjectTemplate}
 }
