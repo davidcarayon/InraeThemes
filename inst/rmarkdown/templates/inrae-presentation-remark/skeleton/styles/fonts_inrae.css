@@ -1,0 +1,54 @@
+/**************************************
+Font template inspired by Dr. A. Bichat
+https://github.com/abichat/defense/
+***************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Parisienne|Philosopher|Source+Code+Pro:400,700);
+
+
+body {
+  font-family: 'AvenirNext LT Pro Cn','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway Medium', sans-serif;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
+}
+
+.cursive {
+  font-family: 'Parisienne', cursive;
+  font-size: 140%;
+}
+
+
+/******************************
+  Font size
+******************************/
+
+.Large       , .Large .remark-code, .Large .remark-inline-code { font-size: 144%; }
+.large       , .large .remark-code, .large .remark-inline-code { font-size: 120%; }
+.small       , .small .remark-code, .small .remark-inline-code { font-size: 90%; }
+.footnotesize, .footnotesize .remark-code, .footnotesize .remark-inline-code { font-size: 80%; }
+.scriptsize  , .scriptsize .remark-code, .scriptsize .remark-inline-code { font-size: 70%; }
+.tiny        , .tiny .remark-code, .tiny .remark-inline-code { font-size: 60%; }
+
+
+/******************************
+  Font color
+******************************/
+
+.red { color: red; }
+.blue { color: blue; }
+.prune { color: var(--prune); }
+.gris-clair { color: var(--gris-clair); }
+.green { color: green; }
+.yellow { color: yellow; }
+.orange { color: orange; }
+.purple { color: purple; }
+.gray { color: gray; }
+

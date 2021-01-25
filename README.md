@@ -320,6 +320,10 @@ aux couleurs INRAE, un fichier HTML permettant d’insérer le logo
 bloc-état sur chaque slide via du JavaScript et un logo INRAE blanc
 (issu de la charte graphique INRAE).
 
+> Note : le style CSS est très largement inspiré du [thème développé par
+> A. Bichat](https://github.com/abichat/defense/) pour sa soutenance de
+> thèse.
+
 L’utilisateur pourra choisir d’utiliser `chrome_print` au moment de la
 compilation pour obtenir un fichier PDF en plus de la sortie HTML.
 
