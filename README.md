@@ -160,6 +160,10 @@ livré afin d’éditer les premières/dernières pages, pour modifier par
 exemple l’image de fond ou pour écrire directement les informations du
 rapport (ex: titre trop long, ajout d’un sous-titre, de logos, etc.).
 
+> NB : les styles CSS sont largement inspirés des travaux de T.
+> Vroylandt [pour les Scouts et Guides de
+> France](https://github.com/tvroylandt/sgdf_pagedown).
+
 L’utilisateur pourra choisir d’utiliser `chrome_print` dans le YAML au
 moment de la compilation pour obtenir un fichier PDF en plus de la
 sortie HTML.
@@ -168,7 +172,7 @@ Voici un exemple de rapport :
 
 ![](man/figures/cap_rapport.png)
 
-### Rapport fragmenté (Bookdown)
+### Rapport fragmenté (Gitbook / Bookdown)
 
 Ce second template permet de produire un rapport HTML et/ou PDF (au
 choix) en utilisant le package {bookdown}. Ce format est dédié à la
@@ -183,25 +187,15 @@ plus d’informations : [Visitez le site de
 {bookdown}](https://bookdown.org/).
 
 Comme il s’agit d’un format particulier, constitué d’un grand nombre de
-fichiers, celui-ci ne peut être proposé via un addin Rstudio. Mais son
-utilisation reste simple, puisqu’il suffit juste de lancer la commande :
+fichiers, celui-ci ne peut être proposé via un template de document,
+mais plutôt via un template de projet Rstudio via `Projects > New
+Project > New Directory > Gitbook INRAE`. L’utilisateur peut ici définir
+la localisation de son projet de rapport et choisir d’initialiser ou non
+un dépôt git.
 
-``` r
-bookdown_inrae("Mon_Rapport")
-```
-
-Pour que le dossier avec l’ensemble des fichiers soit créé à l’endroit
-de votre choix. Le répertoire de travail est automatiquement modifié et
-le fichier “index.Rmd” automatiquement ouvert.
-
-> Note : Pour une manipulation plus simple du document via des
-> fonctionnalités Rstudio (notamment le widget “Build Book” qui s’avère
-> très pratique). Nous vous recommandons de créer un projet bookdown
-> vierge via les templates de projet Rstudio, puis de copier/remplacer
-> les fichiers `bloc_etat.png`, `index.Rmd` et `styles.css` créés par
-> cette fonction, que vous pouvez aller directement récupérer dans les
-> fichiers internes du package à l’adresse renvoyée par
-> `system.file("Bookdown_Inrae", package = "InraeThemes")`.
+Pour la compilation globale du document, nous vous suggérons le widget
+rstudio `Build > Build book` dans le panneau contenant notamment les
+objets R.
 
 Voici un exemple de rapport :
 
@@ -355,7 +349,7 @@ données, librement inspiré du package
 Ce template est directement accessible dans Rstudio via `Projects > New
 Project > New Directory > New data analysis`. L’utilisateur peut ici
 définir la localisation de son projet et choisir d’initialiser ou non
-un repository git.
+un dépôt git.
 
 > Note : Cette architecture n’est qu’un exemple de bonne pratiques
 > parmis bien d’autres. Libre à vous de modifier ce template selon vos
