@@ -1,6 +1,6 @@
 Package: InraeThemes
 Title: Modèles et thèmes INRAE
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     c(
     person(given = "David",

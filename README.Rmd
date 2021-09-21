@@ -19,13 +19,19 @@ library(magrittr)
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 <!-- badges: end -->
 
-InraeThemes est un package proposant une variété de templates (Rmarkdown/LaTeX), de thèmes (ggplot) et de fonctions utilitaires qui respectent la charte graphique INRAE.
+InraeThemes est un package proposant une variété de templates
+(Rmarkdown/LaTeX), de thèmes (ggplot) et de fonctions utilitaires qui
+respectent la charte graphique INRAE.
 
-**Attention : Ces modèles nécessitent l'installation de 2 polices adoptées dans la charte graphique INRAE : [Raleway](https://fonts.google.com/specimen/Raleway) et [Avenir Next Pro](https://fr.maisfontes.com/avenir-next-lt-pro).**
+**Attention : Ces modèles nécessitent l'installation de 2 polices
+adoptées dans la charte graphique INRAE :
+[Raleway](https://fonts.google.com/specimen/Raleway) et [Avenir Next
+Pro](https://fr.maisfontes.com/avenir-next-lt-pro).**
 
 # Installation
 
@@ -36,7 +42,9 @@ Le package peut-être installé via :
 remotes::install_github("davidcarayon/InraeThemes")
 ```
 
-Si vous ne possédez aucune installation de LaTeX sur votre machine, vous devrez également en installer une version minimale pour utiliser les modèles mobilisant LaTeX :
+Si vous ne possédez aucune installation de LaTeX sur votre machine, vous
+devrez également en installer une version minimale pour utiliser les
+modèles mobilisant LaTeX :
 
 ``` r
 install.packages("tinytex")
@@ -45,11 +53,14 @@ tinytex::install_tinytex()
 
 # Thème ggplot2
 
-Ce package propose différentes fonctions permettant de personnaliser les graphiques produits avec {ggplot2} pour qu'ils correspondent à la charte graphique INRAE.
+Ce package propose différentes fonctions permettant de personnaliser les
+graphiques produits avec {ggplot2} pour qu'ils correspondent à la charte
+graphique INRAE.
 
 ## Palette de couleurs
 
-La palette de couleurs construite à partir de la charte graphique V3 est la suivante :
+La palette de couleurs construite à partir de la charte graphique V3 est
+la suivante :
 
 ![](man/figures/scales.png)
 
@@ -118,41 +129,81 @@ do.call(gridExtra::grid.arrange,  display)
 
 # Templates de documents/présentations
 
-Ce package permet aussi de rédiger des rapports et/ou présentations pré-formatés selon la charte graphique INRAE.
+Ce package permet aussi de rédiger des rapports et/ou présentations
+pré-formatés selon la charte graphique INRAE.
 
-> **Attention, ces fonctions ne visent qu'à fournir des templates (css, LaTeX, docx, logos) correspondants à la charte INRAE, associés à des fichiers Rmarkdown avec un YAML correctement configuré. Nous invitons les utilisateurs à se renseigner par la suite sur chacune des technologies utilisées (rmarkdown, LaTeX, pagedown, officedown, revaljs, remarkjs, etc.) pour aller plus loin dans la personnalisation des documents.**
+> **Attention, ces fonctions ne visent qu'à fournir des templates (css,
+> LaTeX, docx, logos) correspondants à la charte INRAE, associés à des
+> fichiers Rmarkdown avec un YAML correctement configuré. Nous invitons
+> les utilisateurs à se renseigner par la suite sur chacune des
+> technologies utilisées (rmarkdown, LaTeX, pagedown, officedown,
+> revaljs, remarkjs, etc.) pour aller plus loin dans la personnalisation
+> des documents.**
 
 ## Rapports
 
-Différents templates sont proposés en fonction de la longueur du rapport et du format de sortie désiré (pdf, docx, html).
+Différents templates sont proposés en fonction de la longueur du rapport
+et du format de sortie désiré (pdf, docx, html).
 
 ### Rapport paginé (Pagedown)
 
-Ce premier template permet de produire un rapport HTML et/ou PDF (au choix) en utilisant le package {pagedown}. Ce format est dédié à la rédaction de rapports relativement courts car la rédaction se concentre dans un seul fichier .Rmd. Lorsque la rédaction devient plus lourde avec séparation des chapitres et une bibliographie par chapitre par exemple, il convient de passer au modèle suivant (i.e. {bookdown}).
+Ce premier template permet de produire un rapport HTML et/ou PDF (au
+choix) en utilisant le package
+[`{pagedreport}`](https://github.com/rfortherestofus/pagedreport),
+lui-même basé sur [`{pagedown}`](https://github.com/rstudio/pagedown).
+Ce format est dédié à la rédaction de rapports relativement courts car
+la rédaction se concentre dans un seul fichier .Rmd. Lorsque la
+rédaction devient plus lourde avec séparation des chapitres et une
+bibliographie par chapitre par exemple, il convient de passer au modèle
+suivant (i.e. `{bookdown}`).
 
-{pagedown} est un package s'appuyant sur [rmarkdown](https://rmarkdown.rstudio.com/) et [pagedjs](https://www.pagedjs.org/) afin de produire des documents HTML dits "paginés". Puisqu'il s'agit de documents HTML, l'affichage est entièrement personnalisable via l'utilisation de code HTML/CSS. Pour plus d'informations : [Visitez le site de {pagedown}](https://pagedown.rbind.io/).
+Ce template est accessible via
+`File > New File > Rmarkdown > From Template`.
 
-Ce template est accessible via `File > New File > Rmarkdown > From Template`.
+Pour son exécution, il faudra installer le package `{pagedreports}`
+uniquement disponible sur github à l'heure actuelle :
 
-Le template .Rmd est livré avec une feuille de style .css correspondant aux couleurs INRAE ainsi que différents éléments graphiques (logo, première/dernière page, etc.). Un template au format .svg est également livré afin d'éditer les premières/dernières pages, pour modifier par exemple l'image de fond ou pour écrire directement les informations du rapport (ex: titre trop long, ajout d'un sous-titre, de logos, etc.).
+```{r eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("rfortherestofus/pagedreport", ref = "main")
+```
 
-> NB : les styles CSS sont largement inspirés des travaux de T. Vroylandt [pour les Scouts et Guides de France](https://github.com/tvroylandt/sgdf_pagedown).
+Le template .Rmd est livré avec un YAML préformaté selon le template
+fourni par le package `{pagedreport}` avec un logo et des couleurs
+INRAE. L'utilisateur pourra choisir parmis trois mises en formes
+proposées (`hazelnuts`, `grid` ou `windmill`).
 
-L'utilisateur pourra choisir d'utiliser `chrome_print` dans le YAML au moment de la compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+L'utilisateur pourra aussi choisir d'utiliser `chrome_print` dans le
+YAML au moment de la compilation pour obtenir un fichier PDF en plus de
+la sortie HTML.
 
 Voici un exemple de rapport :
 
-![](man/figures/cap_rapport.png)
+![](man/figures/cap_pagedown.png)
 
 ### Rapport fragmenté (Gitbook / Bookdown)
 
-Ce second template permet de produire un rapport HTML et/ou PDF (au choix) en utilisant le package {bookdown}. Ce format est dédié à la rédaction document longs et complexes (i.e livres, thèses, etc.) car il permet une gestion modulaire des chapitres en fragmentant le rapport en plusieurs sous-documents.
+Ce second template permet de produire un rapport HTML et/ou PDF (au
+choix) en utilisant le package {bookdown}. Ce format est dédié à la
+rédaction document longs et complexes (i.e livres, thèses, etc.) car il
+permet une gestion modulaire des chapitres en fragmentant le rapport en
+plusieurs sous-documents.
 
-{bookdown} est un package principalement dédié, tel que son nom l'indique, à la rédaction de livres. Contrairement au format {pagedown}, la version PDF nécessitera ici une installation LaTeX. Pour plus d'informations : [Visitez le site de {bookdown}](https://bookdown.org/).
+{bookdown} est un package principalement dédié, tel que son nom
+l'indique, à la rédaction de livres. Contrairement au format {pagedown},
+la version PDF nécessitera ici une installation LaTeX. Pour plus
+d'informations : [Visitez le site de {bookdown}](https://bookdown.org/).
 
-Comme il s'agit d'un format particulier, constitué d'un grand nombre de fichiers, celui-ci ne peut être proposé via un template de document, mais plutôt via un template de projet Rstudio via `Projects > New Project > New Directory > Gitbook INRAE`. L'utilisateur peut ici définir la localisation de son projet de rapport et choisir d'initialiser ou non un dépôt git.
+Comme il s'agit d'un format particulier, constitué d'un grand nombre de
+fichiers, celui-ci ne peut être proposé via un template de document,
+mais plutôt via un template de projet Rstudio via
+`Projects > New Project > New Directory > Gitbook INRAE`. L'utilisateur
+peut ici définir la localisation de son projet de rapport et choisir
+d'initialiser ou non un dépôt git.
 
-Pour la compilation globale du document, nous vous suggérons le widget rstudio `Build > Build book` dans le panneau contenant notamment les objets R.
+Pour la compilation globale du document, nous vous suggérons le widget
+rstudio `Build > Build book` dans le panneau contenant notamment les
+objets R.
 
 Voici un exemple de rapport :
 
@@ -160,11 +211,16 @@ Voici un exemple de rapport :
 
 ### Rapport éditable (Word)
 
-Ce troisième template permet de produire un rapport au format Microsoft Word (.docx). Il fait appel aux packages [{officer}](https://cran.r-project.org/package=officer) et [{officedown}](https://github.com/davidgohel/officedown).
+Ce troisième template permet de produire un rapport au format Microsoft
+Word (.docx). Il fait appel aux packages
+[{officer}](https://cran.r-project.org/package=officer) et
+[{officedown}](https://github.com/davidgohel/officedown).
 
-Ce template est accessible via `File > New File > Rmarkdown > From Template`.
+Ce template est accessible via
+`File > New File > Rmarkdown > From Template`.
 
-Le template Rmd est livré avec un template au format .docx, à modifier selon les préférences de l'utilisateur, et un logo bloc-état.
+Le template Rmd est livré avec un template au format .docx, à modifier
+selon les préférences de l'utilisateur, et un logo bloc-état.
 
 Voici un exemple de rapport :
 
@@ -172,17 +228,24 @@ Voici un exemple de rapport :
 
 ### Rapport statique (LaTeX)
 
-Ce quatrième template est une exception puisqu'il s'agit d'un template LaTeX (et non Rmarkdown). Une maîtrise de LaTeX est donc requise pour l'utilisation de ce modèle.
+Ce quatrième template est une exception puisqu'il s'agit d'un template
+LaTeX (et non Rmarkdown). Une maîtrise de LaTeX est donc requise pour
+l'utilisation de ce modèle.
 
 > **Note : Ce modèle a été développé par E. Quinton (INRAE/EABX).**
 
-Puisque ce template nécessite un grand nombre de fichiers pour fonctionner (images, page de garde, etc.) et n'est pas un template Rmarkdown, celui-ci ne peut être proposé via un addin Rstudio. Mais son utilisation reste simple, puisqu'il suffit juste de lancer la commande :
+Puisque ce template nécessite un grand nombre de fichiers pour
+fonctionner (images, page de garde, etc.) et n'est pas un template
+Rmarkdown, celui-ci ne peut être proposé via un addin Rstudio. Mais son
+utilisation reste simple, puisqu'il suffit juste de lancer la commande :
 
 ```{r eval = FALSE}
 latex_report("Mon_Rapport")
 ```
 
-Pour créer un répertoire contenant le template prêt à l'emploi. Le fichier principal du template (`document_inrae.tex`) sera automatiquement ouvert sur Rstudio.
+Pour créer un répertoire contenant le template prêt à l'emploi. Le
+fichier principal du template (`document_inrae.tex`) sera
+automatiquement ouvert sur Rstudio.
 
 Voici un exemple de rapport :
 
@@ -192,13 +255,21 @@ Voici un exemple de rapport :
 
 ### Présentation dynamique 2D (RevealJS)
 
-Ce cinquième template permet de produire une présentation HTML utilisant la technologie RevealJS. La présentation est construites en 2 niveaux : les titres de premiers niveau définissent la dimension horizontale tandis que les titres de second niveau (et plus) définissent la dimension verticale. Chaque titre correspond à une diapositive.
+Ce cinquième template permet de produire une présentation HTML utilisant
+la technologie RevealJS. La présentation est construites en 2 niveaux :
+les titres de premiers niveau définissent la dimension horizontale
+tandis que les titres de second niveau (et plus) définissent la
+dimension verticale. Chaque titre correspond à une diapositive.
 
-Ce template est accessible via `File > New File > Rmarkdown > From Template`.
+Ce template est accessible via
+`File > New File > Rmarkdown > From Template`.
 
-Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE et un logo bloc-etat.
+Le template Rmd est livré avec une feuille de style CSS correspondant
+aux couleurs INRAE et un logo bloc-etat.
 
-L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la compilation pour obtenir un fichier PDF en plus de la sortie HTML (Mais déconseillé, privilégier RemarkJS pour la sortie PDF).
+L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la
+compilation pour obtenir un fichier PDF en plus de la sortie HTML (Mais
+déconseillé, privilégier RemarkJS pour la sortie PDF).
 
 Voici un exemple de présentation :
 
@@ -206,15 +277,24 @@ Voici un exemple de présentation :
 
 ### Présentation statique (RemarkJS)
 
-Ce sixième template permet de produire une présentation HTML/PDF utilisant la technologie RemarkJS du package {[xaringan](https://github.com/yihui/xaringan)}.
+Ce sixième template permet de produire une présentation HTML/PDF
+utilisant la technologie RemarkJS du package
+{[xaringan](https://github.com/yihui/xaringan)}.
 
-Ce template est accessible via `File > New File > Rmarkdown > From Template`.
+Ce template est accessible via
+`File > New File > Rmarkdown > From Template`.
 
-Le template Rmd est livré avec une feuille de style CSS correspondant aux couleurs INRAE, un fichier HTML permettant d'insérer le logo bloc-état sur chaque slide via du JavaScript et un logo INRAE blanc (issu de la charte graphique INRAE).
+Le template Rmd est livré avec une feuille de style CSS correspondant
+aux couleurs INRAE, un fichier HTML permettant d'insérer le logo
+bloc-état sur chaque slide via du JavaScript et un logo INRAE blanc
+(issu de la charte graphique INRAE).
 
-> Note : le style CSS est très largement inspiré du [thème développé par A. Bichat](https://github.com/abichat/defense/) pour sa soutenance de thèse.
+> Note : le style CSS est très largement inspiré du [thème développé par
+> A. Bichat](https://github.com/abichat/defense/) pour sa soutenance de
+> thèse.
 
-L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la compilation pour obtenir un fichier PDF en plus de la sortie HTML.
+L'utilisateur pourra choisir d'utiliser `chrome_print` au moment de la
+compilation pour obtenir un fichier PDF en plus de la sortie HTML.
 
 Voici un exemple de présentation :
 
@@ -222,11 +302,14 @@ Voici un exemple de présentation :
 
 ### Présentation éditable (Powerpoint)
 
-Ce septième template permet de produire un une présentation au format PowerPoint
+Ce septième template permet de produire un une présentation au format
+PowerPoint
 
-Ce template est accessible via `File > New File > Rmarkdown > From Template`.
+Ce template est accessible via
+`File > New File > Rmarkdown > From Template`.
 
-Le template Rmd est livré avec un template au format .pptx, à modifier selon les préférences de l'utilisateur.
+Le template Rmd est livré avec un template au format .pptx, à modifier
+selon les préférences de l'utilisateur.
 
 Voici un exemple de présentation :
 
@@ -234,30 +317,42 @@ Voici un exemple de présentation :
 
 ### Présentation beamer (LaTeX)
 
-Ce huitième template est une autre exception puisqu'il s'agit d'un template LaTeX (et non Rmarkdown). Une maîtrise de LaTeX est donc requise pour l'utilisation de ce modèle.
+Ce huitième template est une autre exception puisqu'il s'agit d'un
+template LaTeX (et non Rmarkdown). Une maîtrise de LaTeX est donc
+requise pour l'utilisation de ce modèle.
 
 > **Note : Ce modèle a été développé par E. Quinton (INRAE/EABX).**
 
-Puisque ce template nécessite un grand nombre de fichiers pour fonctionner (images, page de garde, etc.) et n'est pas un template Rmarkdown, celui-ci ne peut être proposé via un addin Rstudio. Mais son utilisation reste simple, puisqu'il suffit juste de lancer la commande :
+Puisque ce template nécessite un grand nombre de fichiers pour
+fonctionner (images, page de garde, etc.) et n'est pas un template
+Rmarkdown, celui-ci ne peut être proposé via un addin Rstudio. Mais son
+utilisation reste simple, puisqu'il suffit juste de lancer la commande :
 
 ```{r eval = FALSE}
 latex_presentation("Ma_Presentation")
 ```
 
-Pour créer un répertoire contenant le template prêt à l'emploi. Le fichier principal du template (`modele_beamer_inrae.tex`) sera automatiquement ouvert sur Rstudio.
+Pour créer un répertoire contenant le template prêt à l'emploi. Le
+fichier principal du template (`modele_beamer_inrae.tex`) sera
+automatiquement ouvert sur Rstudio.
 
 Voici un exemple de rapport :
 
 ![](man/figures/cap_beamer.png)
 
-## Autres ressources
-
--   Le package [{pagedreport}](https://github.com/rfortherestofus/pagedreport) propose un ensemble de templates de rapport paginés (pagedown) avec une customisation simple via le YAML. Vous pouvez tout à fait combiner ces templates aux couleurs / images utilisés dans InraeThemes.
-
 # Création d'un répertoire d'analyse
 
-Nous proposons dans ce package un template de projet pour l'analyse de données, librement inspiré du package [{ProjectTemplate}](https://cran.r-project.org/web/packages/ProjectTemplate/) Ce template est directement accessible dans Rstudio via `Projects > New Project > New Directory > New data analysis`. L'utilisateur peut ici définir la localisation de son projet et choisir d'initialiser ou non un dépôt git.
+Nous proposons dans ce package un template de projet pour l'analyse de
+données, librement inspiré du package
+[{ProjectTemplate}](https://cran.r-project.org/web/packages/ProjectTemplate/)
+Ce template est directement accessible dans Rstudio via
+`Projects > New Project > New Directory > New data analysis`.
+L'utilisateur peut ici définir la localisation de son projet et choisir
+d'initialiser ou non un dépôt git.
 
-> Note : Cette architecture n'est qu'un exemple de bonne pratiques parmis bien d'autres. Libre à vous de modifier ce template selon vos habitudes. Vos suggestions d'améliorations sont évidemment les bienvenues [ici](https://github.com/davidcarayon/InraeThemes/issues).
+> Note : Cette architecture n'est qu'un exemple de bonne pratiques
+> parmis bien d'autres. Libre à vous de modifier ce template selon vos
+> habitudes. Vos suggestions d'améliorations sont évidemment les
+> bienvenues [ici](https://github.com/davidcarayon/InraeThemes/issues).
 
 ![](man/figures/cap_dir.png)

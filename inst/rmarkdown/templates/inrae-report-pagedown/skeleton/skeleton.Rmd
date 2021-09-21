@@ -1,143 +1,103 @@
 ---
 title: "Titre du document"
-author: "Auteur | Unité de Recherche"
-date: "Janvier 2021"
-output: 
-  pagedown::html_paged:
-    highlight: haddock
-    toc: true
-    lot: true
-    lof: true
-    css: 
-    - "style/pagedown_inrae.css"
+subtitle: "Sous titre"
+author: "Auteur du document"
+date: "Date"
+output:
+  pagedreport::paged_windmill:
+ #pagedreport::paged_hazelnuts:
+ #pagedreport::paged_grid:
+    front_img: "https://pixnio.com/free-images/2017/09/29/2017-09-29-09-57-21-1100x683.jpg"
+    back_img: "https://pixnio.com/free-images/2017/09/29/2017-09-29-09-57-21-1100x683.jpg"
+    logo: "style/logo_inrae.svg"
+    img_to_dark: TRUE
+    logo_to_white: TRUE
 knit: pagedown::chrome_print
+toc-title: "Sommaire"
+main-color: "#00a3a6"
+secondary-color: "#00a3a6"
+google-font: TRUE
+main-font: "Montserrat"
+header-font: "Raleway"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE,
-	dpi = 300,
-	out.width = 2100
-)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r packages}
-library(InraeThemes)
-library(dplyr)
-library(ggplot2)
-library(gt)
-library(gridExtra)
-```
+# This is part 1 
 
->
-> # A PROPOS
->
-> Ce document est un rapport au format {pagedown} généré par le package {InraeThemes}.
-> Il consiste en un fichier Rmarkdown (.Rmd) associé à un répertoire de "styles" contenant une feuille de style CSS ainsi que les éléments graphiques relatifs à INRAE (logos, sigles, etc.)
->
-> Les premières et dernières pages de ce modèle sont des images (PNG) insérées en tant que fond. Ainsi, les informations du YAML sont automatiquement rajoutées par dessous.
-> Un template au format .svg est également livré afin d'éditer cette première page, par exemple pour modifier l'image de fond ou pour écrire directement les informations du rapport (dans le cas par exemple d'un titre trop long, d'un sous-titre, etc.). Il suffit d'ouvrir ce fichier sous [Inkscape](https://inkscape.org/fr/), puis d'exporter la page sous le nom de "styles/page_avant.png".
->
-> Le document est initialement généré en HTML (sortie native de pagedown), mais peut être exporté en PDF en dé-commentant `knit: pagedown::chrome_print` dans le YAML.
->
-> Vous êtes libres de personnaliser le CSS de ce modèle à vos goûts (cf. documentation [pagedown](https://pagedown.rbind.io/) & [paged.js](https://www.pagedjs.org/)) et vos suggestions sont les bienvenues sur le [Github InraeThemes](https://github.com/davidcarayon/InraeThemes/issues) !
+## Second level 
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+## Second level 
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
 
-# Intro {-}
++ item 1
++ item 2
++ item 3
 
-Cf. [sous section](#Equations).
+1. numbered 1
+2. numbered 2
+3. numbered 3
 
-Citer un article [@article] (Penser à inclure le .bib dans le YAML)
 
-Cf. section [Analyse].
+## Second level 
 
-# Tableaux {-}
+Finally, be sure to remove this message!
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
 
-`Vestibulum` imperdiet, ex vel sodales facilisis, nibh tellus imperdiet massa, sit amet scelerisque orci velit vel tellus. Ut consequat justo tincidunt porttitor varius. Suspendisse erat ipsum, feugiat vitae rhoncus non, molestie ac purus. Morbi aliquet, elit eget blandit suscipit, est lacus facilisis turpis, nec fermentum nunc felis et lorem.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
-::: {#Table1}
-Exemple de tableau avec {gt} :
-:::
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
-```{r}
-gt::gt(head(mtcars)) %>% gt::tab_options(table.width = pct(100))
-```
+# And now part 2 
 
-## Equations {-}
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
 
-> Bloc de citation
+## Second level 
 
-Les formules LaTeX peuvent être utilisés au sein d'un paragraphe : $E=mc^2$ ou en tant qu'équation sur une ligne seule :
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
-::: {#eq1}
-:::
-
-$$f=\frac{a}{b+c}$$
-
-Ligne verticale :
-
-----
-
-Cras pulvinar ligula ac nisi porttitor, volutpat congue orci tincidunt. Pellentesque non mi congue, porta enim eget, venenatis sem. Integer suscipit vulputate tellus, eget commodo dolor gravida vel. Suspendisse gravida gravida ligula, in interdum sapien molestie ut.
-
-### Graphiques {-}
-
-Cf. [table](#Table1) ci-dessus.
-
-On reprend un des exemples proposés dans le README du package InraeThemes :
-
-```{r example, message = FALSE, fig.width = 14, fig.height=8, dpi = 320}
-## On charge les données d'exemple du package
-data("example_datasets")
-
-## On construit 4 graphiques d'exemple, stockés dans une même liste
-display <- list(
-  ggplot(example_datasets$www, aes_string(x = 'Minute', y = 'Users',
-                                          color = 'Measure',
-                                          shape = 'Measure')) +
-    geom_line() +
-    geom_point(size = 3) +
-    facet_wrap(~Measure) +
-    geom_point(size = 1.8) +
-    scale_color_inrae() +
-    scale_shape_manual(values = c(15, 16)) +
-    labs(title = "Titre", subtitle = "Sous-titre") +
-    theme_inrae(),
-
-  ggplot(example_datasets$cars, aes_string(x = 'mpg', fill = 'cyl',
-                                           colour = 'cyl')) +
-    geom_density(alpha = 0.75) +
-    scale_fill_inrae() +
-    scale_color_inrae() +
-    labs(fill = 'Cylinders', colour = 'Cylinders', x = 'MPG', y = 'Density') +
-    theme_inrae(),
-
-  ggplot(example_datasets$dia, aes_string(x = 'price', fill = 'cut')) +
-    geom_histogram(binwidth = 850) +
-    xlab('Price (USD)') +
-    ylab('Count') +
-    scale_fill_inrae() +
-    scale_x_continuous(label = function(x) paste0(x / 1000, 'k'))+
-    theme_inrae(),
-
-  ggplot(example_datasets$drivers, aes_string(x = 'Year', y = 'Deaths',
-                                              fill = "Year")) +
-    geom_boxplot(size = 0.25) +
-    ylab('Monthly Deaths') +
-    theme_inrae() +
-    scale_fill_inrae() +
-    coord_flip() +
-    labs(caption = "Caption")
-)
-
-# On assemble
-do.call(gridExtra::grid.arrange,  display)
-```
-
-# Conclusion {-}
-
-Conclusion.
-
-# References {-}
+Finally, be sure to remove this message!

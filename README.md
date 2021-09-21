@@ -136,41 +136,38 @@ et du format de sortie désiré (pdf, docx, html).
 ### Rapport paginé (Pagedown)
 
 Ce premier template permet de produire un rapport HTML et/ou PDF (au
-choix) en utilisant le package {pagedown}. Ce format est dédié à la
-rédaction de rapports relativement courts car la rédaction se concentre
-dans un seul fichier .Rmd. Lorsque la rédaction devient plus lourde avec
-séparation des chapitres et une bibliographie par chapitre par exemple,
-il convient de passer au modèle suivant (i.e. {bookdown}).
-
-{pagedown} est un package s’appuyant sur
-[rmarkdown](https://rmarkdown.rstudio.com/) et
-[pagedjs](https://www.pagedjs.org/) afin de produire des documents HTML
-dits “paginés”. Puisqu’il s’agit de documents HTML, l’affichage est
-entièrement personnalisable via l’utilisation de code HTML/CSS. Pour
-plus d’informations : [Visitez le site de
-{pagedown}](https://pagedown.rbind.io/).
+choix) en utilisant le package
+[`{pagedreport}`](https://github.com/rfortherestofus/pagedreport),
+lui-même basé sur [`{pagedown}`](https://github.com/rstudio/pagedown).
+Ce format est dédié à la rédaction de rapports relativement courts car
+la rédaction se concentre dans un seul fichier .Rmd. Lorsque la
+rédaction devient plus lourde avec séparation des chapitres et une
+bibliographie par chapitre par exemple, il convient de passer au modèle
+suivant (i.e. `{bookdown}`).
 
 Ce template est accessible via `File > New File > Rmarkdown > From
 Template`.
 
-Le template .Rmd est livré avec une feuille de style .css correspondant
-aux couleurs INRAE ainsi que différents éléments graphiques (logo,
-première/dernière page, etc.). Un template au format .svg est également
-livré afin d’éditer les premières/dernières pages, pour modifier par
-exemple l’image de fond ou pour écrire directement les informations du
-rapport (ex: titre trop long, ajout d’un sous-titre, de logos, etc.).
+Pour son exécution, il faudra installer le package `{pagedreports}`
+uniquement disponible sur github à l’heure actuelle :
 
-> NB : les styles CSS sont largement inspirés des travaux de T.
-> Vroylandt [pour les Scouts et Guides de
-> France](https://github.com/tvroylandt/sgdf_pagedown).
+``` r
+# install.packages("remotes")
+remotes::install_github("rfortherestofus/pagedreport", ref = "main")
+```
 
-L’utilisateur pourra choisir d’utiliser `chrome_print` dans le YAML au
-moment de la compilation pour obtenir un fichier PDF en plus de la
-sortie HTML.
+Le template .Rmd est livré avec un YAML préformaté selon le template
+fourni par le package `{pagedreport}` avec un logo et des couleurs
+INRAE. L’utilisateur pourra choisir parmis trois mises en formes
+proposées (`hazelnuts`, `grid` ou `windmill`).
+
+L’utilisateur pourra aussi choisir d’utiliser `chrome_print` dans le
+YAML au moment de la compilation pour obtenir un fichier PDF en plus de
+la sortie HTML.
 
 Voici un exemple de rapport :
 
-![](man/figures/cap_rapport.png)
+![](man/figures/cap_pagedown.png)
 
 ### Rapport fragmenté (Gitbook / Bookdown)
 
@@ -331,15 +328,6 @@ automatiquement ouvert sur Rstudio.
 Voici un exemple de rapport :
 
 ![](man/figures/cap_beamer.png)
-
-## Autres ressources
-
-  - Le package
-    [{pagedreport}](https://github.com/rfortherestofus/pagedreport)
-    propose un ensemble de templates de rapport paginés (pagedown) avec
-    une customisation simple via le YAML. Vous pouvez tout à fait
-    combiner ces templates aux couleurs / images utilisés dans
-    InraeThemes.
 
 # Création d’un répertoire d’analyse
 
