@@ -1,0 +1,4 @@
+Binding: create_presentation
+Title: Présentation INRAE
+OpenFiles: template_presentation.qmd
+Icon: logo_hex-min.png

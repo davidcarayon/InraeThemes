@@ -1,0 +1,82 @@
+---
+title: "Titre de la présentation"
+subtitle: "Sous-titre de la présentation"
+author: "Auteur de la présentation"
+date: "Lieu | Date"
+format: 
+  beamer: 
+    sansfont: Avenir Next LT Pro
+    include-in-header: ressources/beamercolorthemeinrae.sty
+    aspectratio: 169
+    toc: true
+    toc-title: "Sommaire"
+    logo: ressources/bloc-etat.png
+  revealjs:
+    logo: ressources/bloc-etat.png
+    footer: "Pied de page"
+    slide-number: "c/t"
+    toc: true
+    toc-title: "Sommaire" 
+    toc-depth: 1
+    self-contained: true
+    theme: [ressources/reveal_inrae.scss]
+    plugins:
+      - PdfExport
+  pptx:
+    reference-doc: ressources/template.pptx
+    toc: true
+---
+
+# Template de présentation Quarto INRAE
+
+## Bienvenue sur Quarto 
+
+[Quarto](https://quarto.org/) est un système de publication scientifique et technique open-source basé sur Pandoc.
+
+- Créez du contenu dynamique avec Python, R, Julia et Observable.
+
+- Créez des documents sous forme de texte brut markdown ou de notebooks Jupyter.
+
+- Publiez des articles, des rapports, des présentations, des sites web, des blogs et des livres de haute qualité en HTML, PDF, MS Word, ePub et plus encore.
+
+- Rédigez des documents en format markdown scientifique, notamment des équations, des citations, des références croisées, des panneaux de figures, des légendes, une mise en page avancée, etc.
+
+## Adaptation INRAE
+
+Le package [{InraeThemes}](https://github.com/davidcarayon/InraeThemes) propose 3 templates de présentation basés sur Quarto. Le YAML de ce document est pré-rempli avec ces 3 formats et les ressources associées ont été copiées dans le répertoire `ressources/` créé lors de la création de ce document. Vous pouvez choisir :
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+Présentation HTML (RevealJS) :
+
+  - [Guide d'utilisation](https://quarto.org/docs/presentations/revealjs/)
+  
+  - [Référence complète](https://quarto.org/docs/reference/formats/presentations/revealjs.html)
+  
+:::
+
+::: {.column width="33%"}
+  
+Présentation PDF (Beamer) :
+
+  - [Guide d'utilisation](https://quarto.org/docs/presentations/beamer/)
+  
+  - [Référence complète](https://quarto.org/docs/reference/formats/presentations/beamer)
+
+:::
+
+
+::: {.column width="33%"}
+Présentation PPTX (Powerpoint) :
+
+  - [Guide d'utilisation](https://quarto.org/docs/presentations/powerpoint/)
+  
+  - [Référence complète](https://quarto.org/docs/reference/formats/presentations/pptx)
+
+:::
+
+::::
+  
+# Merci de votre attention ! {background-color="#E0FFFF"}

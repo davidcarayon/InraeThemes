@@ -1,0 +1,51 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fff;
+$body-color: #113949;
+$link-color: #42affa;
+$presentation-heading-font: "Raleway";
+$presentation-heading-color: #00a3a6;
+$presentation-heading-line-height: 1.2;
+$presentation-title-slide-text-align: "left";
+$presentation-h1-font-size: 1.4em;
+
+/*-- scss:rules --*/
+
+section.top h1{
+        margin-top: -270px;
+    }
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.reveal h2 {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* shadows */
+  color: #00a3a6;
+  font-family: "Raleway";
+  font-weight: bold;
+}
+
+.reveal p {
+  font-size: 0.8em;
+}
+
+.reveal h1.title {
+  font-family: "Raleway";
+  font-size: 1.6em;
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* shadows */
+}
+
+.reveal .slides section>* { /* this is for left align */
+  margin-left: 0;
+  margin-right: 0;
+}
+  
+  
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+} 

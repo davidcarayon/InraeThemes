@@ -10,7 +10,7 @@ scale_fill_inrae(...)
 \item{...}{Autres arguments pour \code{discrete_scale}.}
 }
 \value{
-
+a fill scale
 }
 \description{
 Echelle de couleur INRAE

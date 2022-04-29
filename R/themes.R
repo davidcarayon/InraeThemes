@@ -3,12 +3,11 @@
 #' Ce theme ggplot correspond aux couleurs issues de la charte graphique INRAE V3.
 #'
 #' @param base_size base size
-#' @param base_family base family
 #'
-#' @return
+#' @return a ggplot theme
 #' @import ggplot2
 #' @export
-theme_inrae <- function(base_size = 15, base_family = "Avenir Next Pro") {
+theme_inrae <- function(base_size = 15) {
 
   # Global colors
   blue  <- palette_inrae()["inrae_bleu"]
@@ -18,14 +17,14 @@ theme_inrae <- function(base_size = 15, base_family = "Avenir Next Pro") {
   inrae <- palette_inrae()["inrae_fonce"]
   inrae_sombre <- palette_inrae()["inrae_sombre"]
   # Starts with theme_grey and then modify some parts
-  theme_grey(base_size = base_size, base_family = base_family) %+replace%
+  theme_grey(base_size = base_size) %+replace%
 
     ggplot2::theme(
 
       # Base Inherited Elements
       line = ggplot2::element_line(colour = grey, size = 0.5, linetype = 1,lineend = "butt"),
       rect = ggplot2::element_rect(fill = white, colour = blue,size = 0.5, linetype = 1),
-      text = ggplot2::element_text(family = base_family, face = "plain",
+      text = ggplot2::element_text(face = "plain",
                                    colour = inrae_sombre, size = base_size,
                                    lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0,
                                    margin = ggplot2::margin(), debug = FALSE),
@@ -69,3 +68,26 @@ theme_inrae <- function(base_size = 15, base_family = "Avenir Next Pro") {
       complete = TRUE
     )
 }
+
+
+#' Bootstrap Sass INRAE theme
+#'
+#' @return A Sass INRAE theme
+#' @export
+bs_inrae <- function() {
+  bslib::bs_theme(
+  version = 4,
+  bg = "#FFFFFF",
+  fg = "#275662",
+  primary = "#00a3a6",
+  secondary = "#275662",
+  success = "#9dc544",
+  info = "#9ed6e3",
+  warning = "#FFF100",
+  danger = "#ed6e6c",
+  base_font = "Avenir Next LT Pro",
+  heading_font = "Raleway",
+  code_font = "Fira Code"
+)
+}
+

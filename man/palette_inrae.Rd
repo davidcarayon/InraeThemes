@@ -12,7 +12,3 @@ un vecteur contenant les couleurs
 \description{
 Cette palette correspond aux couleurs issues de la charte INRAE V3.
 }
-\examples{
-library(InraeThemes)
-palette_inrae()
-}

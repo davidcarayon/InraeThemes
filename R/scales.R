@@ -4,10 +4,6 @@
 #'
 #' @return un vecteur contenant les couleurs
 #' @export
-#'
-#' @examples
-#' library(InraeThemes)
-#' palette_inrae()
 palette_inrae <- function() {
   c("inrae" = "#00a3a6",
     "inrae_clair" = "#66c1bf",
@@ -27,7 +23,7 @@ palette_inrae <- function() {
 #'
 #' @param ... Autres arguments pour \code{discrete_scale}.
 #'
-#' @return
+#' @return a fill scale
 #' @import scales
 #' @export
 scale_fill_inrae <- function(...){
@@ -38,9 +34,10 @@ scale_fill_inrae <- function(...){
 #'
 #' @param ... Autres arguments pour \code{discrete_scale}.
 #'
-#' @return
-#' @export
+#' @return a color scale
 #' @import scales
+#' @export
+
 scale_color_inrae <- function(...){
   ggplot2::discrete_scale("color","inrae",scales::manual_pal(values = c("#00a3a6","#275662","#9dc544","#9ed6e3","#423089","#ed6e6c","#797870","#c4c0b3","#4e5352")), ...)
 }

@@ -4,15 +4,13 @@
 \alias{theme_inrae}
 \title{Theme ggplot aux couleurs INRAE}
 \usage{
-theme_inrae(base_size = 15, base_family = "Avenir Next Pro")
+theme_inrae(base_size = 15)
 }
 \arguments{
 \item{base_size}{base size}
-
-\item{base_family}{base family}
 }
 \value{
-
+a ggplot theme
 }
 \description{
 Ce theme ggplot correspond aux couleurs issues de la charte graphique INRAE V3.

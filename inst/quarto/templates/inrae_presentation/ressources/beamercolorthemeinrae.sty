@@ -1,0 +1,73 @@
+% Based on Boadilla Style
+% definition des couleurs INRAE
+\definecolor{inrae}{RGB}{0,163,166} % inrae
+\definecolor{inraeclair}{RGB}{102,193,191}   % inrae clair
+\definecolor{inraemedium}{RGB}{0,140,142}   % inrae medium
+\definecolor{inraefonce}{RGB}{39,86, 98} % inrae foncé
+\definecolor{vert}{RGB}{157,197,68} % vert
+\definecolor{bleuclair}{RGB}{158,214,227} % bleu clair
+\definecolor{bleufonce}{RGB}{66,48,137} % bleu foncé
+\definecolor{gris}{RGB}{121,120,112}   % gris
+\definecolor{argent}{RGB}{196,192,179} % argent
+\definecolor{rouge}{RGB}{142,2,0} % rouge
+% disallow navigation menu
+\setbeamertemplate{navigation symbols}{}
+
+% Colors for title, subttitle, author, date...
+\setbeamercolor{title}{fg=inrae}
+\setbeamercolor{subtitle}{fg=inraefonce}
+\setbeamercolor{author}{fg=inrae}
+\setbeamercolor{date}{fg=inrae}
+\setbeamercolor{beamercolorbox}{bg=white}
+\setbeamercolor{section in toc}{bg=white,fg=inrae}
+\setbeamercolor{subsection in toc}{bg=white,fg=inraefonce}
+\setbeamercolor{section number projected}{bg=white,fg=bleufonce}
+\setbeamercolor{subsection number projected}{bg=white,fg=bleuclair}
+\setbeamercolor{frametitle}{fg=inrae}
+\setbeamercolor{framesubtitle}{fg=inraefonce}
+\setbeamercolor{item}{fg=inrae,bg=white}
+\setbeamercolor{subitem}{fg=inrae,bg=white}
+ 
+
+\useinnertheme[shadow]{rounded}
+\useoutertheme{infolines}
+
+
+\setbeamercolor{block title}{fg=white,bg=inraefonce}
+\setbeamercolor{block title alerted}{fg=white, bg=rouge}
+\setbeamercolor{block title example}{fg=black, bg=vert}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!20!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!20!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!20!bg}
+
+\setbeamercolor*{palette primary}{fg=white,bg=inraemedium}
+\setbeamercolor*{palette secondary}{fg=white,bg=inrae}
+\setbeamercolor*{palette tertiary}{fg=white,bg=inraeclair}
+\setbeamercolor*{palette quaternary}{fg=black,bg=white}
+  
+\setbeamercolor*{palette sidebar primary}{fg=white,bg=inraefonce}
+\setbeamercolor*{palette sidebar secondary}{fg=white,bg=inrae}
+\setbeamercolor*{palette sidebar tertiary}{fg=white,bg=inraeclair}
+\setbeamercolor*{palette sidebar quaternary}{fg=black,bg=white}
+
+\setbeamercolor*{titlelike}{fg=inraefonce,bg=white}
+\setbeamercolor*{subtitlelike}{fg=inrae,bg=white}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\useitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{inrae}$\blacktriangleright$}%
+}
+
+\usesubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{inrae}$\blacktriangleright$}%
+}
+\usesubsubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{inrae}$\bigstar$}%
+}
+
+\mode
+<all>

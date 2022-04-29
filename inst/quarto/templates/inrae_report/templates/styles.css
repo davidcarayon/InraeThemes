@@ -1,0 +1,17 @@
+body {
+  font-family: "Avenir Next LT Pro";
+  text-align: justify;
+}
+
+.title {
+  color: #00a3a6;
+  font-family: "Raleway";
+  font-weight: bold;
+}
+
+h1,h2,h3,h4,h5 {
+  text-align: left;
+  color: #00a3a6;
+  font-family: "Raleway";
+  font-weight: bold;
+}
