@@ -1,3 +1,7 @@
+## InraeThemes 2.0.1
+
+* Update to latex preambles to better handle YAML metadata
+
 # InraeThemes 2.0.0
 
 * Added a `NEWS.md` file to track changes to the package.

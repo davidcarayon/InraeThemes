@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![packageversion](https://img.shields.io/badge/Package%20version-2.0.0-green?style=flat-square)](commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2.0.1-green?style=flat-square)](commits/master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 <!-- badges: end -->
@@ -209,17 +209,8 @@ de projet.
 **A noter pour les rapports PDF :**
 
 -   La sortie PDF (basée sur LaTeX) s’appuie sur des fichiers `.tex`
-    indépendants qu’il faudra customiser de manière plus ou moins
-    approfondie pour les pages de garde et de fin. Il est d’ailleurs
-    recommandé de supprimer les infos `title`,`date` et `author` dans
-    `_quarto.yml` dans le cas d’une sortie PDF pour supprimer une
-    première page vide qui sera générée dans le cas où ces infos sont
-    présentes (ou alors de supprimer cette page automatiquement après
-    chaque rendu).
-
--   la cartouche “Centre” peut être remplacée par celle qui vous
-    correspond à télécharger
-    [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3749/33311/version/1/file/Cartouches%20Centre.zip)
+    indépendants qu’il faudra customiser pour l’image de couverture
+    ainsi que pour la dernière page.
 
 -   L’image sur la page de garde (photo.png) peut-être remplacée par
     n’importe quelle image. Si la hauteur de la nouvelle image diffère
@@ -227,13 +218,17 @@ de projet.
     `\vspace*{}` en L11 de `templates/page_de_garde.tex` pour retrouver
     une mise en forme correcte.
 
+-   la cartouche “Centre” peut être remplacée par celle qui vous
+    correspond à télécharger
+    [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3749/33311/version/1/file/Cartouches%20Centre.zip)
+
 ## Création via ligne de commande
 
 En l’absence de module de création de document quarto basé sur un
-template (à la Rmarkdown), la création d’un document Quarto avec un
-thème INRAE est pour le moment uniquement possible via les fonctions
-suivantes (ou via l’interface de création de projets présentée
-ci-dessous):
+template à la Rmarkdown (implémentation prévue pour juillet 2022), la
+création d’un document Quarto avec un thème INRAE est pour le moment
+uniquement possible via les fonctions suivantes (ou via l’interface de
+création de projets présentée ci-dessous):
 
 ``` r
 InraeThemes::create_presentation()
@@ -292,4 +287,16 @@ documents Rmarkdown sous Rstudio.
 
 Une carte de visite, basée sur {pagedown}, avec logo INRAE peut-être
 produite en plusieurs exemplaires par page (nombre paramétrable) via
-l’interface de création de documents Rmarkdown sous Rstudio
+l’interface de création de documents Rmarkdown sous Rstudio.
+
+# Work in Progress / TO-DO
+
+-   Convertir les templates de projet Quarto en templates de documents
+    sous Rstudio lorsque ce sera disponible (juillet 2022)
+
+-   Création d’un format de rapport PDF “simple” et non sous format
+    book, qui sera proposé une fois les templates de documents
+    disponibles
+
+-   Meilleure gestion de la page de garde PDF (photo) ainsi que des
+    infos de bas de page directement dans le YAML

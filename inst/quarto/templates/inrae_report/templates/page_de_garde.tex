@@ -1,4 +1,13 @@
-\begin{titlepage}
+\makeatletter
+\let\inserttitle\@title
+\makeatother
+\makeatletter
+\let\insertauthor\@author
+\makeatother
+\makeatletter
+\let\insertdate\@date
+\makeatother
+
 \newgeometry{left=2cm,bottom=0.1cm}
 
 \vspace*{-4.5cm}
@@ -6,7 +15,7 @@
 \makebox[0pt][l]{%
 \raisebox{-\totalheight}[0pt][0pt]{%
 \hspace{-2.1cm}
-\includegraphics[width=220mm]{templates/photo}}}%
+\includegraphics[width=220mm]{templates/photo.png}}}%
 
 \vspace*{12.15cm}
 
@@ -25,13 +34,13 @@
 
 \hspace{-1cm}
 \setlength{\parindent}{0cm}
-\includegraphics[width=0.5cm]{templates/fleche-titre}\hspace{0.3cm}\textcolor{inrae}{\sffamily\Huge\bfseries Titre du document}\par\bigskip
+\includegraphics[width=0.5cm]{templates/fleche-titre}\hspace{0.3cm}\textcolor{inrae}{\sffamily\Huge\bfseries \inserttitle}\par\bigskip
 
-\hspace{-1cm}\textcolor{inrae}{\sffamily Date du rapport -- Version 1}\par
+\hspace{-1cm}\textcolor{inrae}{\sffamily \insertdate}\par
 
 \vspace*{1cm}
 
-\hspace{-1cm}\textcolor{inraefonce}{\sffamily Auteur(s) du document}\par
+\hspace{-1cm}\textcolor{inraefonce}{\sffamily \insertauthor}\par
 
 \hspace{-1cm}\textcolor{inraefonce}{\sffamily
 Document distribué sous licence CC-BY}\par
@@ -40,4 +49,3 @@ Document distribué sous licence CC-BY}\par
 
 \restoregeometry
 
-\end{titlepage}
