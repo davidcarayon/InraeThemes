@@ -20,9 +20,9 @@ library(magrittr)
 <!-- badges: start -->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![packageversion](https://img.shields.io/badge/Package%20version-2.0.1-green?style=flat-square)](commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2.1.0-green?style=flat-square)](commits/master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
+[![R-CMD-check](https://github.com/davidcarayon/InraeThemes/workflows/R-CMD-check/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions)
 <!-- badges: end -->
 
 InraeThemes est une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE.
@@ -78,6 +78,7 @@ InraeThemes propose ces éléments :
 - Un template de rapport basé sur la classe `book` de Quarto et proposant 3 formats de sortie : HTML, PDF et DOCX
 - Deux templates de présentation et de rapports au format Rmarkdown
 - Un template de carte de visite au format Rmarkdown
+- Un template de projet Rstudio suivant un certain nombre de "bonnes pratiques"
 
 ## Palette de couleurs
 
@@ -226,6 +227,20 @@ Ces deux templates sont accessibles via l'interface de création de documents Rm
 # Template de carte de visite
 
 Une carte de visite, basée sur {pagedown}, avec logo INRAE peut-être produite en plusieurs exemplaires par page (nombre paramétrable) via l'interface de création de documents Rmarkdown sous Rstudio.
+
+# Création d'un répertoire d'analyse
+
+Nous proposons dans ce package un template de projet pour l'analyse de
+données, librement inspiré du package
+[{ProjectTemplate}](https://cran.r-project.org/web/packages/ProjectTemplate/)
+Ce template est directement accessible dans Rstudio via
+`Projects > New Project > New Directory > Data Analysis Project`.
+L'utilisateur peut ici définir la localisation de son projet et choisir
+d'initialiser ou non un dépôt git.
+
+> Note : Cette architecture n'est qu'un exemple de bonne pratiques
+> parmis bien d'autres. Libre à l'utilisateur de modifier ce template selon ses habitudes. Vos suggestions d'améliorations sont évidemment les
+> bienvenues [ici](https://github.com/davidcarayon/InraeThemes/issues).
 
 # Work in Progress / TO-DO
 

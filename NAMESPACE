@@ -3,6 +3,7 @@
 export(bs_inrae)
 export(create_presentation)
 export(create_report)
+export(new_analysis)
 export(palette_inrae)
 export(scale_color_inrae)
 export(scale_fill_inrae)

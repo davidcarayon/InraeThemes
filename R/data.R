@@ -6,3 +6,10 @@
 "example_datasets"
 
 
+
+#' Jeu de couleurs INRAE
+#'
+#' Cet objet contient les couleurs INRAE
+#'
+#' @format un vecteur R
+"couleurs_inrae"

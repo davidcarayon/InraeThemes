@@ -1,3 +1,7 @@
+## InraeThemes 2.1.0
+
+* Re-introduced data analysis project template
+
 ## InraeThemes 2.0.1
 
 * Update to latex preambles to better handle YAML metadata
