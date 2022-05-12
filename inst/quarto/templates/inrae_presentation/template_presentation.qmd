@@ -8,14 +8,20 @@ format:
     sansfont: Avenir Next LT Pro
     include-in-header: ressources/beamercolorthemeinrae.sty
     aspectratio: 169
+    keep-tex: true
     toc: true
     toc-title: "Sommaire"
-    logo: ressources/bloc-etat.png
+    header-includes: \logo{\includegraphics[width=2cm]{ressources/bloc-etat-white-bg.png}}
   revealjs:
+    title-slide-attributes:
+      data-background-image: ressources/bloc-etat-white-bg.png
+      data-background-size: 20%
+      data-background-position: 99.5% 99%
     logo: ressources/bloc-etat.png
     footer: "Pied de page"
     slide-number: "c/t"
     toc: true
+    auto-stretch: false
     toc-title: "Sommaire" 
     toc-depth: 1
     self-contained: true
@@ -40,6 +46,36 @@ format:
 - Publiez des articles, des rapports, des présentations, des sites web, des blogs et des livres de haute qualité en HTML, PDF, MS Word, ePub et plus encore.
 
 - Rédigez des documents en format markdown scientifique, notamment des équations, des citations, des références croisées, des panneaux de figures, des légendes, une mise en page avancée, etc.
+
+## Quelques blocs
+
+:::{.callout-note}
+## Bloc note
+Contenu du bloc
+:::
+
+:::{.callout-important}
+## Bloc important
+Contenu du bloc
+:::
+
+:::{.callout-caution}
+## Bloc caution
+Contenu du bloc
+:::
+
+---
+
+:::{.callout-warning}
+## Bloc warning
+Contenu du bloc
+:::
+
+:::{.callout-tip}
+## Bloc tip
+Contenu du bloc
+:::
+
 
 ## Adaptation INRAE
 
