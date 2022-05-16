@@ -53,11 +53,11 @@ Description of the project's architecture :
 
 -   `cache` : The cache is used to store data output.
 
--   `data` : The data directory stores all data inputs in raw format.
+-   `input` : The data directory stores all data inputs in raw format.
 
 -   `docs` : Here you can store any source or reference material about the project.
 
--   `img` : Used to store image output, including Rplots, image files or gif animations.
+-   `output` : Used to store image output, including Rplots, image files or gif animations.
 
 -   `R` : R source code (Plain R files or Rmd/Qmd notebooks)
 
