@@ -12,11 +12,11 @@ new_analysis <- function(projname = "MyProject",init = TRUE){
   dir.create(projname, recursive = TRUE, showWarnings = FALSE)
 
   # Creating folders --------------------------------------------------------
-  dir.create(file.path(projname,"data"))
+  dir.create(file.path(projname,"input"))
   dir.create(file.path(projname,"cache"))
   dir.create(file.path(projname,"scripts"))
   dir.create(file.path(projname,"docs"))
-  dir.create(file.path(projname,"img"))
+  dir.create(file.path(projname,"output"))
   dir.create(file.path(projname,"R"))
   dir.create(file.path(projname,"report"))
 
@@ -53,11 +53,11 @@ Description of the project's architecture :
 
 -   `cache` : The cache is used to store data output.
 
--   `data` : The data directory stores all data inputs in raw format.
+-   `input` : The data directory stores all data inputs in raw format.
 
 -   `docs` : Here you can store any source or reference material about the project.
 
--   `img` : Used to store image output, including Rplots, image files or gif animations.
+-   `output` : Used to store image output, including Rplots, image files or gif animations.
 
 -   `R` : R source code (Plain R files or Rmd/Qmd notebooks)
 
