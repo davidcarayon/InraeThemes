@@ -14,17 +14,17 @@ format:
     header-includes: \logo{\includegraphics[width=2cm]{ressources/bloc-etat-white-bg.png}}
   revealjs:
     title-slide-attributes:
-      data-background-image: ressources/bloc-etat-white-bg.png
-      data-background-size: 20%
-      data-background-position: 99.5% 99%
+      data-background-image: ressources/sigle-inrae.png
+      data-background-size: 40%
+      data-background-position: left
+      data-background-opacity: "0.5" 
     logo: ressources/bloc-etat.png
     footer: "Pied de page"
+    transition: fade
     slide-number: "c/t"
-    toc: true
     auto-stretch: false
-    toc-title: "Sommaire" 
-    toc-depth: 1
     self-contained: true
+    center-title-slide: true
     theme: [ressources/reveal_inrae.scss]
     plugins:
       - PdfExport
@@ -33,7 +33,7 @@ format:
     toc: true
 ---
 
-# Template de présentation Quarto INRAE
+# Template de présentation Quarto INRAE {background-color="#00a3a6"}
 
 ## Bienvenue sur Quarto 
 
@@ -76,6 +76,13 @@ Contenu du bloc
 Contenu du bloc
 :::
 
+```{r}
+#| echo: true
+#| eval: false
+## Bloc de code
+library(tools)
+options(scipen = 999)
+```
 
 ## Adaptation INRAE
 
@@ -115,4 +122,4 @@ Présentation PPTX (Powerpoint) :
 
 ::::
   
-# Merci de votre attention ! {background-color="#E0FFFF"}
+# Merci de votre attention ! {background-color="#00a3a6"}
