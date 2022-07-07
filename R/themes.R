@@ -54,13 +54,13 @@ theme_inrae <- function(base_size = 15) {
 
       # Plot
       plot.title = ggplot2::element_text(family = "Raleway",
-                                         color = inrae,
+                                         color = inrae_sombre,
                                          face = "bold",
                                          size = rel(1.2), hjust = 0,
                                          margin = ggplot2::margin(t = 0, r = 0, b = 4, l = 0, unit = "pt")),
       plot.subtitle = ggplot2::element_text(family = "Raleway",
                                             color = inrae,
-                                            face = "bold",
+                                            face = "italic",
                                             size = rel(0.9), hjust = 0,
                                             margin = ggplot2::margin(t = 0, r = 0, b = 3, l = 0, unit = "pt")),
 
