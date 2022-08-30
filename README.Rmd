@@ -23,6 +23,7 @@ library(magrittr)
 [![packageversion](https://img.shields.io/badge/Package%20version-2.2.0-green?style=flat-square)](commits/master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![R-CMD-check](https://github.com/davidcarayon/InraeThemes/workflows/R-CMD-check/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions)
+[![DOI](https://zenodo.org/badge/274901390.svg)](https://zenodo.org/badge/latestdoi/274901390)
 <!-- badges: end -->
 
 InraeThemes est une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE.

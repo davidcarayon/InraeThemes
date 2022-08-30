@@ -9,7 +9,7 @@ Authors@R:
            email = "david.carayon@inrae.fr"),
     person(given = "Sébastien",
            family = "Boutry",
-           role = c("aut"),
+           role = c("ctb"),
            email = "sebastien.boutry@inrae.fr")
     )       
 Description: Ce package met à disposition une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE.
