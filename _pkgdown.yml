@@ -1,4 +1,4 @@
-url: ~
+url: https://davidcarayon.github.io/InraeThemes/
 template:
   bootstrap: 5
   bslib:
@@ -18,3 +18,4 @@ navbar:
   right:
     - icon: fa-github
       href: https://github.com/davidcarayon/InraeThemes
+
