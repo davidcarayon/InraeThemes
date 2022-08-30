@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# InraeThemes <img src="man/figures/logo_hex.png" align="right" height="139"/>
+# InraeThemes <img src="man/figures/logo_hex.png" align="right" width="20%"/>
 
 <!-- badges: start -->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![packageversion](https://img.shields.io/badge/Package%20version-2.1.0-green?style=flat-square)](commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2.2.0-green?style=flat-square)](commits/master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![R-CMD-check](https://github.com/davidcarayon/InraeThemes/workflows/R-CMD-check/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions)
 <!-- badges: end -->
@@ -31,7 +31,8 @@ ou encore via :
 remotes::install_git("https://gitlab.irstea.fr/david.carayon/inraethemes")
 ```
 
-> NB : L’ancienne version (1.0.1) peut toujours être installée via :
+> NB : L’ancienne version (1.0.1), qui contenait notamment des modèles
+> Rmarkdown, peut toujours être installée via :
 
 ``` r
 # install.packages("remotes")
@@ -66,28 +67,10 @@ tinytex::install_tinytex()
 -   Une version de Rstudio supérieure à la 2022.02.1 est nécessaire pour
     utiliser Quarto de manière conviviale.
 
-# Présentation des fonctionnalités
+# Thème et palettes {ggplot2}
 
-InraeThemes propose ces éléments :
-
--   Une palette de couleur
--   Un thème ggplot2
--   Un thème Bootstrap Sass basé sur {bslib}
--   Deux versions de `scale_` : `scale_fill_inrae()` et
-    `scale_color_inrae()`
--   Un template de présentation basé sur la classe `presentation` de
-    Quarto et proposant 3 formats de sortie : HTML, PDF et PPTX
--   Un template de rapport basé sur la classe `book` de Quarto et
-    proposant 3 formats de sortie : HTML, PDF et DOCX
--   Deux templates de présentation et de rapports au format Rmarkdown
--   Un template de carte de visite au format Rmarkdown
--   Un template de projet Rstudio suivant un certain nombre de “bonnes
-    pratiques”
-
-## Palette de couleurs
-
-La palette de couleurs construite à partir de la charte graphique V3 est
-la suivante :
+La palette de couleurs est construite à partir de la charte graphique
+V3.
 
 ``` r
 palette_inrae()
@@ -95,16 +78,14 @@ palette_inrae()
 
 ![](man/figures/scales.png)
 
-## Thème ggplot2 et scales
-
-Voici des exemples de graphes utilisants le `theme_inrae()` ainsi que
-les fonctions `scale_()`:
+Les deux fonctions à utiliser sont `theme_inrae()` pour le thème général
+du graphique ainsi que les fonctions `scale_<fill/color>_inrae()`.
 
 ``` r
 library(InraeThemes)
 library(ggplot2)
 
-## Ce package contient des données d'exemple
+## Example dataset
 data("example_datasets")
 
 ggplot(example_datasets$www, aes(x = Minute, y = Users, color = Measure, shape = Measure)) +
@@ -121,6 +102,7 @@ ggplot(example_datasets$www, aes(x = Minute, y = Users, color = Measure, shape =
 <img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
+
 ggplot(example_datasets$cars, aes(x = mpg, fill = cyl,colour = cyl)) +
   geom_density(alpha = 0.75) +
   scale_fill_inrae() +
@@ -132,6 +114,7 @@ ggplot(example_datasets$cars, aes(x = mpg, fill = cyl,colour = cyl)) +
 <img src="man/figures/README-example-2.png" width="100%" />
 
 ``` r
+
 ggplot(example_datasets$dia, aes(x = price, fill = cut)) +
   geom_histogram(binwidth = 850) +
   xlab("Price (USD)") +
@@ -144,6 +127,7 @@ ggplot(example_datasets$dia, aes(x = price, fill = cut)) +
 <img src="man/figures/README-example-3.png" width="100%" />
 
 ``` r
+
 ggplot(example_datasets$drivers, aes(x = Year, y = Deaths,fill = Year)) +
   geom_boxplot(size = 0.25) +
   ylab("Monthly Deaths") +
@@ -155,10 +139,11 @@ ggplot(example_datasets$drivers, aes(x = Year, y = Deaths,fill = Year)) +
 
 <img src="man/figures/README-example-4.png" width="100%" />
 
-# Template Bootstrap Sass
+# Thème Shiny/Sass
 
-Vous pouvez prévisualiser l’apparence de ce thème bootstrap pouvant être
-utilisé avec Shiny et Rmarkdown (et probablement Quarto un jour) via :
+Ce package propose un thème Sass construit avec
+[bslib](https://rstudio.github.io/bslib/). Le thème peut être
+prévisualisé comme ceci :
 
 ``` r
 bslib::bs_theme_preview(bs_inrae())
@@ -166,16 +151,7 @@ bslib::bs_theme_preview(bs_inrae())
 
 ![](man/figures/cap_bslib.png)
 
-Ce thème peut être utilisé dans un document Rmarkdown en préciseant dans
-son YAML :
-
-``` r
-output:
-  html_document:
-    theme: !expr InraeThemes::bs_inrae()
-```
-
-Ou dans une application Shiny via :
+Et est utilisé dans une application Shiny via :
 
 ``` r
 ui <- fluidPage(
@@ -184,35 +160,103 @@ ui <- fluidPage(
 )
 ```
 
-# Templates de documents/présentations Quarto
+# Templates de documents aux couleurs INRAE
 
-Ce package permet aussi de rédiger des rapports et/ou présentations
-pré-formatés selon la charte graphique INRAE.
+Il existe à ce jour dans l’écosystème R deux technologies (ou packages)
+pour la réalisation de documents :
 
-> **Attention, ces fonctions ne visent qu’à fournir des templates (css,
-> LaTeX, docx, logos) correspondants à la charte INRAE, associés à des
-> fichiers Quarto avec un YAML correctement configuré. Nous invitons les
-> utilisateurs à se renseigner par la suite sur chacune des technologies
-> utilisées pour aller plus loin dans la personnalisation des
-> documents.**
+-   [Rmarkdown](https://rmarkdown.rstudio.com/) : Le plus classique,
+    bénéficie aujourd’hui d’un bon recul et d’une bonne stabilité
+-   [Quarto](https://quarto.org/) : Une nouvelle version de Rmarkdown,
+    plus orientée “multilangue” et moins dépendant de R. Mais très jeune
+    et soumis à de nombreuses évolutions.
 
-Dans tous les cas, la documentation de Quarto est indispensable pour la
-customisation de ces documents :
+Pour le package {InraeThemes}, la décision a été prise très tôt de
+migrer au plus vite les sorties proposées vers Quarto dès qu’un
+équivalent à ce qui était proposé avec Rmarkdown est disponible.
 
--   [Guide d’utilisation des formats
-    quarto](https://quarto.org/docs/guide/)
--   [Liste exhaustive des options](https://quarto.org/docs/reference/)
+> **Dans les deux cas, ce package ne vise qu’à fournir des templates
+> associés à des ressources (Tex, Css…) et à des documents Rmd/Qmd au
+> YAML correctement configurés. Il est recommandé de se tourner vers les
+> documentations de ces deux technologies pour pleinement profiter des
+> fonctionnalités proposées.**
 
-Ces templates sont soit disponibles via une ligne de commande, en
-l’absence pour le moment d’interface graphique de création de document
-quarto avec template, soit via l’interface graphique Rstudio de création
-de projet.
+Vous trouverez les documentations respectives à ces liens :
+
+-   [Documentation Quarto](https://quarto.org/docs/guide/)
+
+-   [Documentation Rmarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+## Templates Rmarkdown
+
+Trois templates Rmarkdown sont encore proposés par ce package et sont
+accessibles via l’interface graphique Rstudio :
+
+| Format (Technologie)             | Via Interface graphique Rstudio                                 |
+|----------------------------------|-----------------------------------------------------------------|
+| Présentation Xaringan (RemarkJS) | New file \> Rmarkdown \> From Template \> Présentation INRAE    |
+| Rapport Paginé (PagedJS)         | New file \> Rmarkdown \> From Template \> Rapport INRAE         |
+| Cartes de visite (PagedJS)       | New file \> Rmarkdown \> From Template \> Carte de visite INRAE |
+
+> **Note : Avec la récente implémentation de PagedJS dans Quarto, les
+> deux derniers formats seront bientôt amenés à migrer vers Quarto**
+
+## Templates Quarto
+
+Rstudio ne propose pas actuellement de module de création de document
+Quarto avec template via leur interface graphique. La procédure
+actuellement proposée pour l’utilisation de templates Quarto est de
+créer des [extensions](https://quarto.org/docs/extensions/formats.html)
+Quarto.
+
+L’extension créee pour accompagner {InraeThemes} est ici :
+[davidcarayon/quarto-inrae-extension](https://github.com/davidcarayon/quarto-inrae-extension)
+
+### Installation de l’extension
+
+Pour l’installer, l’utilisation du terminal est pour l’instant requise
+(en attendant l’acceptation de la
+[PR#45](https://github.com/quarto-dev/quarto-r/pull/45)). Deux approches
+sont possibles.
+
+Pour démarrer un nouveau document/projet avec l’extension :
+
+``` bash
+quarto use template davidcarayon/quarto-inrae-extension
+```
+
+Pour ajouter l’extension sur un projet déjà existant :
+
+``` bash
+quarto install extension davidcarayon/quarto-inrae-extension
+```
+
+### Utilisation
+
+Un template au format .Qmd sera automatiquement créé en portant le nom
+saisi dans le terminal. Le choix du format de sortie désiré se fait dans
+le YAML en rajoutant le format en suffixe à `quarto-inrae-*`. Les
+formats possibles sont :
+
+Pour des slides :
+
+![](man/figures/cap_presentations.png)
+
+Pour des documents :
+
+![](man/figures/cap_documents.png)
+
+### Personnalisation
+
+Pour customiser ces templates, il vous suffit de vous rendre dans le
+répertoire `_extensions` et de modifier les fichiers css/scss/tex ou les
+images associées.
 
 **A noter pour les rapports PDF :**
 
 -   La sortie PDF (basée sur LaTeX) s’appuie sur des fichiers `.tex`
-    indépendants qu’il faudra customiser pour l’image de couverture
-    ainsi que pour la dernière page.
+    indépendants qu’il faudra customiser à l’intérieur de l’extension
+    pour l’image de couverture ainsi que pour la dernière page.
 
 -   L’image sur la page de garde (photo.png) peut-être remplacée par
     n’importe quelle image. Si la hauteur de la nouvelle image diffère
@@ -220,78 +264,27 @@ de projet.
     `\vspace*{}` en L11 de `templates/page_de_garde.tex` pour retrouver
     une mise en forme correcte.
 
--   la cartouche “Centre” peut être remplacée par celle qui vous
+-   La cartouche “Centre” peut être remplacée par celle qui vous
     correspond à télécharger
     [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3749/33311/version/1/file/Cartouches%20Centre.zip)
 
-## Création via ligne de commande
+# Template de projets
 
-En l’absence de module de création de document quarto basé sur un
-template à la Rmarkdown (implémentation prévue pour juillet 2022), la
-création d’un document Quarto avec un thème INRAE est pour le moment
-uniquement possible via les fonctions suivantes (ou via l’interface de
-création de projets présentée ci-dessous):
+## Livre quarto (ou rapport fragmenté)
 
-``` r
-InraeThemes::create_presentation()
-```
+Il est également possible via ce package, via l’interface de création de
+projet Rstudio, de créer un projet de livre quarto (équivalent à un
+rapport avec plusieurs chapitres) à la
+[{bookdown}](https://bookdown.org/) :
 
-ou pour les rapports :
+-   `Projects > New Project > New Directory > Livre / Rapport chapitré INRAE`
 
-``` r
-InraeThemes::create_report()
-```
+Il suffit d’utiliser le bouton `Build` (situé en haut à droite sur
+Rstudio) pour compiler ce type de document une fois créé.
 
-Ces fonctions vont copier, dans le répertoire courant (ou un autre
-répertoire au choix) l’ensemble des fichiers associés aux templates
-(fichiers .qmd, css, tex, etc.).
+![](man/figures/build_cap.png)
 
-Le YAML de ces template contient les informations nécessaires pour un
-rendu sous 3 formats possibles : HTML, PDF et PPTX/DOCX. Vous pouvez
-soit laisser ce contenu et choisir le format de rendu via le menu
-déroulant associé aux bouton `Render` pour les présentations et `Build`
-(situé en haut à droite sur Rstudio) pour les rapports, soit effacer les
-formats non souhaités.
-
-## Création via projets Rstudio
-
-L’interface graphique de création de projets Rstudio permet de créer des
-documents avec des thèmes INRAE via :
-
--   `Projects > New Project > New Directory > Présentation INRAE`
-
-pour les présentations ou
-
--   `Projects > New Project > New Directory > Rapport INRAE`
-
-pour les rapports.
-
-# Templates de documents/présentations Rmarkdown
-
-Deux templates Rmarkdown issus de la version 1.0 d’INRAEThemes ont été
-conservés car il n’existe pas encore d’équivalents sous Quarto (et
-étaient les plus utilisés):
-
--   Présentation RemarkJS via {xaringan}
--   Rapport paginé via {pagedreport}
-
-Ces deux templates sont accessibles via l’interface de création de
-documents Rmarkdown sous Rstudio.
-
-> **Attention, ces éléments ne visent encore une fois qu’à fournir des
-> templates (css, LaTeX, logos) correspondants à la charte INRAE,
-> associés à des fichiers Rmarkdown avec un YAML correctement configuré.
-> Nous invitons les utilisateurs à se renseigner par la suite sur
-> chacune des technologies utilisées pour aller plus loin dans la
-> personnalisation des documents.**
-
-# Template de carte de visite
-
-Une carte de visite, basée sur {pagedown}, avec logo INRAE peut-être
-produite en plusieurs exemplaires par page (nombre paramétrable) via
-l’interface de création de documents Rmarkdown sous Rstudio.
-
-# Création d’un répertoire d’analyse
+## Analyse de données
 
 Nous proposons dans ce package un template de projet pour l’analyse de
 données, librement inspiré du package
@@ -309,12 +302,9 @@ d’initialiser ou non un dépôt git.
 
 # Work in Progress / TO-DO
 
--   Convertir les templates de projet Quarto en templates de documents
-    sous Rstudio lorsque ce sera disponible (juillet 2022)
-
--   Création d’un format de rapport PDF “simple” et non sous format
-    book, qui sera proposé une fois les templates de documents
-    disponibles
-
 -   Meilleure gestion de la page de garde PDF (photo) ainsi que des
     infos de bas de page directement dans le YAML
+-   Implémentation des templates issus de PagedJS lorsqu’il seront
+    disponibles
+-   Proposition de code R au lieu du terminal pour l’installation
+    d’extension quarto (en attente PR#45)

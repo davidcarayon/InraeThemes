@@ -1,3 +1,9 @@
+## InraeThemes 2.2.0
+
+* Added Quarto extension support for reports and slides
+* Improved README
+* New Pkgdown-based website : [https://davidcarayon.github.io/inraethemes/](https://davidcarayon.github.io/inraethemes/)
+
 ## InraeThemes 2.1.0
 
 * Re-introduced data analysis project template
@@ -6,7 +12,7 @@
 
 * Update to latex preambles to better handle YAML metadata
 
-# InraeThemes 2.0.0
+## InraeThemes 2.0.0
 
 * Added a `NEWS.md` file to track changes to the package.
 * Converted most of document templates from Rmarkdown to Quarto

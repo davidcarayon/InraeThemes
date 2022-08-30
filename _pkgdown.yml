@@ -1,0 +1,20 @@
+url: ~
+template:
+  bootstrap: 5
+  bslib:
+    bg: "#FFFFFF"
+    fg: "#275662"
+    primary: "#00a3a6"
+navbar:
+  left:
+    - icon: fa-home
+      href: index.html
+    - icon: fa-file-code-o
+      text: "Fonctions"
+      href: reference/index.html
+    - icon: fa-newspaper
+      text: Changelog
+      href: news/index.html
+  right:
+    - icon: fa-github
+      href: https://github.com/davidcarayon/InraeThemes

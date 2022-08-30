@@ -1,6 +1,6 @@
 Package: InraeThemes
 Title: Modèles et thèmes INRAE
-Version: 2.1.0
+Version: 2.2.0
 Authors@R: 
     c(
     person(given = "David",
@@ -17,7 +17,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 Imports: 
@@ -26,6 +26,7 @@ Imports:
     rmarkdown,
     pagedown,
     quarto,
+    rstudioapi,
     scales,
     cli,
     bslib,

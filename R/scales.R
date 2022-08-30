@@ -19,7 +19,7 @@ palette_inrae <- function() {
 }
 
 
-#' Echelle de couleur INRAE
+#' Echelle de remplissage INRAE
 #'
 #' @param ... Autres arguments pour \code{discrete_scale}.
 #'
@@ -30,7 +30,7 @@ scale_fill_inrae <- function(...){
   ggplot2::discrete_scale("fill","inrae",scales::manual_pal(values = c("#00a3a6","#275662","#9dc544","#9ed6e3","#423089","#ed6e6c","#797870","#c4c0b3","#4e5352")), ...)
 }
 
-#' Echelle de remplissage INRAE
+#' Echelle de couleur INRAE
 #'
 #' @param ... Autres arguments pour \code{discrete_scale}.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/scales.R
 \name{scale_color_inrae}
 \alias{scale_color_inrae}
-\title{Echelle de remplissage INRAE}
+\title{Echelle de couleur INRAE}
 \usage{
 scale_color_inrae(...)
 }
@@ -13,5 +13,5 @@ scale_color_inrae(...)
 a color scale
 }
 \description{
-Echelle de remplissage INRAE
+Echelle de couleur INRAE
 }
