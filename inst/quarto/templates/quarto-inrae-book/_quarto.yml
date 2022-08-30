@@ -21,23 +21,23 @@ format:
     toc-title: "Sommaire"
     number-sections: true
     highlight-style: github
-    cover-image: templates/bloc-etat
-    css: templates/styles.css
+    cover-image: ressources/bloc-etat
+    css: ressources/styles.css
   pdf:
     documentclass: scrreprt
     sansfont: Raleway
     mainfont: Avenir Next LT Pro
     toc-title: "Sommaire"
-    include-before-body: templates/page_de_garde.tex
-    include-in-header: templates/preamble.tex
-    include-after-body: templates/lastPage.tex
+    include-before-body: ressources/page_de_garde.tex
+    include-in-header: ressources/preamble.tex
+    include-after-body: ressources/lastPage.tex
     geometry:
       - top=25mm
       - left=25mm
       - right=25mm
       - bottom=25mm
   docx:
-    reference-doc: templates/template.docx
+    reference-doc: ressources/template.docx
     toc-title: "Sommaire"
 
 

@@ -1,0 +1,52 @@
+\makeatletter
+\let\inserttitle\@title
+\makeatother
+\makeatletter
+\let\insertauthor\@author
+\makeatother
+\makeatletter
+\let\insertdate\@date
+\makeatother
+
+\newgeometry{left=2cm,bottom=0.1cm}
+
+\vspace*{-4.5cm}
+
+\makebox[0pt][l]{%
+\raisebox{-\totalheight}[0pt][0pt]{%
+\hspace{-2.1cm}
+\includegraphics[width=220mm]{ressources/photo.png}}}%
+
+\vspace*{12.15cm}
+
+\hspace{-2.7cm}
+\includegraphics[width=10cm]{ressources/cartouche}\par
+
+\hspace{12cm}
+\includegraphics[width=10cm]{ressources/bloc-etat}\par
+\vspace*{-2cm}
+
+\hspace{-2.8cm}
+\includegraphics[width=8cm]{ressources/sigle-inrae}
+
+\vspace*{1cm}
+
+\hspace{-1cm}
+\setlength{\parindent}{0cm}
+\includegraphics[width=0.5cm]{ressources/fleche-titre}\hspace{0.3cm}\textcolor{inrae}{\sffamily\Huge\bfseries \inserttitle}\par\bigskip
+
+\hspace{-1cm}\textcolor{inrae}{\sffamily \insertdate}\par
+
+\hspace{-1cm}\textcolor{inraefonce}{\sffamily \insertauthor}\par
+
+\vspace*{0.25cm}
+
+\hspace{-1.3cm}
+\raisebox{-.42\height}{\includegraphics[width=1cm]{ressources/7}}
+\textcolor{inraefonce}{\sffamily
+Document distribué sous licence ouverte}\par
+\vspace*{-0.3cm}
+\hspace{-1.1cm} \href{https://www.etalab.gouv.fr/licence-ouverte-open-licence/}{https://www.etalab.gouv.fr/licence-ouverte-open-licence/}
+
+\restoregeometry
+
