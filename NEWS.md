@@ -1,3 +1,7 @@
+## InraeThemes 2.2.1
+
+* Renamed the inrae format (removed the quarto- prefix)
+
 ## InraeThemes 2.2.0
 
 * Added Quarto extension support for reports and slides

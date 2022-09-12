@@ -193,7 +193,7 @@ quarto install extension davidcarayon/quarto-inrae-extension
 
 ### Utilisation 
 
-Un template au format .Qmd sera automatiquement créé en portant le nom saisi dans le terminal. Le choix du format de sortie désiré se fait dans le YAML en rajoutant le format en suffixe à `quarto-inrae-*`. Les formats possibles sont :
+Un template au format .Qmd sera automatiquement créé en portant le nom saisi dans le terminal. Le choix du format de sortie désiré se fait dans le YAML en rajoutant le format en suffixe à `inrae-*`. Les formats possibles sont :
 
 Pour des slides :
 
