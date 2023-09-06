@@ -6,10 +6,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![packageversion](https://img.shields.io/badge/Package%20version-2.2.0-green?style=flat-square)](commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-2.3.0-green?style=flat-square)](commits/master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![R-CMD-check](https://github.com/davidcarayon/InraeThemes/workflows/R-CMD-check/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions)
+[![R-CMD-check](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml)
 [![DOI](https://zenodo.org/badge/274901390.svg)](https://zenodo.org/badge/latestdoi/274901390)
+
 <!-- badges: end -->
 
 > *InraeThemes est une collection non officielle de templates, thèmes et
@@ -241,11 +242,15 @@ possibles sont :
 
 Pour des slides :
 
-![](man/figures/cap_presentations.png)
+- `inrae-revealjs` (HTML)
+- `inrae-pptx` (Powerpoint)
+- `inrae-beamer` (PDF)
 
 Pour des documents :
 
-![](man/figures/cap_documents.png)
+- `inrae-html` (HTML)
+- `inrae-docx` (Word)
+- `inrae-pdf` (PDF)
 
 ### Personnalisation
 

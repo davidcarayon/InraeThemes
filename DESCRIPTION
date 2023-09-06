@@ -1,6 +1,6 @@
 Package: InraeThemes
-Title: Modèles et thèmes INRAE
-Version: 2.2.1
+Title: Templates and themes following INRAE Design System
+Version: 2.3.0
 Authors@R: 
     c(
     person(given = "David",
@@ -12,7 +12,7 @@ Authors@R:
            role = c("ctb"),
            email = "sebastien.boutry@inrae.fr")
     )       
-Description: Ce package met à disposition une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE.
+Description: This package provides a set of non-official templates, themes and other grahical elements based on INRAE Research Institute design system
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

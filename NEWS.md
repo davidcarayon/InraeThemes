@@ -1,3 +1,7 @@
+## InraeThemes 2.3.0
+
+* Cleanup for CRAN
+
 ## InraeThemes 2.2.1
 
 * Renamed the inrae format (removed the quarto- prefix)
