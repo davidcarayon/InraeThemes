@@ -1,0 +1,26 @@
+nav .text-muted {
+  color: #d8d8d8 !important;
+}
+
+a {
+  color: #00a3a6;
+}
+
+a:hover {
+  color: #00a3a6;
+}
+
+button.btn.btn-primary.btn-copy-ex {
+  background-color: #00a3a6;
+  border-color: #00a3a6;
+}
+
+.app-preview {
+  margin: 1.5em 0.75em;
+  padding: 0.25em;
+  box-shadow:
+    0 3.9px 4.6px rgba(0, 0, 0, 0.08),
+    0 12.3px 8.4px rgba(0, 0, 0, 0.056),
+    0 18.8px 19.2px rgba(0, 0, 0, 0.037),
+    0 22px 40px rgba(0, 0, 0, 0.019);
+}

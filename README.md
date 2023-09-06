@@ -12,9 +12,9 @@
 [![DOI](https://zenodo.org/badge/274901390.svg)](https://zenodo.org/badge/latestdoi/274901390)
 <!-- badges: end -->
 
-InraeThemes est une collection non officielle de templates, thèmes et
-autres éléments graphiques basés sur des formats en lien avec R et en
-accords avec la charte graphique INRAE.
+> *InraeThemes est une collection non officielle de templates, thèmes et
+> autres éléments graphiques basés sur des formats en lien avec R et en
+> accords avec la charte graphique INRAE.*
 
 # Installation
 
@@ -42,31 +42,31 @@ remotes::install_github("davidcarayon/InraeThemes@v1.0.1")
 
 # Pré-requis
 
--   Certaines fonctionnalités de ce package nécessitent l’installation
-    de 2 polices adoptées dans la charte graphique INRAE : *Raleway* et
-    *Avenir Next LT Pro*. Ces polices peuvent être téléchargées
-    [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3007/30036/version/5/file/POLICES.zip).
+- Certaines fonctionnalités de ce package nécessitent l’installation de
+  2 polices adoptées dans la charte graphique INRAE : *Raleway* et
+  *Avenir Next LT Pro*. Ces polices peuvent être téléchargées
+  [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3007/30036/version/5/file/POLICES.zip).
 
--   La police Fira Code est utilisée dans certains templates et est,
-    d’ailleurs, recommandée sur votre Rstudio pour l’affichage du code
-    avec ligatures : [Fira
-    Code](https://fonts.google.com/specimen/Fira+Code)
+- La police Fira Code est utilisée dans certains templates et est,
+  d’ailleurs, recommandée sur votre Rstudio pour l’affichage du code
+  avec ligatures : [Fira
+  Code](https://fonts.google.com/specimen/Fira+Code)
 
--   Si vous ne possédez aucune installation de LaTeX sur votre machine,
-    vous devrez également en installer une version minimale pour
-    utiliser les modèles mobilisant LaTeX :
+- Si vous ne possédez aucune installation de LaTeX sur votre machine,
+  vous devrez également en installer une version minimale pour utiliser
+  les modèles mobilisant LaTeX :
 
 ``` r
 install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 
--   Certains modèles nécessitent l’utilisation de Quarto, successeur de
-    Rmarkdown, qui peut être téléchargé ici :
-    <https://quarto.org/docs/get-started/>.
+- Certains modèles nécessitent l’utilisation de Quarto, successeur de
+  Rmarkdown, qui peut être téléchargé ici :
+  <https://quarto.org/docs/get-started/>.
 
--   Une version de Rstudio supérieure à la 2022.02.1 est nécessaire pour
-    utiliser Quarto de manière conviviale.
+- Une version de Rstudio supérieure à la 2022.02.1 est nécessaire pour
+  utiliser Quarto de manière conviviale.
 
 # Thème et palettes {ggplot2}
 
@@ -166,11 +166,11 @@ ui <- fluidPage(
 Il existe à ce jour dans l’écosystème R deux technologies (ou packages)
 pour la réalisation de documents :
 
--   [Rmarkdown](https://rmarkdown.rstudio.com/) : Le plus classique,
-    bénéficie aujourd’hui d’un bon recul et d’une bonne stabilité
--   [Quarto](https://quarto.org/) : Une nouvelle version de Rmarkdown,
-    plus orientée “multilangue” et moins dépendant de R. Mais très jeune
-    et soumis à de nombreuses évolutions.
+- [Rmarkdown](https://rmarkdown.rstudio.com/) : Le plus classique,
+  bénéficie aujourd’hui d’un bon recul et d’une bonne stabilité
+- [Quarto](https://quarto.org/) : Une nouvelle version de Rmarkdown,
+  plus orientée “multilangue” et moins dépendant de R. Mais très jeune
+  et soumis à de nombreuses évolutions.
 
 Pour le package {InraeThemes}, la décision a été prise très tôt de
 migrer au plus vite les sorties proposées vers Quarto dès qu’un
@@ -184,9 +184,9 @@ migrer au plus vite les sorties proposées vers Quarto dès qu’un
 
 Vous trouverez les documentations respectives à ces liens :
 
--   [Documentation Quarto](https://quarto.org/docs/guide/)
+- [Documentation Quarto](https://quarto.org/docs/guide/)
 
--   [Documentation Rmarkdown](https://bookdown.org/yihui/rmarkdown/)
+- [Documentation Rmarkdown](https://bookdown.org/yihui/rmarkdown/)
 
 ## Templates Rmarkdown
 
@@ -255,19 +255,19 @@ images associées.
 
 **A noter pour les rapports PDF :**
 
--   La sortie PDF (basée sur LaTeX) s’appuie sur des fichiers `.tex`
-    indépendants qu’il faudra customiser à l’intérieur de l’extension
-    pour l’image de couverture ainsi que pour la dernière page.
+- La sortie PDF (basée sur LaTeX) s’appuie sur des fichiers `.tex`
+  indépendants qu’il faudra customiser à l’intérieur de l’extension pour
+  l’image de couverture ainsi que pour la dernière page.
 
--   L’image sur la page de garde (photo.png) peut-être remplacée par
-    n’importe quelle image. Si la hauteur de la nouvelle image diffère
-    de celle d’origine, il faudra alors modifier la valeur en cm du
-    `\vspace*{}` en L11 de `templates/page_de_garde.tex` pour retrouver
-    une mise en forme correcte.
+- L’image sur la page de garde (photo.png) peut-être remplacée par
+  n’importe quelle image. Si la hauteur de la nouvelle image diffère de
+  celle d’origine, il faudra alors modifier la valeur en cm du
+  `\vspace*{}` en L11 de `templates/page_de_garde.tex` pour retrouver
+  une mise en forme correcte.
 
--   La cartouche “Centre” peut être remplacée par celle qui vous
-    correspond à télécharger
-    [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3749/33311/version/1/file/Cartouches%20Centre.zip)
+- La cartouche “Centre” peut être remplacée par celle qui vous
+  correspond à télécharger
+  [ici](https://intranet.inrae.fr/charte-identitaire/content/download/3749/33311/version/1/file/Cartouches%20Centre.zip)
 
 # Template de projets
 
@@ -278,7 +278,7 @@ projet Rstudio, de créer un projet de livre quarto (équivalent à un
 rapport avec plusieurs chapitres) à la
 [{bookdown}](https://bookdown.org/) :
 
--   `Projects > New Project > New Directory > Livre / Rapport chapitré INRAE`
+- `Projects > New Project > New Directory > Livre / Rapport chapitré INRAE`
 
 Il suffit d’utiliser le bouton `Build` (situé en haut à droite sur
 Rstudio) pour compiler ce type de document une fois créé.
@@ -303,9 +303,9 @@ d’initialiser ou non un dépôt git.
 
 # Work in Progress / TO-DO
 
--   Meilleure gestion de la page de garde PDF (photo) ainsi que des
-    infos de bas de page directement dans le YAML
--   Implémentation des templates issus de PagedJS lorsqu’il seront
-    disponibles
--   Proposition de code R au lieu du terminal pour l’installation
-    d’extension quarto (en attente PR#45)
+- Meilleure gestion de la page de garde PDF (photo) ainsi que des infos
+  de bas de page directement dans le YAML
+- Implémentation des templates issus de PagedJS lorsqu’il seront
+  disponibles
+- Proposition de code R au lieu du terminal pour l’installation
+  d’extension quarto (en attente PR#45)

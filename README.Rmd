@@ -26,7 +26,7 @@ library(magrittr)
 [![DOI](https://zenodo.org/badge/274901390.svg)](https://zenodo.org/badge/latestdoi/274901390)
 <!-- badges: end -->
 
-InraeThemes est une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE.
+> _InraeThemes est une collection non officielle de templates, thèmes et autres éléments graphiques basés sur des formats en lien avec R et en accords avec la charte graphique INRAE._
 
 # Installation
 

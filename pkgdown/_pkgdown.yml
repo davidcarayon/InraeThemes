@@ -1,9 +1,11 @@
 url: https://davidcarayon.github.io/InraeThemes/
 template:
   bootstrap: 5
+  bootswatch: pulse
   bslib:
+    pkgdown-nav-height: 100px
     bg: "#FFFFFF"
-    fg: "#275662"
+    fg: "#000000"
     primary: "#00a3a6"
 navbar:
   left:
