@@ -1,7 +1,6 @@
 #' Create a Quarto report/book template with INRAE theme
 #'
 #' @param dir the directory where the template will be copied to
-#' @param change_dir should the working directory be changed to dir ?
 #'
 #' @return a quarto book template
 #' @export

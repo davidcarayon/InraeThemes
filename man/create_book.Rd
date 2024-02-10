@@ -8,8 +8,6 @@ create_book(dir = "quarto-inrae-book")
 }
 \arguments{
 \item{dir}{the directory where the template will be copied to}
-
-\item{change_dir}{should the working directory be changed to dir ?}
 }
 \value{
 a quarto book template
