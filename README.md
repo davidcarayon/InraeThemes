@@ -35,7 +35,7 @@ remotes::install_github("davidcarayon/InraeThemes")
 > ```
 
 You will also need the two fonts defined in INRAE’s design system:
-Raleway and Avenir Next LT Pro. These fonts are available
+`Raleway` and `Avenir Next LT Pro`. These fonts are available
 [here](https://charte-identitaire.intranet.inrae.fr/content/download/3007/30036?version=5).
 
 # Colors
@@ -51,8 +51,8 @@ palette_inrae()
 
 ## ggplot2 themes and scales
 
-Customize your ggplots using INRAE’s colors with theme_inrae() and/or
-scale\_<fill/color>\_inrae().
+Customize your ggplots using INRAE’s colors with `theme_inrae()` and/or
+`scale_<fill/color>_inrae()`.
 
 Here are examples using the iris dataset.
 
@@ -61,32 +61,11 @@ library(InraeThemes)
 library(ggplot2)
 data(iris)
 
-ggplot(
-  data = iris,
-  aes(
-    x = Sepal.Length,
-    y = Petal.Length,
-    group = Species
-  )
-) +
-  geom_point(
-    aes(
-      color = Species,
-      shape = Species
-    ),
-    size = 3,
-    alpha = 0.8
-  ) +
+ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, group = Species)) +
+  geom_point(aes(color = Species, shape = Species), size = 3, alpha = 0.8) +
   geom_smooth(method = "lm", se = FALSE, aes(color = Species)) +
   scale_color_inrae() +
-  labs(
-    title = "Iris dimensions",
-    subtitle = "This is a subtitle explaining what you can see in this plot",
-    x = "Sepal Length",
-    y = "Petal Length",
-    color = "Iris species",
-    shape = "Iris species"
-  ) +
+  labs(title = "Iris dimensions", subtitle = "This is a subtitle explaining what you can see in this plot", x = "Sepal Length", y = "Petal Length", color = "Iris species", shape = "Iris species") +
   theme_inrae()
 ```
 
@@ -94,18 +73,10 @@ ggplot(
 
 ``` r
 
-
 ggplot(data = iris, aes(x = Sepal.Width)) +
-  geom_histogram(aes(fill = Species),
-    alpha = 0.5,
-    position = "identity"
-  ) +
+  geom_histogram(aes(fill = Species), alpha = 0.5, position = "identity") +
   scale_fill_inrae() +
-  labs(
-    x = "Sepal Width",
-    y = "Frequency",
-    title = "Sepal Width distribution"
-  ) +
+  labs(x = "Sepal Width", y = "Frequency", title = "Sepal Width distribution") +
   theme_inrae()
 ```
 

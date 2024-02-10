@@ -1,4 +1,4 @@
-#' Architecture type d'une analyse
+#' Opiniated data analysis directory structured
 #' Inpired by `ProjectTemplate`
 #'
 #' @param projname Name of the project to be created

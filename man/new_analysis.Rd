@@ -2,7 +2,7 @@
 % Please edit documentation in R/new_analysis_project.R
 \name{new_analysis}
 \alias{new_analysis}
-\title{Architecture type d'une analyse
+\title{Opiniated data analysis directory structured
 Inpired by \code{ProjectTemplate}}
 \usage{
 new_analysis(projname = "MyProject", init = TRUE)
@@ -16,6 +16,6 @@ new_analysis(projname = "MyProject", init = TRUE)
 a data analysis directory
 }
 \description{
-Architecture type d'une analyse
+Opiniated data analysis directory structured
 Inpired by \code{ProjectTemplate}
 }
