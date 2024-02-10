@@ -1,1 +1,0 @@
-globalVariables("couleurs_inrae")

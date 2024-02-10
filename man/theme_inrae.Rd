@@ -2,7 +2,7 @@
 % Please edit documentation in R/themes.R
 \name{theme_inrae}
 \alias{theme_inrae}
-\title{Theme ggplot aux couleurs INRAE}
+\title{ggplot theme with INRAE colors}
 \usage{
 theme_inrae(base_size = 15)
 }
@@ -13,5 +13,5 @@ theme_inrae(base_size = 15)
 a ggplot theme
 }
 \description{
-Ce theme ggplot correspond aux couleurs issues de la charte graphique INRAE V3.
+This ggplot theme uses colors and fonts defined in INRAE's design system
 }

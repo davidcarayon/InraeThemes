@@ -1,3 +1,10 @@
+## InraeThemes 3.0.0
+* Removing rmarkdown templates
+* Removing LaTeX-related templates
+* New logo
+* Full documentation refactoring
+* Update bootstrap theme to version 5
+
 ## InraeThemes 2.3.0
 
 * Cleanup for CRAN
@@ -10,7 +17,7 @@
 
 * Added Quarto extension support for reports and slides
 * Improved README
-* New Pkgdown-based website : [https://davidcarayon.github.io/inraethemes/](https://davidcarayon.github.io/inraethemes/)
+
 
 ## InraeThemes 2.1.0
 
