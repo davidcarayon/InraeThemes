@@ -21,7 +21,7 @@ The goal of this :package: is to provide a easy to use themes and color
 palettes for INRAE engineers and researchers. These are an
 **unofficial** and **opiniated** templates.
 
-Related work :
+## Related work
 
 - The
   [quarto-inrae-extension](https://github.com/davidcarayon/quarto-inrae-extension)
