@@ -1,5 +1,4 @@
 #' Opiniated data analysis directory structured
-#' Inpired by `ProjectTemplate`
 #'
 #' @param projname Name of the project to be created
 #' @param init Should a git repository be initialised ?

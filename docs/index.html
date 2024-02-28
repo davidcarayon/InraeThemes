@@ -46,7 +46,7 @@
   <a class="nav-link" href="reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
-    Fonctions
+    Functions
   </a>
 </li>
 <li class="nav-item">
@@ -82,12 +82,21 @@
 
 <!-- badges: end -->
 <blockquote>
-<p><em>InraeThemes is an unofficial collection of R-related templates, themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.</em></p>
+<p><em>InraeThemes is a collection of R-related templates, themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.</em></p>
 </blockquote>
+<p>The goal of this <span class="emoji" data-emoji="package">📦</span> is to provide a easy to use themes and color palettes for INRAE engineers and researchers. These are an <strong>unofficial</strong> and <strong>opiniated</strong> templates.</p>
+<p>Related work :</p>
+<ul>
+<li>The <a href="https://github.com/davidcarayon/quarto-inrae-extension" class="external-link">quarto-inrae-extension</a> which provides a wide range of quarto-based formats for documents, slides and projects.</li>
+</ul>
+<div class="section level2">
+<h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h2>
+<p>To make the full use of this package, you will need 2 fonts defined in INRAE’s design system : <code>Raleway</code> and <code>Avenir Next Pro Cn</code> that can be downloaded <a href="https://charte-identitaire.intranet.inrae.fr/content/download/3007/30036?version=5" class="external-link">here</a></p>
 </div>
-<div class="section level1">
-<h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h1>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>The package can be installed using:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
@@ -98,30 +107,45 @@
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"davidcarayon/InraeThemes@v1.0.1"</span><span class="op">)</span></span></code></pre></div>
 </blockquote>
-<p>You will also need the two fonts defined in INRAE’s design system: <code>Raleway</code> and <code>Avenir Next LT Pro</code>. These fonts are available <a href="https://charte-identitaire.intranet.inrae.fr/content/download/3007/30036?version=5" class="external-link">here</a>.</p>
 </div>
-<div class="section level1">
-<h1 id="colors">Colors<a class="anchor" aria-label="anchor" href="#colors"></a>
-</h1>
+<div class="section level2">
+<h2 id="colors">Colors<a class="anchor" aria-label="anchor" href="#colors"></a>
+</h2>
 <p>A color palette is available in this package, based on INRAE’s design system</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/palette_inrae.html">palette_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/scales.png"></p>
-<div class="section level2">
-<h2 id="ggplot2-themes-and-scales">ggplot2 themes and scales<a class="anchor" aria-label="anchor" href="#ggplot2-themes-and-scales"></a>
-</h2>
+<div class="section level3">
+<h3 id="ggplot2-themes-and-scales">ggplot2 themes and scales<a class="anchor" aria-label="anchor" href="#ggplot2-themes-and-scales"></a>
+</h3>
 <p>Customize your ggplots using INRAE’s colors with <code><a href="reference/theme_inrae.html">theme_inrae()</a></code> and/or <code>scale_&lt;fill/color&gt;_inrae()</code>.</p>
 <p>Here are examples using the iris dataset.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://davidcarayon.github.io/InraeThemes/">InraeThemes</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># If needed</span></span>
+<span><span class="fu">sysfonts</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/sysfonts/man/font_add_google.html" class="external-link">font_add_google</a></span><span class="op">(</span><span class="st">"Raleway"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load the fonts</span></span>
+<span><span class="fu">showtext</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/showtext/man/showtext_auto.html" class="external-link">showtext_auto</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
 <span></span>
+<span><span class="co"># The plot</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Petal.Length</span>, group <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Species</span>, shape <span class="op">=</span> <span class="va">Species</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_color_inrae.html">scale_color_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Iris dimensions"</span>, subtitle <span class="op">=</span> <span class="st">"This is a subtitle explaining what you can see in this plot"</span>, x <span class="op">=</span> <span class="st">"Sepal Length"</span>, y <span class="op">=</span> <span class="st">"Petal Length"</span>, color <span class="op">=</span> <span class="st">"Iris species"</span>, shape <span class="op">=</span> <span class="st">"Iris species"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Iris dimensions"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"This is a subtitle explaining what you can see in this plot"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Sepal Length"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Petal Length"</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">"Iris species"</span>,</span>
+<span>    shape <span class="op">=</span> <span class="st">"Iris species"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -133,10 +157,10 @@
 <span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-2.png" width="100%"></p>
 </div>
-<div class="section level2">
-<h2 id="bootstrap-theme">Bootstrap theme<a class="anchor" aria-label="anchor" href="#bootstrap-theme"></a>
-</h2>
-<p>This package also provides a Sass theme built with {bslib}: bs_inrae(). Preview the theme with:</p>
+<div class="section level3">
+<h3 id="bootstrap-theme">Bootstrap theme<a class="anchor" aria-label="anchor" href="#bootstrap-theme"></a>
+</h3>
+<p>This package also provides a Sass theme built with <a href="%5Bhttps://%5D(https://rstudio.github.io/bslib/)" class="external-link">{bslib}</a>: bs_inrae(). Preview the theme with:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">bslib</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bslib/man/bs_theme_preview.html" class="external-link">bs_theme_preview</a></span><span class="op">(</span><span class="fu"><a href="reference/bs_inrae.html">bs_inrae</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/cap_bslib.png"></p>
@@ -148,19 +172,15 @@
 <span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="quarto-templates">Quarto templates<a class="anchor" aria-label="anchor" href="#quarto-templates"></a>
-</h1>
-<p>We developed templates following INRAE’s design system for the Quarto scientific publishing system.</p>
-<p>Source code, installation, requirements, and usage instructions can be found in this repository: <a href="https://github.com/davidcarayon/quarto-inrae-extension" class="external-link">davidcarayon/quarto-inrae-extension</a>.</p>
+<div class="section level2">
+<h2 id="project-templates">Project templates<a class="anchor" aria-label="anchor" href="#project-templates"></a>
+</h2>
+<p>This package provides an opinionated project directory structure for data analysis which can be either used by going though <code>Projects &gt; New Project &gt; New Directory</code> in Rstudio or by using :</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/new_analysis.html">new_analysis</a></span><span class="op">(</span><span class="st">"myproj"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/tree.png"></p>
 </div>
-<div class="section level1">
-<h1 id="project-templates">Project templates<a class="anchor" aria-label="anchor" href="#project-templates"></a>
-</h1>
-<p>This package provides two project templates that can be found either through RStudio’s graphical interface <code>Projects &gt; New Project &gt; New Directory</code> or using corresponding R functions:</p>
-<p>INRAE Book: A Quarto project of type “book”: <code><a href="reference/create_book.html">create_book()</a></code> Data Analysis Project: An opinionated directory structure for data analysis: <code><a href="reference/new_analysis.html">new_analysis()</a></code></p>
 </div>
-
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">

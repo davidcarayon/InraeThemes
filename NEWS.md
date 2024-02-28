@@ -1,9 +1,8 @@
 ## InraeThemes 3.0.0
-* Removing rmarkdown templates
-* Removing LaTeX-related templates
+* Removing all rmarkdown/quarto template (now supported by the [quarto-inrae-extension](https://github.com/davidcarayon/quarto-inrae-extension))
 * New logo
 * Full documentation refactoring
-* Update bootstrap theme to version 5
+* Update bootstrap theme to version 5 for `bs_inrae()`
 
 ## InraeThemes 2.3.0
 

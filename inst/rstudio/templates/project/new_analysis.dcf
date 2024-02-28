@@ -1,7 +1,7 @@
 Binding: new_analysis
 Title: Data Analysis Project
 OpenFiles: README.md
-Icon: logo_hex-min.png
+Icon: logo_hex.png
 
 Parameter: init
 Widget: CheckboxInput

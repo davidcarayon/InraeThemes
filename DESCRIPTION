@@ -24,8 +24,9 @@ Imports:
     ggplot2,
     gert,
     scales,
-    bslib
+    bslib,
+    showtext
 Suggests:
     rmarkdown,
-    quarto,
+    quarto
 URL: https://davidcarayon.github.io/InraeThemes/

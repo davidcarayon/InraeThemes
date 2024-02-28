@@ -1,18 +1,21 @@
 url: https://davidcarayon.github.io/InraeThemes/
 template:
   bootstrap: 5
-  bootswatch: pulse
+  bootswatch: cosmo
   bslib:
-    pkgdown-nav-height: 100px
-    bg: "#FFFFFF"
-    fg: "#000000"
+    pkgdown-nav-height: 80px
     primary: "#00a3a6"
+    secondary: "#008c8e"
+    success: "#9dc544"
+    info: "#9ed6e3"
+    warning: "#FFF100"
+    danger: "#ed6e6c"
 navbar:
   left:
     - icon: fa-home
       href: index.html
     - icon: fa-file-code-o
-      text: "Fonctions"
+      text: "Functions"
       href: reference/index.html
     - icon: fa-newspaper
       text: Changelog

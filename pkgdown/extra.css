@@ -24,3 +24,9 @@ button.btn.btn-primary.btn-copy-ex {
     0 18.8px 19.2px rgba(0, 0, 0, 0.037),
     0 22px 40px rgba(0, 0, 0, 0.019);
 }
+
+.navbar-dark input[type="search"] {
+    border-color: #868e96;
+    background-color: #e9ecef;
+    color: #212529;
+}
