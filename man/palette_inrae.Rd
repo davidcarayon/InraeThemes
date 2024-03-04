@@ -2,13 +2,13 @@
 % Please edit documentation in R/scales.R
 \name{palette_inrae}
 \alias{palette_inrae}
-\title{Palette de couleurs INRAE}
+\title{INRAE color palette}
 \usage{
 palette_inrae()
 }
 \value{
-un vecteur contenant les couleurs
+a named vector of colors
 }
 \description{
-Cette palette correspond aux couleurs issues de la charte INRAE V3.
+This color palette is based on colors from INRAE's design system.
 }

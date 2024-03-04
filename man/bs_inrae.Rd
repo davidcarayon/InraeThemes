@@ -2,13 +2,13 @@
 % Please edit documentation in R/themes.R
 \name{bs_inrae}
 \alias{bs_inrae}
-\title{Bootstrap Sass INRAE theme}
+\title{Bootstrap 5 INRAE theme}
 \usage{
 bs_inrae()
 }
 \value{
-A Sass INRAE theme
+A bslib theme with INRAE colors
 }
 \description{
-Bootstrap Sass INRAE theme
+Bootstrap 5 INRAE theme
 }
