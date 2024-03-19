@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# InraeThemes <img src="man/figures/logo_hex.png" align="right" width="20%"/>
+# InraeThemes <img src="man/figures/logo_hex2.png" align="right" width="20%"/>
 
 <!-- badges: start -->
 
