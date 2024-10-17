@@ -17,58 +17,11 @@ theme_inrae <- function(base_size = 15) {
   inrae_sombre <- palette_inrae()["inrae_sombre"]
 
   # Starts with theme_grey and then modify some parts
-  theme_grey(base_size = base_size) %+replace%
+  theme_light(base_size = base_size) %+replace%
 
     ggplot2::theme(
-
-      # Base Inherited Elements
-      line = ggplot2::element_line(colour = grey, size = 0.5, linetype = 1, lineend = "butt"),
-      rect = ggplot2::element_rect(fill = white, colour = blue, size = 0.5, linetype = 1),
-      text = ggplot2::element_text(
-        face = "plain",
-        colour = inrae_sombre, size = base_size,
-        lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0,
-        margin = ggplot2::margin(), debug = FALSE
-      ),
-
-      # Axes
-      axis.line = ggplot2::element_blank(),
-      axis.text = ggplot2::element_text(size = rel(0.8)),
-      axis.ticks = ggplot2::element_line(color = grey, size = rel(1 / 3)),
-      axis.title = ggplot2::element_text(size = rel(1.0), face = "bold"),
-
-      # Panel
-      panel.background = ggplot2::element_rect(fill = white, color = NA),
-      panel.border = ggplot2::element_rect(fill = NA, size = rel(1 / 2), color = blue),
-      panel.grid.major = ggplot2::element_line(color = grey, size = rel(1 / 5), linetype = "longdash"),
-      panel.grid.minor = ggplot2::element_blank(),
-      panel.grid.minor.x = ggplot2::element_blank(),
-      panel.spacing = ggplot2::unit(.75, "cm"),
-
-      # Legend
-      legend.key = ggplot2::element_rect(fill = white, color = NA),
-      legend.position = "top",
-      legend.title = element_text(face = "bold"),
-
-      # Strip (Used with multiple panels)
-      strip.background = ggplot2::element_rect(fill = inrae_sombre, color = blue),
-      strip.text = ggplot2::element_text(color = white, size = ggplot2::rel(0.8), margin = ggplot2::margin(t = 5, b = 5)),
-
-      # Plot
-      plot.title = ggplot2::element_text(
-        family = "Raleway",
-        color = inrae_sombre,
-        face = "bold",
-        size = rel(1.2), hjust = 0,
-        margin = ggplot2::margin(t = 0, r = 0, b = 4, l = 0, unit = "pt")
-      ),
-      plot.subtitle = ggplot2::element_text(
-        family = "Raleway",
-        color = inrae,
-        face = "italic",
-        size = rel(0.9), hjust = 0,
-        margin = ggplot2::margin(t = 0, r = 0, b = 3, l = 0, unit = "pt")
-      ),
+      strip.background = element_rect(fill = "#275662", color = "white"),
+      plot.title = element_text(margin = margin(5, 5, 3, 2, unit = "points"), size = rel(1.6), color = "#275662"),
 
       # Complete theme
       complete = TRUE

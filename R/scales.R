@@ -29,7 +29,7 @@ palette_inrae <- function() {
 #' @import scales
 #' @export
 scale_fill_inrae <- function(...) {
-  ggplot2::discrete_scale("fill", "inrae", scales::manual_pal(values = c("#00a3a6", "#275662", "#9dc544", "#9ed6e3", "#423089", "#ed6e6c", "#797870", "#c4c0b3", "#4e5352")), ...)
+  ggplot2::discrete_scale("fill", "inrae", scales::manual_pal(values = c("#00a3a6", "#ed6e6c", "#9dc544", "#423089", "#275662", "#9ed6e3", "#797870", "#c4c0b3", "#4e5352")), ...)
 }
 
 #' INRAE fill palette
@@ -41,5 +41,5 @@ scale_fill_inrae <- function(...) {
 #' @export
 
 scale_color_inrae <- function(...) {
-  ggplot2::discrete_scale("color", "inrae", scales::manual_pal(values = c("#00a3a6", "#275662", "#9dc544", "#9ed6e3", "#423089", "#ed6e6c", "#797870", "#c4c0b3", "#4e5352")), ...)
+  ggplot2::discrete_scale("color", "inrae", scales::manual_pal(values = c("#00a3a6", "#ed6e6c", "#9dc544", "#423089", "#275662", "#9ed6e3", "#797870", "#c4c0b3", "#4e5352")), ...)
 }
