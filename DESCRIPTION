@@ -1,6 +1,6 @@
 Package: InraeThemes
 Title: Templates and themes following INRAE's Design System
-Version: 3.0.1
+Version: 3.1.0
 Authors@R: 
     c(
     person(given = "David",
@@ -12,7 +12,7 @@ Authors@R:
            role = c("ctb"),
            email = "sebastien.boutry@inrae.fr")
     )       
-Description: This package is an unofficial collection of R-related templates, themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.
+Description: This package is an unofficial collection of R-related themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -22,6 +22,8 @@ Depends:
     R (>= 2.10)
 Imports: 
     ggplot2,
+    palmerpenguins,
+    extrafont,
     gert,
     scales,
     bslib,

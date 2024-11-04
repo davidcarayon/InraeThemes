@@ -31,6 +31,9 @@
     <loc>https://davidcarayon.github.io/InraeThemes/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://davidcarayon.github.io/InraeThemes/reference/inrae_colors.html</loc>
+  </url>
+  <url>
     <loc>https://davidcarayon.github.io/InraeThemes/reference/new_analysis.html</loc>
   </url>
   <url>
@@ -47,5 +50,8 @@
   </url>
   <url>
     <loc>https://davidcarayon.github.io/InraeThemes/reference/theme_inrae2.html</loc>
+  </url>
+  <url>
+    <loc>https://davidcarayon.github.io/InraeThemes/reference/theme_inrae_gt.html</loc>
   </url>
 </urlset>

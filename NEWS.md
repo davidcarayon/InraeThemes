@@ -1,3 +1,7 @@
+## InraeThemes 3.1.0
+* New `theme_inrae()` and `scale_*_inrae()` (see README for examples)
+* New `theme_inrae_gt()`
+
 ## InraeThemes 3.0.0
 * Removing all rmarkdown/quarto template (now supported by the [quarto-inrae-extension](https://github.com/davidcarayon/quarto-inrae-extension))
 * New logo

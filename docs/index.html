@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This package is an unofficial collection of R-related templates, themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.">
+<meta name="description" content="This package is an unofficial collection of R-related themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.">
 <title>Templates and themes following INRAE's Design System • InraeThemes</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Templates and themes following INRAE's Design System">
-<meta property="og:description" content="This package is an unofficial collection of R-related templates, themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.">
+<meta property="og:description" content="This package is an unofficial collection of R-related themes, and other graphical elements based on formats related to R and in accordance with the INRAE design system.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="index.html">InraeThemes</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +95,7 @@
 <div class="section level2">
 <h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
 </h2>
-<p>To make the full use of this package, you will need 2 fonts defined in INRAE’s design system : <code>Raleway</code> and <code>Avenir Next Pro Cn</code> that can be downloaded <a href="https://charte-identitaire.intranet.inrae.fr/content/download/3007/30036?version=5" class="external-link">here</a></p>
+<p>To make the full use of this package, you will need the <code>Raleway</code> font that can be downloaded <a href="https://fonts.google.com/specimen/Raleway" class="external-link">here</a></p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -110,65 +110,799 @@
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"davidcarayon/InraeThemes@v1.0.1"</span><span class="op">)</span></span></code></pre></div>
 </blockquote>
-</div>
-<div class="section level2">
-<h2 id="colors">Colors<a class="anchor" aria-label="anchor" href="#colors"></a>
-</h2>
-<p>A color palette is available in this package, based on INRAE’s design system</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/palette_inrae.html">palette_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/scales.png"></p>
 <div class="section level3">
 <h3 id="ggplot2-themes-and-scales">ggplot2 themes and scales<a class="anchor" aria-label="anchor" href="#ggplot2-themes-and-scales"></a>
 </h3>
 <p>Customize your ggplots using INRAE’s colors with <code><a href="reference/theme_inrae.html">theme_inrae()</a></code> and/or <code>scale_&lt;fill/color&gt;_inrae()</code>.</p>
-<p>Here are examples using the iris dataset.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<p>Here are examples using the palmerpenguins dataset.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://davidcarayon.github.io/InraeThemes/">InraeThemes</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link">palmerpenguins</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># If needed</span></span>
-<span><span class="fu">sysfonts</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/sysfonts/man/font_add_google.html" class="external-link">font_add_google</a></span><span class="op">(</span><span class="st">"Raleway"</span><span class="op">)</span></span>
+<span><span class="co"># sysfonts::font_add_google("Raleway")</span></span>
 <span></span>
 <span><span class="co"># Load the fonts</span></span>
 <span><span class="fu">showtext</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/showtext/man/showtext_auto.html" class="external-link">showtext_auto</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Load data</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># The plot</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Petal.Length</span>, group <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Species</span>, shape <span class="op">=</span> <span class="va">Species</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/scale_color_inrae.html">scale_color_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Iris dimensions"</span>,</span>
-<span>    subtitle <span class="op">=</span> <span class="st">"This is a subtitle explaining what you can see in this plot"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"Sepal Length"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Petal Length"</span>,</span>
-<span>    color <span class="op">=</span> <span class="st">"Iris species"</span>,</span>
-<span>    shape <span class="op">=</span> <span class="st">"Iris species"</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Relation entre la longueur des nageoires et la masse corporelle"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Données des pingouins par espèce"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Longueur des nageoires (mm)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Masse corporelle (g)"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_color_inrae.html">scale_color_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Masse corporelle des différentes espèces de pingouins"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Espèce"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Masse corporelle (g)"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_fill_inrae.html">scale_fill_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-2.png" width="100%"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">Species</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, position <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/scale_fill_inrae.html">scale_fill_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Sepal Width"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span>, title <span class="op">=</span> <span class="st">"Sepal Width distribution"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-example-2.png" width="100%"></p>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">2</span>, position <span class="op">=</span> <span class="st">"stack"</span>, color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Distribution de la longueur du bec des pingouins"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Longueur du bec (mm)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Fréquence"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_fill_inrae.html">scale_fill_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-3.png" width="100%"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html" class="external-link">geom_density</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Distribution de la longueur des nageoires par espèce"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Longueur des nageoires (mm)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Densité"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_fill_inrae.html">scale_fill_inrae</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-4.png" width="100%"></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Dimensions des nageoires et masse corporelle par espèce et île"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Longueur des nageoires (mm)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Masse corporelle (g)"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_inrae.html">theme_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_color_inrae.html">scale_color_inrae</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">species</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-5.png" width="100%"></p>
+</div>
+<div class="section level3">
+<h3 id="gt-theme">gt theme<a class="anchor" aria-label="anchor" href="#gt-theme"></a>
+</h3>
+<p>This package also provides a {gt} theme with <code><a href="reference/theme_inrae_gt.html">theme_inrae_gt()</a></code>:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com" class="external-link">gt</a></span><span class="op">)</span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html" class="external-link">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html" class="external-link">tab_header</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html" class="external-link">md</a></span><span class="op">(</span><span class="st">"**Caractéristiques des pingouins**"</span><span class="op">)</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Sous-titre du tableau"</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="reference/theme_inrae_gt.html">theme_inrae_gt</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div id="tkcubuuzfb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tkcubuuzfb table {
+  font-family: Raleway;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&#10;#tkcubuuzfb thead, #tkcubuuzfb tbody, #tkcubuuzfb tfoot, #tkcubuuzfb tr, #tkcubuuzfb td, #tkcubuuzfb th {
+  border-style: none;
+}
+&#10;#tkcubuuzfb p {
+  margin: 0;
+  padding: 0;
+}
+&#10;#tkcubuuzfb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #00A3A6;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #00A3A6;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+&#10;#tkcubuuzfb .gt_title {
+  color: #333333;
+  font-size: 20px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+&#10;#tkcubuuzfb .gt_subtitle {
+  color: #333333;
+  font-size: 14px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+&#10;#tkcubuuzfb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #00A3A6;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #00A3A6;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+&#10;#tkcubuuzfb .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #00A3A6;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+&#10;#tkcubuuzfb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+&#10;#tkcubuuzfb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+&#10;#tkcubuuzfb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #00A3A6;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+&#10;#tkcubuuzfb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+&#10;#tkcubuuzfb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+&#10;#tkcubuuzfb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+&#10;#tkcubuuzfb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+&#10;#tkcubuuzfb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+&#10;#tkcubuuzfb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #C4C0B3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+&#10;#tkcubuuzfb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#tkcubuuzfb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+&#10;#tkcubuuzfb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+&#10;#tkcubuuzfb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+&#10;#tkcubuuzfb .gt_summary_row {
+  color: #333333;
+  background-color: #C4C0B3;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#tkcubuuzfb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #00A3A6;
+}
+&#10;#tkcubuuzfb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+&#10;#tkcubuuzfb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #00A3A6;
+}
+&#10;#tkcubuuzfb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#tkcubuuzfb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+&#10;#tkcubuuzfb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #797870;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #797870;
+}
+&#10;#tkcubuuzfb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#tkcubuuzfb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#tkcubuuzfb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#tkcubuuzfb .gt_left {
+  text-align: left;
+}
+&#10;#tkcubuuzfb .gt_center {
+  text-align: center;
+}
+&#10;#tkcubuuzfb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+&#10;#tkcubuuzfb .gt_font_normal {
+  font-weight: normal;
+}
+&#10;#tkcubuuzfb .gt_font_bold {
+  font-weight: bold;
+}
+&#10;#tkcubuuzfb .gt_font_italic {
+  font-style: italic;
+}
+&#10;#tkcubuuzfb .gt_super {
+  font-size: 65%;
+}
+&#10;#tkcubuuzfb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+&#10;#tkcubuuzfb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+&#10;#tkcubuuzfb .gt_indent_1 {
+  text-indent: 5px;
+}
+&#10;#tkcubuuzfb .gt_indent_2 {
+  text-indent: 10px;
+}
+&#10;#tkcubuuzfb .gt_indent_3 {
+  text-indent: 15px;
+}
+&#10;#tkcubuuzfb .gt_indent_4 {
+  text-indent: 20px;
+}
+&#10;#tkcubuuzfb .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading">
+<td colspan="8" class="gt_heading gt_title gt_font_normal" style>
+<strong>Caractéristiques des pingouins</strong>
+</td>
+</tr>
+<tr class="gt_heading">
+<td colspan="8" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>
+Sous-titre du tableau
+</td>
+</tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="species">
+species
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="island">
+island
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="bill_length_mm">
+bill_length_mm
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="bill_depth_mm">
+bill_depth_mm
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="flipper_length_mm">
+flipper_length_mm
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="body_mass_g">
+body_mass_g
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="sex">
+sex
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="year">
+year
+</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+39.1
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+18.7
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+181
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3750
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+male
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+39.5
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+17.4
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+186
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3800
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+female
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+40.3
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+18.0
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+195
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3250
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+female
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+36.7
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+19.3
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+193
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3450
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+female
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+39.3
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+20.6
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+190
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3650
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+male
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+38.9
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+17.8
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+181
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3625
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+female
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+39.2
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+19.6
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+195
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+4675
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+male
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+34.1
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+18.1
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+193
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+3475
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+<tr>
+<td headers="species" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Adelie
+</td>
+<td headers="island" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+Torgersen
+</td>
+<td headers="bill_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+42.0
+</td>
+<td headers="bill_depth_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+20.2
+</td>
+<td headers="flipper_length_mm" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+190
+</td>
+<td headers="body_mass_g" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+4250
+</td>
+<td headers="sex" class="gt_row gt_center" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+NA
+</td>
+<td headers="year" class="gt_row gt_right" style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #00a3a6;">
+2007
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section level3">
 <h3 id="bootstrap-theme">Bootstrap theme<a class="anchor" aria-label="anchor" href="#bootstrap-theme"></a>
 </h3>
 <p>This package also provides a Sass theme built with <a href="%5Bhttps://%5D(https://rstudio.github.io/bslib/)" class="external-link">{bslib}</a>: bs_inrae(). Preview the theme with:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">bslib</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bslib/man/bs_theme_preview.html" class="external-link">bs_theme_preview</a></span><span class="op">(</span><span class="fu"><a href="reference/bs_inrae.html">bs_inrae</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">bslib</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/bslib/reference/bs_theme_preview.html" class="external-link">bs_theme_preview</a></span><span class="op">(</span><span class="fu"><a href="reference/bs_inrae.html">bs_inrae</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/cap_bslib.png"></p>
 <p>And can be used in any Shiny app with :</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  theme <span class="op">=</span> <span class="fu">InraeThemes</span><span class="fu">::</span><span class="fu"><a href="reference/bs_inrae.html">bs_inrae</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
@@ -179,7 +913,7 @@
 <h2 id="project-templates">Project templates<a class="anchor" aria-label="anchor" href="#project-templates"></a>
 </h2>
 <p>This package provides an opinionated project directory structure for data analysis which can be either used by going though <code>Projects &gt; New Project &gt; New Directory</code> in Rstudio or by using :</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/new_analysis.html">new_analysis</a></span><span class="op">(</span><span class="st">"myproj"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/tree.png"></p>
 </div>

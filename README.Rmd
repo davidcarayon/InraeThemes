@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-![packageversion](https://img.shields.io/badge/Package%20version-3.0.0-green?style=flat-square)
+![packageversion](https://img.shields.io/badge/Package%20version-3.1.0-green?style=flat-square)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![R-CMD-check](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml)
 [![DOI](https://zenodo.org/badge/274901390.svg)](https://zenodo.org/badge/latestdoi/274901390)
@@ -36,7 +36,7 @@ The goal of this :package: is to provide a easy to use themes and color palettes
 
 ## Prerequisites
 
-To make the full use of this package, you will need 2 fonts defined in INRAE's design system : `Raleway` and `Avenir Next Pro Cn` that can be downloaded [here](https://charte-identitaire.intranet.inrae.fr/content/download/3007/30036?version=5)
+To make the full use of this package, you will need the `Raleway` font that can be downloaded [here](https://fonts.google.com/specimen/Raleway)
 
 ## Installation
 
@@ -54,54 +54,91 @@ remotes::install_github("davidcarayon/InraeThemes")
 > remotes::install_github("davidcarayon/InraeThemes@v1.0.1")
 > ```
 
-## Colors
-
-A color palette is available in this package, based on INRAE's design system 
-
-``` r
-palette_inrae()
-```
-![](man/figures/scales.png)
-
 ### ggplot2 themes and scales
 
 Customize your ggplots using INRAE's colors with `theme_inrae()` and/or `scale_<fill/color>_inrae()`.
 
-Here are examples using the iris dataset.
+Here are examples using the palmerpenguins dataset.
 
-```{r example, message = FALSE, fig.showtext=TRUE, fig_retina = 1, warning = FALSE}
+```{r example, message = FALSE, fig.showtext=TRUE, fig_retina = 1, warning = FALSE, fig.width = 10}
 library(InraeThemes)
 library(ggplot2)
+library(palmerpenguins)
 
 # If needed
-sysfonts::font_add_google("Raleway")
+# sysfonts::font_add_google("Raleway")
 
 # Load the fonts
 showtext::showtext_auto()
 
-# Load data
-data(iris)
-
-# The plot
-ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, group = Species)) +
-  geom_point(aes(color = Species, shape = Species), size = 3, alpha = 0.8) +
-  geom_smooth(method = "lm", se = FALSE, aes(color = Species)) +
-  scale_color_inrae() +
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point(size = 3, alpha = 0.7) +
   labs(
-    title = "Iris dimensions",
-    subtitle = "This is a subtitle explaining what you can see in this plot",
-    x = "Sepal Length",
-    y = "Petal Length",
-    color = "Iris species",
-    shape = "Iris species"
+    title = "Relation entre la longueur des nageoires et la masse corporelle",
+    subtitle = "Données des pingouins par espèce",
+    x = "Longueur des nageoires (mm)",
+    y = "Masse corporelle (g)"
   ) +
-  theme_inrae()
+  theme_inrae() +
+  scale_color_inrae()
 
-ggplot(data = iris, aes(x = Sepal.Width)) +
-  geom_histogram(aes(fill = Species), alpha = 0.5, position = "identity") +
-  scale_fill_inrae() +
-  labs(x = "Sepal Width", y = "Frequency", title = "Sepal Width distribution") +
-  theme_inrae()
+ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    title = "Masse corporelle des différentes espèces de pingouins",
+    x = "Espèce",
+    y = "Masse corporelle (g)"
+  ) +
+  theme_inrae() +
+  scale_fill_inrae()
+
+ggplot(penguins, aes(x = bill_length_mm, fill = species)) +
+  geom_histogram(binwidth = 2, position = "stack", color = "white") +
+  labs(
+    title = "Distribution de la longueur du bec des pingouins",
+    x = "Longueur du bec (mm)",
+    y = "Fréquence"
+  ) +
+  theme_inrae() +
+  scale_fill_inrae()
+
+ggplot(penguins, aes(x = flipper_length_mm, fill = species)) +
+  geom_density(alpha = 0.6) +
+  labs(
+    title = "Distribution de la longueur des nageoires par espèce",
+    x = "Longueur des nageoires (mm)",
+    y = "Densité"
+  ) +
+  theme_inrae() +
+  scale_fill_inrae()
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = island)) +
+  geom_point(size = 3, alpha = 0.7) +
+  labs(
+    title = "Dimensions des nageoires et masse corporelle par espèce et île",
+    x = "Longueur des nageoires (mm)",
+    y = "Masse corporelle (g)"
+  ) +
+  theme_inrae() +
+  scale_color_inrae() +
+  facet_wrap(~species)
+```
+
+
+### gt theme
+
+This package also provides a {gt} theme with `theme_inrae_gt()`:
+
+```{r example gt, message = FALSE, fig.showtext=TRUE, fig_retina = 1, warning = FALSE}
+library(gt)
+penguins |>
+  head(10) |>
+  gt() |>
+  tab_header(
+    title = md("**Caractéristiques des pingouins**"),
+    subtitle = "Sous-titre du tableau"
+  ) |>
+  theme_inrae_gt()
 ```
 
 ### Bootstrap theme

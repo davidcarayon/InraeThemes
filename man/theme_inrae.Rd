@@ -4,7 +4,7 @@
 \alias{theme_inrae}
 \title{ggplot theme with INRAE colors}
 \usage{
-theme_inrae(base_size = 15)
+theme_inrae(base_size = 12)
 }
 \arguments{
 \item{base_size}{base size}
