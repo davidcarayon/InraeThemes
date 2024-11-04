@@ -128,7 +128,8 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = island)) +
 
 This package also provides a {gt} theme with `theme_inrae_gt()`:
 
-```{r example gt, message = FALSE, warning = FALSE}
+
+```{r example gt, message = FALSE, warning = FALSE, eval = FALSE}
 library(gt)
 tab <- penguins |>
   head(10) |>
@@ -138,9 +139,11 @@ tab <- penguins |>
     subtitle = "Sous-titre du tableau"
   ) |>
   theme_inrae_gt() 
-
-gt::as_raw_html(tab)
 ```
+
+![](man/figures/tab_gt.png)
+
+
 
 ### Bootstrap theme
 
