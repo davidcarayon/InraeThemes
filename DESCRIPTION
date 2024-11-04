@@ -22,13 +22,14 @@ Depends:
     R (>= 2.10)
 Imports: 
     ggplot2,
-    palmerpenguins,
-    extrafont,
     gert,
     scales,
     bslib,
-    showtext
+    gt
 Suggests:
     rmarkdown,
-    quarto
+    quarto,
+    palmerpenguins,
+    showtext,
+    extrafont
 URL: https://davidcarayon.github.io/InraeThemes/
