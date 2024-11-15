@@ -69,7 +69,7 @@ library(palmerpenguins)
 # sysfonts::font_add_google("Raleway")
 
 # Load the fonts
-showtext::showtext_auto()
+extrafont::loadfonts(quiet = TRUE)
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point(size = 3, alpha = 0.7) +

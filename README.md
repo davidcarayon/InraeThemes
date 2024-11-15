@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 ![packageversion](https://img.shields.io/badge/Package%20version-3.1.0-green?style=flat-square)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![R-CMD-check](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/davidcarayon/InraeThemes/actions/workflows/R-CMD-check.yaml)
@@ -66,7 +66,7 @@ library(palmerpenguins)
 # sysfonts::font_add_google("Raleway")
 
 # Load the fonts
-showtext::showtext_auto()
+extrafont::loadfonts(quiet = TRUE)
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point(size = 3, alpha = 0.7) +
